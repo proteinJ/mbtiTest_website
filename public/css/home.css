@@ -1,0 +1,124 @@
+
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body_1 {
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header and Navigation */
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 15px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    margin-right: 20px;
+}
+
+#nav-logo {
+    height: 40px;
+    width: auto;
+}
+
+.title h1 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+}
+
+/* Main Content */
+main {
+    padding-top: 100px;
+    min-height: calc(100vh - 130px);
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.test-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.test-description {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+.start-btn {
+    background-color: #8bc34a;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.start-btn:hover {
+    background-color: #7cb342;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.start-btn:active {
+    transform: translateY(1px);
+}
+
+/* Footer */
+footer {
+    background-color: #f1f1f1;
+    text-align: center;
+    padding: 20px;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .logo {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    
+    .test-title {
+        font-size: 2rem;
+    }
+    
+    .start-btn {
+        padding: 12px 30px
+    }
+}

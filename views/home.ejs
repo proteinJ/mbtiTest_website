@@ -1,0 +1,31 @@
+
+    <%- include('partials/header') %>
+
+<body_1>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="/images/homeLogo.webp" alt="Forest Animal Logo" id="nav-logo">
+            </div>
+            <div class="title">
+                <h1>Forest Animal Personality Test</h1>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2 class="test-title">Forest Animal Test</h2>
+            <p class="test-description">Discover which forest animal represents your personality!</p>
+            <button class="start-btn" onclick="window.location.href='/testPage1'">검사 시작</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; <%= new Date().getFullYear() %> Forest Animal Test</p>
+    </footer>
+    
+    <script src="/js/main.js"></script>
+</body_1>
+</html>
+
