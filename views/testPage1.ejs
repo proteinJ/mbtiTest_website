@@ -1,32 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forest Animal Test</title>
-    <link rel="stylesheet" href="/css/testPage.css">
-</head>
-<body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">
-                <img src="/images/homeLogo.webp" alt="Forest Animal Logo" id="nav-logo">
-            </div>
-            <div class="title">
-                <h1>Forest Animal Personality Test</h1>
-            </div>
-        </nav>
-    </header>
+<%- include('partials/head') %>
 
     <div class="container">
-        <header>
-            <h1>Aptitude Test</h1>
-            <p>For each question, select the option that best describes your preference.</p>
-        </header>
-        
         <form id="aptitudeForm">
             <div class="question-container">
-                <div class="question">
+                <div class="question1">
                     <h2>Question 1</h2>
                     <p>I prefer to work independently rather than in a team.</p>
                     <div class="radio-group">
@@ -61,7 +38,7 @@
 
             <!-- Questions 2-10 follow the same pattern -->
             <div class="question-container">
-                <div class="question">
+                <div class="question2">
                     <h2>Question 2</h2>
                     <p>I prefer to work independently rather than in a team.</p>
                     <div class="radio-group">
@@ -96,7 +73,7 @@
 
             <!-- Questions 3-10 follow the same pattern -->
             <div class="question-container">
-                <div class="question">
+                <div class="question3">
                     <h2>Question 3</h2>
                     <p>I prefer to work independently rather than in a team.</p>
                     <div class="radio-group">
@@ -130,7 +107,7 @@
             </div>
             <!-- Questions 4-10 follow the same pattern -->
             <div class="question-container">
-                <div class="question">
+                <div class="question4">
                     <h2>Question 4</h2>
                     <p>I prefer to work independently rather than in a team.</p>
                     <div class="radio-group">
@@ -165,7 +142,7 @@
 
             <!-- Questions 5-10 follow the same pattern -->
             <div class="question-container">
-                <div class="question">
+                <div class="question5">
                     <h2>Question 5</h2>
                     <p>I prefer to work independently rather than in a team.</p>
                     <div class="radio-group">
@@ -200,7 +177,7 @@
 
             <!-- Questions -10 follow the same pattern -->
             <div class="question-container">
-                <div class="question">
+                <div class="question6">
                     <h2>Question 6</h2>
                     <p>I prefer to work independently rather than in a team.</p>
                     <div class="radio-group">
@@ -235,7 +212,7 @@
             <!-- Remaining questions omitted for brevity but would follow the same pattern -->
             <!-- Add questions 3-10 with the same structure -->
 
-            <a href="/testPage2" class="submit-btn">Next Page</a>
+            <button type="submit" class="submit-btn">Next Page</button>
             
         </form>
     </div>
@@ -243,6 +220,6 @@
 
     
 
-    <script src="app.js"></script>
+    <script src="/js/app.js"></script>
 </body>
 </html>

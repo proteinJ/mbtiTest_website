@@ -1,14 +1,23 @@
 {
   "name": "project",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "",
+  "homepage": "https://github.com/proteinJ/mbtiTest_website#readme",
+  "bugs": {
+    "url": "https://github.com/proteinJ/mbtiTest_website/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/proteinJ/mbtiTest_website.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "server/server.js",
   "scripts": {
-    "start": "nodemon app.js",
+    "start": "nodemon server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "dependencies": {
     "ejs": "^3.1.10",
     "express": "^4.21.2"
