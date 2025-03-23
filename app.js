@@ -23,6 +23,18 @@ app.get('/testPage2', (req, res) => {
     res.render('testPage2');
 })
 
+app.get('/testPage3', (req, res) => {
+    res.render('testPage3');
+})
+
+app.get('/testPage4', (req, res) => {
+    res.render('testPage4');
+})
+
+app.get('/result', (req, res) => {
+    res.render('result');
+})
+
 const PORT = 3000;
 
 app.listen(PORT, () => {

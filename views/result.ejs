@@ -1,11 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>MBTI 테스트 결과</title>
+    <link rel="stylesheet" href="/css/result.css">
 </head>
 <body>
-    
+    <div class="result-container">
+        <div class="result-type">
+            <h1>당신은 ESTP!</h1>
+            <span id="mbtiType"></span>
+        </div>
+        <div class="percentage-container">
+            <div class="percentage-bar" id="E-I">
+                <span class="label">E</span>
+                <div class="bar">
+                    <div class="fill" id="E-fill"></div>
+                </div>
+                <span class="label">I</span>
+                <span class="percentage" id="E-percentage"></span>
+            </div>
+            <div class="percentage-bar" id="S-N">
+                <span class="label">S</span>
+                <div class="bar">
+                    <div class="fill" id="S-fill"></div>
+                </div>
+                <span class="label">N</span>
+                <span class="percentage" id="S-percentage"></span>
+            </div>
+            <div class="percentage-bar" id="T-F">
+                <span class="label">T</span>
+                <div class="bar">
+                    <div class="fill" id="T-fill"></div>
+                </div>
+                <span class="label">F</span>
+                <span class="percentage" id="T-percentage"></span>
+            </div>
+            <div class="percentage-bar" id="J-P">
+                <span class="percentage" id="J-percentage"></span>
+                <span class="label">J</span>
+                <div class="bar">
+                    <div class="fill" id="J-fill"></div>
+                </div>
+                <span class="label">P</span>
+                <span class="percentage" id="P-percentage"></span>
+            </div>
+            <div class="result-recomand">
+                <h1>추천 향 - 시트러스, 스파이시</h1>
+                <span id="mbtiRecomand"></span>
+            </div>
+            <div class="result-recomand-info">
+                <h1>즉흥적이고 에너제틱한 성격에 어울리는 상쾌하고 강렬한 향</h1>
+                <span id="mbtiRecomand"></span>
+            </div>
+        </div>
+        <div class="result-description">
+            <p id="description"></p>
+        </div>
+        <div class="result-characteristics">
+            <h2>성격 특징</h2>
+            <ul id="characteristics">
+            </ul>
+        </div>
+        <div class="result-recommendations">
+            <h2>추천 활동</h2>
+            <ul id="recommendations">
+            </ul>
+        </div>
+        <button id="restartButton">다시 테스트하기</button>
+    </div>
+    <script src="mbti_result.js"></script>
+    <script src="mbti_percentage.js"></script>
 </body>
 </html>
