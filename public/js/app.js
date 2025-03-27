@@ -18,35 +18,50 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // "Next Page" 버튼 클릭 시 폼 제출 전 점수를 계산
-    document.getElementById('aptitudeForm').addEventListener('submit', function(event) {
-        event.preventDefault();  // 폼이 제출되지 않도록 방지
+    let nextButton = document.getElementById('nextPage');  // 버튼의 id가 'nextPage'라고 가정
+    if (nextButton) {
+        nextButton.addEventListener('click', function(event) {
+            event.preventDefault();  // 폼이 제출되지 않도록 방지
 
-        // 점수 업데이트
-        updateScore();
+            // 점수 업데이트
+            updateScore();
 
-        // 점수 출력 (디버그용으로 알림창)
-        alert('선택된 점수의 총합은 ' + totalScore + '입니다.');
+            // 점수 출력 (디버그용으로 알림창)
+            alert('선택된 점수의 총합은 ' + totalScore + '입니다.');
 
-        // 서버에 점수 전송
-        fetch('/submit', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'  // JSON 형식으로 전송
-            },
-            body: JSON.stringify({ score: totalScore })  // 점수를 JSON 형식으로 변환하여 전송
-        }).then(response => {
-            if (response.ok) {
-                // 서버로부터 받은 응답 처리
-                return response.json();  // 응답을 JSON 형식으로 반환
-            } else {
-                throw new Error('점수 전송 실패');
-            }
-        }).then(data => {
-            console.log('서버 응답:', data);  // 서버 응답 출력
-            // 페이지 이동
-            window.location.href = "/testPage2";  // 다른 페이지로 이동
-        }).catch(error => {
-            console.error('오류 발생:', error);  // 오류 처리
+            // 서버에 점수 전송
+            fetch('/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'  // JSON 형식으로 전송
+                },
+                body: JSON.stringify({ score: totalScore })  // 점수를 JSON 형식으로 변환하여 전송
+            }).then(response => {
+                if (response.ok) {
+                    // 서버로부터 받은 응답 처리
+                    return response.json();  // 응답을 JSON 형식으로 반환
+                } else {
+                    throw new Error('점수 전송 실패');
+                }
+            }).then(data => {
+                console.log('서버 응답:', data);  // 서버 응답 출력
+                // 페이지 이동
+
+                let currentPage = window.location.pathname;
+
+                if(currentPage === "/testPage1"){
+                    window.location.href = "/testPage2";
+                }else if(currentPage === "/testPage2"){
+                    window.location.href = "/testPage3"
+                }else if(currentPage === "/testPage3"){
+                    window.location.href = "/testPage4"
+                }else{
+                    window.location.href = "/result"
+                }
+
+            }).catch(error => {
+                console.error('오류 발생:', error);  // 오류 처리
+            });
         });
-    });
+    }
 });
