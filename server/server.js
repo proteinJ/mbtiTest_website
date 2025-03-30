@@ -3,6 +3,7 @@ const app = express();
 const ejs = require("ejs");
 const path = require('path');
 
+
 app.use(express.json());
 
 app.use(express.static(__dirname + '/public'));
@@ -12,6 +13,9 @@ app.set('views', path.join(__dirname, 'views')); // 'views' 폴더 설정
 app.set('views', './views');
 
 app.use(express.static('public')); // CSS, JS, 이미지 같은 정적 파일 제공
+
+
+
 
 
 

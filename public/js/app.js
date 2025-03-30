@@ -23,6 +23,18 @@ document.addEventListener('DOMContentLoaded', function() {
         nextButton.addEventListener('click', function(event) {
             event.preventDefault();  // 폼이 제출되지 않도록 방지
 
+
+            
+            let questions = document.querySelectorAll('input[type="radio"]:checked');
+
+            // 선택된 radio 버튼이 6개인지 확인
+            if (questions.length !== 6) {
+                // 6개가 아닌 경우, 경고 메시지 출력
+                alert('모든 문항에 답하세요.');
+                return;  // 점수 전송 및 페이지 이동을 하지 않음
+            }
+
+
             // 점수 업데이트
             updateScore();
 
