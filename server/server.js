@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const ejs = require("ejs");
 const path = require('path');
+const session = require('express-session');
 
 
 app.use(express.json());
@@ -14,6 +15,11 @@ app.set('views', './views');
 
 app.use(express.static('public')); // CSS, JS, 이미지 같은 정적 파일 제공
 
+app.use(session({
+    secret: 'proteinj',  // 세션 암호화 키
+    resave: false,
+    saveUninitialized: true,
+  }));
 
 
 
@@ -24,16 +30,14 @@ app.get('/', (req, res) => {
 })
 
 app.post('/submit', (req, res) => {
-    const score = req.body.score;  // 요청에서 전송된 점수 받아오기
-    console.log('받은 점수:', score);
+    const { totalScore, pageNumber } = req.body; // 요청에서 전송된 점수 받아오기
 
-    // 점수를 저장하거나, 다른 로직을 추가할 수 있음
+    req.session[`totalScorePage${pageNumber}`] = totalScore;
 
-    // 클라이언트에 응답
-    res.status(200).json({
-        message : '점수가 성공적으로 처리되었습니다.',
-        score : score
-    });
+    console.log(`세션 저장 후:`, req.session);
+
+    console.log(`Page ${pageNumber}의 totalScore 저장:`, totalScore);
+    res.json({ message: `Page ${pageNumber}의 점수가 세션에 저장되었습니다.` });
 })
 
 
@@ -54,7 +58,13 @@ app.get('/testPage4', (req, res) => {
 })
 
 app.get('/result', (req, res) => {
-    res.render('result');
+
+    const EI_value = req.session.totalScorePage1;
+    const SN_value = req.session.totalScorePage2;
+    const TF_value = req.session.totalScorePage3;
+    const JP_value = req.session.totalScorePage4;
+
+    res.render('result', { EI_value, SN_value, TF_value, JP_value });
 })
 
 const PORT = 3000;

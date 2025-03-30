@@ -41,13 +41,19 @@ document.addEventListener('DOMContentLoaded', function() {
             // 점수 출력 (디버그용으로 알림창)
             alert('선택된 점수의 총합은 ' + totalScore + '입니다.');
 
+            let pageNumber = window.location.pathname.match(/\d+/)[0];  // 페이지 번호 추출
+
             // 서버에 점수 전송
             fetch('/submit', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'  // JSON 형식으로 전송
                 },
-                body: JSON.stringify({ score: totalScore })  // 점수를 JSON 형식으로 변환하여 전송
+                body: JSON.stringify({ 
+                    totalScore,
+                    pageNumber 
+
+                 })  // 점수를 JSON 형식으로 변환하여 전송
             }).then(response => {
                 if (response.ok) {
                     // 서버로부터 받은 응답 처리
