@@ -4,6 +4,8 @@ const ejs = require("ejs");
 const path = require('path');
 const session = require('express-session');
 
+const DataBase = require('../public/config/DataBase'); // 경로를 정확히 지정
+
 app.use(express.json());
 
 app.use(express.static(__dirname + '/public'));
@@ -49,26 +51,6 @@ function decision_mbtiType(EI, SN, TF, JP){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
 app.get('/', (req, res) => {
     res.render('home');
 })
@@ -109,8 +91,10 @@ app.get('/result', (req, res) => {
     const JP_value = req.session.totalScorePage4 * 3;
 
     const mbtiType = decision_mbtiType(EI_value, SN_value, TF_value, JP_value);
+    const category = mbtiType.startsWith("E") ? "E" : "I"; // 유형이 E로 시작하면 "E", 아니면 "I"
+    const mbtiData = DataBase[category][mbtiType]; // DataBase에서 해당 유형 데이터 가져오기
 
-    res.render('result', { EI_value, SN_value, TF_value, JP_value, mbtiType });
+    res.render('result', { mbtiType, mbtiData, EI_value, SN_value, TF_value, JP_value});
 })
 
 const PORT = 3000;
