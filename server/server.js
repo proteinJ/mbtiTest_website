@@ -4,7 +4,6 @@ const ejs = require("ejs");
 const path = require('path');
 const session = require('express-session');
 
-
 app.use(express.json());
 
 app.use(express.static(__dirname + '/public'));
@@ -20,6 +19,51 @@ app.use(session({
     resave: false,
     saveUninitialized: true,
   }));
+
+function decision_mbtiType(EI, SN, TF, JP){
+    let mbtiType = '';
+
+    if (EI > 50) {
+        mbtiType += 'E';
+    } else {
+        mbtiType += 'I';
+    }
+    if (SN > 50) {
+        mbtiType += 'S';
+    } else {
+        mbtiType += 'N';
+    }
+    if (TF > 50) {
+        mbtiType += 'T';
+    } else {
+        mbtiType += 'F';
+    }
+    if (JP > 50) {
+        mbtiType += 'J';
+    } else {
+        mbtiType += 'P';
+    }
+
+    return mbtiType;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 
 
 
@@ -59,12 +103,14 @@ app.get('/testPage4', (req, res) => {
 
 app.get('/result', (req, res) => {
 
-    const EI_value = req.session.totalScorePage1;
-    const SN_value = req.session.totalScorePage2;
-    const TF_value = req.session.totalScorePage3;
-    const JP_value = req.session.totalScorePage4;
+    const EI_value = req.session.totalScorePage1 * 3;
+    const SN_value = req.session.totalScorePage2 * 3;
+    const TF_value = req.session.totalScorePage3 * 3;
+    const JP_value = req.session.totalScorePage4 * 3;
 
-    res.render('result', { EI_value, SN_value, TF_value, JP_value });
+    const mbtiType = decision_mbtiType(EI_value, SN_value, TF_value, JP_value);
+
+    res.render('result', { EI_value, SN_value, TF_value, JP_value, mbtiType });
 })
 
 const PORT = 3000;
