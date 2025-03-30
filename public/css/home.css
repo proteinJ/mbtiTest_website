@@ -5,6 +5,7 @@
     font-weight: bold;
     color: #2c3e50;
     margin-bottom: 20px;
+    margin-top: -300px;
 }
 
 .test-description {
@@ -44,23 +45,3 @@ footer {
     font-size: 0.9rem;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .logo {
-        margin-right: 0;
-        margin-bottom: 10px;
-    }
-    
-    .test-title {
-        font-size: 2rem;
-    }
-    
-    .start-btn {
-        padding: 12px 30px
-    }
-}

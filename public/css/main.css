@@ -16,7 +16,6 @@
 
 .container-home {
     max-width: 1500px;
-    max-height: 300px;
     margin: 80px auto;
     background-color: #fff;
     border-radius: 8px;
@@ -31,25 +30,22 @@ header {
     width: 100%;
     top: 0;
     z-index: 100;
+    display: fles;
 }
 
 .navbar {
     display: flex;
-    align-items: center;
-    justify-content: space-between; /* 로고와 제목을 양쪽으로 배치 */
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center;    /* 세로 정렬 (필요 시) */
     padding: 15px;
-    max-width: 1200px;
     margin: 0 auto;
-    position: relative; /* 제목을 중앙에 배치하기 위해 상대 위치 설정 */
 }
 
 .title {
     text-align: center; /* 텍스트를 중앙 정렬 */
-    font-size: 2em; /* 필요에 따라 글자 크기 조정 */
-    margin: 0; /* 여백 제거 */
-    position: absolute; /* 부모 요소(navbar) 기준으로 절대 위치 설정 */
-    left: 50%; /* 왼쪽 기준으로 50% 이동 */
-    transform: translateX(-50%); /* 중앙 정렬을 위해 X축으로 -50% 이동 */
+    font-size: 1.5em;   /* 글자 크기 조정 */
+    color: #2c3e50;     /* 텍스트 색상 */
+    margin: 0;          /* 여백 제거 */
 }
 
 .test-title {
@@ -83,6 +79,10 @@ body {
 }
 
 main {
-    padding-top: 100px;
-    min-height: calc(100vh - 130px);
+    display: flex;
+    flex-direction: column; /* 세로 방향 정렬 */
+    align-items: center;    /* 가로 중앙 정렬 */
+    justify-content: center; /* 세로 중앙 정렬 */
+    min-height: calc(100vh - 130px); /* 화면 높이에 맞게 중앙 배치 */
+    padding-top: 0; /* 기존 패딩 제거 */
 }

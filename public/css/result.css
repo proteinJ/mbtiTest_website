@@ -7,8 +7,10 @@
     background-color: #fff;
     padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 400px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    margin-top: 100px;
+    margin: 80px auto;
 }
 
 .result-recomand {
@@ -66,8 +68,12 @@
 }
 
 .percentage-container {
-    width: 300px;
+    width: 400px;
+    height: 160px;
     margin: 50px auto;
+    background-color: #ffffffe6;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .percentage-bar {
