@@ -83,12 +83,19 @@ app.get('/testPage4', (req, res) => {
     res.render('testPage4');
 })
 
+function iePer(count){
+    if(count<0){
+        return count / 30 * -100;
+    }
+    return (count / 30 * 100);
+}
+
 app.get('/result', (req, res) => {
 
-    const EI_value = req.session.totalScorePage1 * 3;
-    const SN_value = req.session.totalScorePage2 * 3;
-    const TF_value = req.session.totalScorePage3 * 3;
-    const JP_value = req.session.totalScorePage4 * 3;
+    const EI_value = Math.round(iePer(req.session.totalScorePage1));
+    const SN_value = Math.round(iePer(req.session.totalScorePage2));
+    const TF_value = Math.round(iePer(req.session.totalScorePage3));
+    const JP_value = Math.round(iePer(req.session.totalScorePage4));
 
     const mbtiType = decision_mbtiType(EI_value, SN_value, TF_value, JP_value);
     const category = mbtiType.startsWith("E") ? "E" : "I"; // 유형이 E로 시작하면 "E", 아니면 "I"

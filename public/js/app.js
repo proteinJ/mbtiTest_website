@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
             let questions = document.querySelectorAll('input[type="radio"]:checked');
 
             // 선택된 radio 버튼이 6개인지 확인
-            if (questions.length !== 6) {
+            if (questions.length !== 15) {
                 // 6개가 아닌 경우, 경고 메시지 출력
                 alert('모든 문항에 답하세요.');
                 return;  // 점수 전송 및 페이지 이동을 하지 않음
