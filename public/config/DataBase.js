@@ -193,7 +193,7 @@ module.exports ={
             }
         },
         "ESTJ": {
-            "recommendedScents": ["우디", "시트러스"],
+            "recommendedScents": ["우디🍯", "시트러스"],
             "perfumeRecommendations": [
                 {
                     "perfumeName": "톰 포드 '그레이 베티버'",

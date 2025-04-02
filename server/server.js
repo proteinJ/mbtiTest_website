@@ -55,6 +55,10 @@ app.get('/', (req, res) => {
     res.render('home');
 })
 
+app.get('/intro', (req, res) => {
+    res.render('intropage');
+})
+
 app.post('/submit', (req, res) => {
     const { totalScore, pageNumber } = req.body; // 요청에서 전송된 점수 받아오기
 
