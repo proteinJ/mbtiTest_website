@@ -14,15 +14,6 @@
     padding: 30px;
 }
 
-.container-home {
-    width: 60%;
-    margin: 80px auto;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-}
-
 header {
     background-color: #fff;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -46,12 +37,6 @@ header {
     font-size: 1.5em;   /* 글자 크기 조정 */
     color: #2c3e50;     /* 텍스트 색상 */
     margin: 0;          /* 여백 제거 */
-}
-
-.test-title {
-    text-align: center; /* 텍스트를 중앙 정렬 */
-    font-size: 2em; /* 필요에 따라 글자 크기 조정 */
-    margin-bottom: 20px; /* 아래쪽 여백 추가 */
 }
 
 .logo {
@@ -84,4 +69,12 @@ main {
     align-items: center;    /* 가로 중앙 정렬 */
     min-height: calc(100vh - 130px); /* 화면 높이에 맞게 중앙 배치 */
     padding-top: 0; /* 기존 패딩 제거 */
+}
+
+footer {
+    background-color: #f1f1f1;
+    text-align: center;
+    padding: 10px;
+    color: #666;
+    font-size: 0.9rem;
 }

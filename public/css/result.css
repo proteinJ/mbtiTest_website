@@ -3,15 +3,6 @@
     margin-bottom: 120px;
 }
 
-.result-container {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    width: 500px;
-    margin: 80px auto;
-}
-
 .result-recomand {
     text-align: center;
     margin-bottom: 25px;
@@ -67,8 +58,8 @@
 }
 
 .percentage-container {
-    width: 400px;
-    height: 190px;
+    width: 90%;
+    height: 500px;
     margin: 50px auto;
     background-color: #ffffffe6;
     border-radius: 8px;
@@ -88,12 +79,14 @@
 }
 
 .percentage-bar .bar {
-    width: 250px;
+    width: 60%;
     height: 20px;
     background-color: #eee;
     border-radius: 10px;
     position: relative;
     overflow: hidden;
+    margin-top:40px;
+    margin-bottom:40px;
 }
 
 .percentage-bar .bar .fill {
@@ -169,6 +162,7 @@
     border-radius: 5px;
     cursor: pointer;
     margin-top: 20px;
+    margin-bottom: 30px;
 }
 
 #restartButton:hover {
@@ -192,21 +186,6 @@
     width: 50px;
     text-align: center;
     margin-right: 10px;
-}
-
-.percentage-bar .bar {
-    width: 250px;
-    height: 20px;
-    background-color: #eee;
-    border-radius: 10px;
-    position: relative;
-    overflow: hidden;
-}
-
-.percentage-bar .bar .fill {
-    height: 100%;
-    background-color: #007bff;
-    transition: width 0.5s ease-in-out;
 }
 
 .percentage-bar .percentage {

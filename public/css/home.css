@@ -9,8 +9,8 @@
 
 
 .mainpage_logo {
-    height: 500px;
-    width: auto;
+    width: 80%;
+    height: auto;
     margin-bottom: 10px;
 }
 
@@ -53,12 +53,5 @@
     transform: translateY(1px);
 }
 
-/* Footer */
-footer {
-    background-color: #f1f1f1;
-    text-align: center;
-    padding: 20px;
-    color: #666;
-    font-size: 0.9rem;
-}
+
 

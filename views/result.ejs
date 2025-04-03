@@ -1,6 +1,6 @@
 <%- include('partials/head') %>
 
-    <div class="result-container">
+    <div class="container">
         <div class="result-type">
             <h1>당신은 <%= mbtiType %>!</h1>
             <span id="mbtiType"></span>
@@ -90,8 +90,4 @@
             </div>
         </div>
         <button id="restartButton" onclick="window.location.href='/'">다시 테스트하기</button>
-    </div>
-    <script src="mbti_result.js"></script>
-    <script src="mbti_percentage.js"></script>
-</body>
-</html>
+<%- include('partials/foot') %>
