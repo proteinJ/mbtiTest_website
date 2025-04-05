@@ -1,8 +1,6 @@
 @font-face {
     font-family: '함초롱바탕';
-    src: url('/fonts/HCRBatang.woff2') format('woff2'),
-         url('/fonts/HCRBatang.woff') format('woff'),
-         url('/fonts/HCRBatang.ttf') format('truetype');
+    src: url('/fonts/HCRBatang.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }

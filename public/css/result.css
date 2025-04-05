@@ -1,18 +1,32 @@
+@font-face {
+    font-family: '윤고딕';
+    src: url('/fonts/HANYGO240.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 .h1 {
     text-align: center;
     margin-bottom: 120px;
+    font-family: '윤고딕', sans-serif;
 }
 
 .result-recomand {
     text-align: center;
-    margin-bottom: 25px;
+    margin-bottom: 0px;
     font-size: 0.8em;
+}
+
+.strong-result{
+    font-size: 2em;
+    font-weight: 600;
 }
 
 .result-recomand-info {
     text-align: center;
     margin-bottom: 25px;
     font-size: 0.5em;
+    font-family: '윤고딕', sans-serif;
 }
 
 .result-type {
@@ -99,9 +113,7 @@
     width: 50px;
     text-align: right;
     margin-left: 10px;
-}.h1 {
-    text-align: center;
-    margin-bottom: 20px;
+
 }
 
 .result-container {
@@ -118,6 +130,7 @@
     text-align: center;
     margin-bottom: 25px;
     font-size: 1.5em;
+    font-family: '윤고딕', sans-serif;
 }
 
 .result-recomand-info {
@@ -219,7 +232,8 @@
 }
 
 .perfume-image {
-    height: 150px;
+    width: 370px;
+    height: 390px;
     background-color: #f9f9f9;
     display: flex;
     align-items: center;

@@ -44,7 +44,7 @@
             </div>
         </div>
         <div class="result-recomand">
-            <p><strong>추천 향-</strong> <%= mbtiData["recommendedScents"] %></p>
+            <p>추천 향-<span class="strong-result"><%= mbtiData["recommendedScents"] %></span></p>
             <span id="mbtiRecomand"></span>
         </div>
         <div class="result-recomand-info">
@@ -55,12 +55,12 @@
             <p id="description"></p>
         </div>
         <div class="result-characteristics">
-            <p><strong>인간 관계:</strong> <%= mbtiData["personalityTraits"]["relationships"] %></p>
-            <p><strong>취미:</strong> <%= mbtiData["personalityTraits"]["hobbies"] %></p>
-            <p><strong>사랑 연애:</strong> <%= mbtiData["personalityTraits"]["romance"] %></p>
+            <p>· <%= mbtiData["personalityTraits"]["relationships"] %></p>            <!-- 인간 관계계 -->
+            <p>· <%= mbtiData["personalityTraits"]["hobbies"] %></p>                       <!-- 인간 관계계 -->
+            <p>· <%= mbtiData["personalityTraits"]["romance"] %></p>                  <!-- 인간 관계계 -->
             <!-- idealType 추가해야 함 -->
-            <p><strong>장점:</strong> <%= mbtiData["personalityTraits"]["strengths"].join(", ") %></p>
-            <p><strong>단점:</strong> <%= mbtiData["personalityTraits"]["weaknesses"].join(", ") %></p>
+            <p>· <%= mbtiData["personalityTraits"]["strengths"].join(", ") %></p>          <!-- 인간 관계계 -->
+            <p>· <%= mbtiData["personalityTraits"]["weaknesses"].join(", ") %></p>         <!-- 인간 관계계 -->
         </div>
         <div class="result-recomand">
             <h2>추천 향수</h2>
@@ -68,7 +68,7 @@
                 <% mbtiData["perfumeRecommendations"].forEach(function(perfume, index) { %>
                     <div class="perfume-item">
                         <h3><%= perfume["perfumeName"] %></h3>
-                        <h4 class="abc">(<%= perfume["perfumeDescription"] %>)</h4>
+                        <h4 class="abc"><%= perfume["perfumeDescription"] %></h4>
                         <div class="perfume-image">
                             <p>이미지</p> <!-- 이미지 경로를 추가할 경우 여기에 동적으로 삽입 -->
                         </div>
@@ -77,17 +77,17 @@
                             <p>(어떤 특징이 있고 어떤 향을 담고 있는지)</p>
                             <p>사용 연령대나 선호 성별</p>
                         </div>
+                        <div class="scent-description">
+                            <% mbtiData["recommendedScents"].forEach(function(scent) { %>
+                                <h4>향 설명:</h4>
+                                <p><%= scent %> 향이란?</p>
+                                <p><%= mbtiData["scentDescriptions"]["scent"] %></p>
+                            <% }); %>
+                        </div>
                     </div>
                 <% }); %>
             </div>
             <hr>
-            <div class="scent-description">
-                <% mbtiData["recommendedScents"].forEach(function(scent) { %>
-                    <h4>향 설명:</h4>
-                    <p><%= scent %> 향이란?</p>
-                    <p><%= mbtiData["scentDescriptions"]["scent"] %></p>
-                <% }); %>
-            </div>
         </div>
         <button id="restartButton" onclick="window.location.href='/'">다시 테스트하기</button>
 <%- include('partials/foot') %>

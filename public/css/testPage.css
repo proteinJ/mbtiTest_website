@@ -1,3 +1,9 @@
+@font-face {
+    font-family: '윤고딕';
+    src: url('/fonts/HANYGO240.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 .logo {
     margin-right: 20px;
@@ -46,6 +52,7 @@
     font-size: 20px;
     margin-bottom: 25px;
     color: #555;
+    font-family: '함초롱바탕', sans-serif;
 }
 
 .radio-group {
