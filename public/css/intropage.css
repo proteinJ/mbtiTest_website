@@ -1,0 +1,11 @@
+.introPage_img{
+    width: 80%;
+    height: auto;
+}
+
+.story_top, .story_bottom{
+    padding: 30px;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

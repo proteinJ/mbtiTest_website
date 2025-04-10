@@ -4,7 +4,9 @@ const ejs = require("ejs");
 const path = require('path');
 const session = require('express-session');
 
-const DataBase = require('../public/config/DataBase'); // 경로를 정확히 지정
+// DB 연결
+const DataBase = require('../public/config/DataBase'); 
+const DataBase_Q = require('../public/config/DataBase_Q');
 
 app.use(express.json());
 
@@ -72,19 +74,19 @@ app.post('/submit', (req, res) => {
 
 
 app.get('/testPage1', (req, res) => {
-    res.render('testPage1');
+    res.render('testPage1', { mbtiQuestion: DataBase_Q.questions});
 })
 
 app.get('/testPage2', (req, res) => {
-    res.render('testPage2');
+    res.render('testPage2', { mbtiQuestion: DataBase_Q.questions});
 })
 
 app.get('/testPage3', (req, res) => {
-    res.render('testPage3');
+    res.render('testPage3', { mbtiQuestion: DataBase_Q.questions});
 })
 
 app.get('/testPage4', (req, res) => {
-    res.render('testPage4');
+    res.render('testPage4', { mbtiQuestion: DataBase_Q.questions});
 })
 
 function iePer(count){
@@ -103,8 +105,9 @@ app.get('/result', (req, res) => {
 
     const mbtiType = decision_mbtiType(EI_value, SN_value, TF_value, JP_value);
     const category = mbtiType.startsWith("E") ? "E" : "I"; // 유형이 E로 시작하면 "E", 아니면 "I"
-    const mbtiData = DataBase[category][mbtiType]; // DataBase에서 해당 유형 데이터 가져오기
+    const mbtiData = DataBase[category][mbtiType]; // DataBase에서 MBTI타입 및 설명 가져오기 
 
+    // const questions = DataBase_Q[mbtitype][qeustion_num];
     res.render('result', { mbtiType, mbtiData, EI_value, SN_value, TF_value, JP_value});
 })
 
