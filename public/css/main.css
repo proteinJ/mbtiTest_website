@@ -5,8 +5,10 @@
     font-family: 'Arial', sans-serif;
 }
 
+ /*기본 컨테이너*/
 .container {
     width: 60%;
+    min-width: 400px;
     margin-top: 80px;
     background-color: #fff;
     border-radius: 8px;

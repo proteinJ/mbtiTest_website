@@ -34,7 +34,6 @@
 
 .question-container {
     justify-content: center;
-    display: flex;
     margin-bottom: 30px;
     padding-bottom: 20px;
     border-bottom: 1px solid #eee;
@@ -52,14 +51,14 @@
     font-size: 20px;
     margin-bottom: 25px;
     color: #555;
-    font-family: '함초롱바탕', sans-serif;
+    font-family: '윤고딕', sans-serif;
 }
 
 .radio-group {
     display: flex;
     justify-content: center;
     width: 100%;
-    gap: 0px; /* 동그라미들 간의 간격 증가 */
+    gap: 4%; /* 동그라미들 간의 간격 증가 */
     align-items: center; /* 수직 중앙 정렬 */
     height: 50px; /* 충분한 높이 확보 */
     position: relative; /* 포지셔닝 컨텍스트 설정 */
@@ -79,25 +78,18 @@
     margin-bottom: 8px;
 }
 
-.scale-label-left, .scale-label-right {
-    color: #666;
-    font-size: 0.9rem;
-    white-space: nowrap;
-    flex-shrink: 0;
-    width: 100px;
-    text-align: center;
-}
-
 .scale-label-left {
     color: #f39529;
     text-align: right;
     padding-right: 1px;
+    font-family: '윤고딕', sans-serif;
 }
 
 .scale-label-right {
     color: #4bdf3e;
     text-align: left;
     padding-left: 15px;
+    font-family: '윤고딕', sans-serif;
 }
 
 .scale-label {
@@ -127,35 +119,36 @@
 
 /* 1번째 동그라미 (가장 왼쪽) */
 .radio-label:nth-child(2) .radio-custom {
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
     border: 2px solid #f39529;
 }
 
 /* 2번째 동그라미 */
 .radio-label:nth-child(3) .radio-custom {
-    width: 28px;
-    height: 28px;
+    size: 32px;
+    width: 32px;
+    height: 32px;
     border: 2px solid #f39529;
 }
 
 /* 3번째 동그라미 (중간이 가장 작은 크기) */
 .radio-label:nth-child(4) .radio-custom {
-    width: 22px;
-    height: 22px; /* 중간이 가장 작은 크기 */
+    width: 26px;
+    height: 26px; /* 중간이 가장 작은 크기 */
 }
 
 /* 4번째 동그라미 */
 .radio-label:nth-child(5) .radio-custom {
-    width: 28px;
-    height: 28px;
+    width: 32px;
+    height: 32px;
     border: 2px solid #4bdf3e;
 }
 
 /* 5번째 동그라미 (가장 오른쪽) */
 .radio-label:nth-child(6) .radio-custom {
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
     border: 2px solid #4bdf3e;
 }
 
@@ -209,21 +202,10 @@
 }
 
 /* 체크된 상태에서 각 동그라미의 크기 내에서 내부 점 크기 */
-.radio-label:nth-child(1) .radio-input:checked + .radio-custom::after,
-.radio-label:nth-child(5) .radio-input:checked + .radio-custom::after {
-    width: 14px;
-    height: 14px;
-}
-
-.radio-label:nth-child(2) .radio-input:checked + .radio-custom::after,
-.radio-label:nth-child(4) .radio-input:checked + .radio-custom::after {
-    width: 12px;
-    height: 12px;
-}
-
-.radio-label:hover .radio-custom {
-    border-color: #999;
-}
+.radio-label:nth-child(n+2):nth-child(-n+6) .radio-input:checked + .radio-custom::after {
+    width: 50%;
+    height: 50%;
+  }
 
 .submit-btn {
     display: block;
@@ -263,23 +245,4 @@
 .radio-label:nth-child(5):hover .radio-custom,
 .radio-label:nth-child(6):hover .radio-custom {
     border-color: #41c435; /* 예시 색상 */
-}
-
-@media (max-width: 600px) {
-    .radio-group {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-    .radio-label {
-        flex-direction: row;
-        justify-content: space-between;
-        width: 100%;
-        margin: 5px 0;
-    }
-    
-    .label-text {
-        margin-bottom: 0;
-        margin-right: 10px;
-    }
 }

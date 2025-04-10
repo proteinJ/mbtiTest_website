@@ -1,3 +1,10 @@
+@font-face {
+    font-family: '함초롱바탕';
+    src: url('/fonts/HCRBatang.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 .introPage_img{
     width: 80%;
     height: auto;
@@ -8,4 +15,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: '함초롱바탕', sans-serif;
+    font-weight: 600px;
 }

@@ -1,14 +1,7 @@
-@font-face {
-    font-family: '윤고딕';
-    src: url('/fonts/HANYGO240.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
 
 .h1 {
     text-align: center;
     margin-bottom: 120px;
-    font-family: '윤고딕', sans-serif;
 }
 
 .result-recomand {
@@ -26,7 +19,6 @@
     text-align: center;
     margin-bottom: 25px;
     font-size: 0.5em;
-    font-family: '윤고딕', sans-serif;
 }
 
 .result-type {
