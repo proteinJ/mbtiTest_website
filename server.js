@@ -113,6 +113,11 @@ app.get('/result', (req, res) => {
         const category = mbtiType.startsWith("E") ? "E" : "I";
         const mbtiData = DataBase[category][mbtiType];
 
+        if(!mbtiData){
+            return res.status(500).send(`❌ 결과 데이터를 찾을 수 없습니다: ${mbtiType}`);
+        }
+        
+
         res.render('result', { mbtiType, mbtiData, EI_value, SN_value, TF_value, JP_value });
     } else {
         // 하나라도 점수가 없으면 에러 메시지
