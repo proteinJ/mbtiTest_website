@@ -1,27 +1,27 @@
 <%- include('partials/head') %>
 
-<div class="container">
-    <form id="aptitudeForm">
-        <% for (let i = 0; i < 15; i++) { %>
-            <div class="question-container">
-                <div class="question<%= i + 1 %>">
-                    <p class="question-text"><%= mbtiQuestion.eiQuestions[i] %></p>
-                    <div class="radio-group">
-                        <div class="scale-label-left">그렇지 않다</div>
-                        <% [-2, -1, 0, 1, 2].forEach((val, idx) => { %>
-                            <label class="radio-label">
-                                <input type="radio" name="p1_q<%= i + 1 %>" value="<%= val %>" class="radio-input">
-                                <span class="radio-custom <%= val === 0 ? 'large' : '' %>"></span>
-                            </label>
-                        <% }) %>
-                        <div class="scale-label-right">그렇다</div>
+    <div class="container">
+        <form id="aptitudeForm">
+            <% for (let i = 0; i < 15; i++) { %>
+                <div class="question-container">
+                    <div class="question<%= i + 1 %>">
+                        <p class="question-text"><%= mbtiQuestion.eiQuestions[i] %></p>
+                        <div class="radio-group">
+                            <div class="scale-label-left">그렇지 않다</div>
+                            <% [-2, -1, 0, 1, 2].forEach((val, idx) => { %>
+                                <label class="radio-label">
+                                    <input type="radio" name="p1_q<%= i + 1 %>" value="<%= val %>" class="radio-input">
+                                    <span class="radio-custom <%= val === 0 ? 'large' : '' %>"></span>
+                                </label>
+                            <% }) %>
+                            <div class="scale-label-right">그렇다</div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        <% } %>
+            <% } %>
 
-        <button type="submit" id="nextPage" class="submit-btn">Next Page</button>
-    </form>
-</div>
+            <button type="submit" id="nextPage" class="submit-btn">Next Page</button>
+        </form>
+    </div>
 
 <%- include('partials/foot') %>
