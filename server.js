@@ -15,7 +15,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views')); // 'views' 폴더 설정
-app.set('views', './views');
 
 app.use(express.static('public')); // CSS, JS, 이미지 같은 정적 파일 제공
 
