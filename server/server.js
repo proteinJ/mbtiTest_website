@@ -27,22 +27,22 @@ app.use(session({
 function decision_mbtiType(EI, SN, TF, JP){
     let mbtiType = '';
 
-    if (EI > 50) {
+    if (EI > 0) {
         mbtiType += 'E';
     } else {
         mbtiType += 'I';
     }
-    if (SN > 50) {
+    if (SN > 0) {
         mbtiType += 'S';
     } else {
         mbtiType += 'N';
     }
-    if (TF > 50) {
+    if (TF > 0) {
         mbtiType += 'T';
     } else {
         mbtiType += 'F';
     }
-    if (JP > 50) {
+    if (JP > 0) {
         mbtiType += 'J';
     } else {
         mbtiType += 'P';
@@ -91,19 +91,26 @@ app.get('/testPage4', (req, res) => {
 
 function iePer(count){
     if(count<0){
-        return count / 30 * -100;
+        return (50 + count / 30 * 50);
     }
-    return (count / 30 * 100);
+    return (50 + count / 30 * 50);
 }
 
 app.get('/result', (req, res) => {
 
-    const EI_value = Math.round(iePer(req.session.totalScorePage1));
-    const SN_value = Math.round(iePer(req.session.totalScorePage2));
-    const TF_value = Math.round(iePer(req.session.totalScorePage3));
-    const JP_value = Math.round(iePer(req.session.totalScorePage4));
+    // REAL_VALUES
+    // const EI_value = Math.round(iePer(req.session.totalScorePage1));
+    // const SN_value = Math.round(iePer(req.session.totalScorePage2));
+    // const TF_value = Math.round(iePer(req.session.totalScorePage3));
+    // const JP_value = Math.round(iePer(req.session.totalScorePage4));
 
-    const mbtiType = decision_mbtiType(EI_value, SN_value, TF_value, JP_value);
+    // TEST_VALUES
+    const EI_value = 60; 
+    const SN_value = 30; 
+    const TF_value = 80; 
+    const JP_value = 75; 
+
+    const mbtiType = decision_mbtiType(req.session.totalScorePage1, req.session.totalScorePage2, req.session.totalScorePage3, req.session.totalScorePage4);
     const category = mbtiType.startsWith("E") ? "E" : "I"; // 유형이 E로 시작하면 "E", 아니면 "I"
     const mbtiData = DataBase[category][mbtiType]; // DataBase에서 MBTI타입 및 설명 가져오기 
 
@@ -111,7 +118,7 @@ app.get('/result', (req, res) => {
     res.render('result', { mbtiType, mbtiData, EI_value, SN_value, TF_value, JP_value});
 })
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
