@@ -10,13 +10,13 @@ const DataBase_Q = require('./public/config/DataBase_Q');
 
 app.use(express.json());
 
+// CSS, JS, 이미지 같은 정적 파일 제공
 app.use(express.static(path.join(__dirname, 'public')));
 // app.use(express.static(__dirname + '/public'));
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views')); // 'views' 폴더 설정
 
-app.use(express.static('public')); // CSS, JS, 이미지 같은 정적 파일 제공
 
 app.use(session({
     secret: 'proteinj',  // 세션 암호화 키
