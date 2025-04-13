@@ -97,26 +97,28 @@ function iePer(count){
 }
 
 app.get('/result', (req, res) => {
+    const score1 = req.session.totalScorePage1;
+    const score2 = req.session.totalScorePage2;
+    const score3 = req.session.totalScorePage3;
+    const score4 = req.session.totalScorePage4;
 
-    // REAL_VALUES
-    // const EI_value = Math.round(iePer(req.session.totalScorePage1));
-    // const SN_value = Math.round(iePer(req.session.totalScorePage2));
-    // const TF_value = Math.round(iePer(req.session.totalScorePage3));
-    // const JP_value = Math.round(iePer(req.session.totalScorePage4));
+    // 모든 점수가 존재할 경우에만 결과 계산
+    if (score1 != null && score2 != null && score3 != null && score4 != null) {
+        const EI_value = Math.round(iePer(score1)); 
+        const SN_value = Math.round(iePer(score2)); 
+        const TF_value = Math.round(iePer(score3)); 
+        const JP_value = Math.round(iePer(score4)); 
 
-    // TEST_VALUES
-    const EI_value = 60; 
-    const SN_value = 30; 
-    const TF_value = 80; 
-    const JP_value = 75; 
+        const mbtiType = decision_mbtiType(score1, score2, score3, score4);
+        const category = mbtiType.startsWith("E") ? "E" : "I";
+        const mbtiData = DataBase[category][mbtiType];
 
-    const mbtiType = decision_mbtiType(req.session.totalScorePage1, req.session.totalScorePage2, req.session.totalScorePage3, req.session.totalScorePage4);
-    const category = mbtiType.startsWith("E") ? "E" : "I"; // 유형이 E로 시작하면 "E", 아니면 "I"
-    const mbtiData = DataBase[category][mbtiType]; // DataBase에서 MBTI타입 및 설명 가져오기 
-
-    // const questions = DataBase_Q[mbtitype][qeustion_num];
-    res.render('result', { mbtiType, mbtiData, EI_value, SN_value, TF_value, JP_value});
-})
+        res.render('result', { mbtiType, mbtiData, EI_value, SN_value, TF_value, JP_value });
+    } else {
+        // 하나라도 점수가 없으면 에러 메시지
+        res.status(400).send("⚠️ 모든 테스트를 완료하셔야 결과를 볼 수 있어요!");
+    }
+});
 
 const PORT = process.env.PORT || 3000;
 
