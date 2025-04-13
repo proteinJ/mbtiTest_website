@@ -13,9 +13,9 @@
   "license": "ISC",
   "author": "",
   "type": "commonjs",
-  "main": "server/server.js",
+  "main": "server.js",
   "scripts": {
-    "start": "nodemon server/server.js",
+    "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {

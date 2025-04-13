@@ -5,8 +5,8 @@ const path = require('path');
 const session = require('express-session');
 
 // DB 연결
-const DataBase = require('../public/config/DataBase'); 
-const DataBase_Q = require('../public/config/DataBase_Q');
+const DataBase = require('./public/config/DataBase'); 
+const DataBase_Q = require('./public/config/DataBase_Q');
 
 app.use(express.json());
 
