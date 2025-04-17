@@ -103,11 +103,11 @@ app.get('/result', (req, res) => {
     const score4 = req.session.totalScorePage4;
 
     // 모든 점수가 존재할 경우에만 결과 계산
-    if (score1 != null && score2 != null && score3 != null && score4 != null) {
-        const EI_value = Math.round(iePer(score1)); 
-        const SN_value = Math.round(iePer(score2)); 
-        const TF_value = Math.round(iePer(score3)); 
-        const JP_value = Math.round(iePer(score4)); 
+    if (true) { // score1 != null && score2 != null && score3 != null && score4 != null
+        const EI_value = 60; Math.round(iePer(score1)); 
+        const SN_value = 40;// Math.round(iePer(score2)); 
+        const TF_value = 30;// Math.round(iePer(score3)); 
+        const JP_value = 50;// Math.round(iePer(score4)); 
 
         const mbtiType = decision_mbtiType(score1, score2, score3, score4);
         const category = mbtiType.startsWith("E") ? "E" : "I";
