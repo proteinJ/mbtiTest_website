@@ -1,15 +1,28 @@
 @font-face {
     font-family: '함초롱바탕';
-    src: url('/fonts/HCRBatang.ttf') format('truetype');
+    src: url('./fonts/HCRBatang.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
+main {
+    display: flex;
+    flex-direction: column; /* 세로 방향 정렬 */
+    align-items: center;    /* 가로 중앙 정렬 */
+    height: 90vh;
+    padding-top: 80px; /* nav 아래 공간 띄우기 */
+}
 
-.mainpage_logo {
-    width: 40%;
+.homepage-container {
+    width: 60%;
+    background-image: url("../image/homepage-background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 8px;
+    padding: 30px;
+    margin-top: 0;
     height: auto;
-    margin-bottom: 10px;
 }
 
 .test-title {
@@ -27,29 +40,28 @@
 }
 
 .start-btn {
-    background-color: #8bc34a;
-    color: white;
+    background-color: #ffffff83;
+    color: rgba(230, 59, 236, 0.781);
     border: none;
     padding: 15px 40px;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+    font-weight: bold;
     border-radius: 10px;
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     font-family: '함초롱바탕', sans-serif;
-    margin-top: 20px;
-    margin-bottom: 60px;
+    margin-top: 50px;
+    display: inline-block;
 }
 
 .start-btn:hover {
-    background-color: #7cb342;
+    background-color: #ff73e1;
     transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
 .start-btn:active {
     transform: translateY(1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
-
-
-
