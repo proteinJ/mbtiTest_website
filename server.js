@@ -103,7 +103,7 @@ app.get('/result', (req, res) => {
     const score4 = req.session.totalScorePage4;
 
     // 모든 점수가 존재할 경우에만 결과 계산
-    if (score1 != null && score2 != null && score3 != null && score4 != null) {
+    // if (score1 != null && score2 != null && score3 != null && score4 != null) {
         const EI_value = Math.round(iePer(score1)); 
         const SN_value = Math.round(iePer(score2)); 
         const TF_value = Math.round(iePer(score3)); 
@@ -118,12 +118,20 @@ app.get('/result', (req, res) => {
         }
         
 
-        res.render('result', { mbtiType, mbtiData, EI_value, SN_value, TF_value, JP_value });
-    } else {
-        // 하나라도 점수가 없으면 에러 메시지
-        res.status(400).send("⚠️ 모든 테스트를 완료하셔야 결과를 볼 수 있어요!");
+        res.render('result', { 
+            mbtiType,
+            mbtiData,
+            EI_value,
+            SN_value,
+            TF_value,
+            JP_value
+         });
+    // } else {
+    //     // 하나라도 점수가 없으면 에러 메시지
+    //     res.status(400).send("⚠️ 모든 테스트를 완료하셔야 결과를 볼 수 있어요!");
     }
-});
+// }
+);
 
 const PORT = process.env.PORT || 3000;
 

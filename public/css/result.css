@@ -254,3 +254,18 @@
     color: #333;
     margin-bottom: 10px;
 }
+
+.circle-number{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border: 2px solid green;
+    color: rgb(0, 0, 0);
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 20px;
+    vertical-align: middle;
+    position: relative; bottom:5px; margin-right: 10px;
+}
