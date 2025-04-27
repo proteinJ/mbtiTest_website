@@ -5,75 +5,71 @@
     font-family: 'Arial', sans-serif;
 }
 
- /*기본 컨테이너*/
-.container {
-    width: 60%;
-    min-width: 400px;
-    margin-top: 80px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-}
-
-header {
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 100;
-    display: fles;
-}
-
-.navbar {
-    display: flex;
-    justify-content: center; /* 가로 중앙 정렬 */
-    align-items: center;    /* 세로 정렬 (필요 시) */
-    padding: 15px;
-    margin: 0 auto;
-}
-
-.title {
-    text-align: center; /* 텍스트를 중앙 정렬 */
-    font-size: 1.5em;   /* 글자 크기 조정 */
-    color: #2c3e50;     /* 텍스트 색상 */
-    margin: 0;          /* 여백 제거 */
-}
-
-.logo {
-    margin-right: 20px;
-}
-
-#nav-logo {
-    height: 40px;
-    width: auto;
-}
-
-.title h1 {
-    font-size: 1.5rem;
-    color: #2c3e50;
-}
-
 body {
     font-family: sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
     margin: 0;
     background-color: #f4f4f4;
 }
 
+ /*기본 컨테이너*/
+ .container {
+    width: 50em;
+    min-width: 400px;
+    margin: 80px auto 0; 
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin-top: 60px;
+}
+
+/* 공통 header 스타일 */
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: absolute; /* 페이지의 최상단에 위치 */
+    width: 50em; /* 페이지의 너비 */
+    top: 0;
+    left: 50%; /* 화면의 50% 지점으로 시작 */
+    transform: translateX(-50%); /* 정확하게 가운데로 위치 */
+    padding: 10px 20px; /* 상하좌우 여백 */
+}
+
+/* 네비게이션 바 (로고와 제목 배치) */
+.navbar {
+    display: flex;
+    justify-content: center; /* 로고와 제목을 양쪽 끝에 배치 */
+    align-items: center; /* 세로 중앙 정렬 */
+    width: 100%; /* navbar의 전체 너비 */
+}
+
+/* 로고 스타일 */
+.logo {
+    display: flex;
+    justify-content: flex-start; /* 로고는 왼쪽에 배치 */
+}
+
+#nav-logo {
+    height: 40px; /* 로고 크기 설정 */
+}
+
+/* 제목 스타일 */
+.title h1 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin: 0; /* 제목의 여백 제거 */
+}
+
+
 
 
 footer {
-    position:fixed;
-    width:100%;
-    bottom:0;
     background-color: #f1f1f1;
     text-align: center;
-    padding: 10px;
+    padding: 20px;
     color: #666;
     font-size: 0.9rem;
+    margin-top: auto; /* 자동으로 아래로 위치 */
 }
+
+

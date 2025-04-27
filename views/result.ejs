@@ -1,8 +1,31 @@
-<%- include('partials/head') %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBTI TEST</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/result.css">    
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="/">
+                    <img src="/image/main_logo.png" alt="Forest Animal Logo" id="nav-logo">
+                </a>
+            </div>
+            <div class="title">
+                <h1>Perfume MBTI Test</h1>
+            </div>
+        </nav>
+    </header>
 
     <div class="container">
         <div class="result-type">
-            <h1>당신은 <%= mbtiType %>!</h1>
+            <h4>당신의 성격 유형: </h4>
+            <h1><%= mbtiType %></h1>
             <span id="mbtiType"></span>
         </div>
         <div class="percentage-container">
@@ -43,26 +66,29 @@
                 <span class="label">P</span>
             </div>
         </div>
+
+        <div class="result-characteristics">
+            <h1><sapn class="circle-number">1</sapn>성격 특성</h1>
+            <div class="result-characteristics-content">
+                <p>· <%= mbtiData["personalityTraits"]["relationships"] %></p>          
+                <p>· <%= mbtiData["personalityTraits"]["hobbies"] %></p>                     
+                <p>· <%= mbtiData["personalityTraits"]["romance"] %></p>               
+                <h2>강점</h2>
+                <p>· <%= mbtiData["personalityTraits"]["strengths"].join(", ") %></p> 
+                <h2>약점</h2>       
+                <p>· <%= mbtiData["personalityTraits"]["weaknesses"].join(", ") %></p>       
+            </div>
+        </div>
+
         <div class="result-recomand">
-            <h2><sapn class="circle-number">1</sapn>추천 향</h2>
-            <span class="strong-result"><%= mbtiData["recommendedScents"] %></span>
+            <h1><sapn class="circle-number">2</sapn>추천 향</h1>
         </div>
         <div class="result-recomand-info">
             <h1>즉흥적이고 에너제틱한 성격에 어울리는 상쾌하고 강렬한 향</h1>
         </div>
-        <div class="result-description">
-            <p id="description"></p>
-        </div>
-        <div class="result-characteristics">
-            <p>· <%= mbtiData["personalityTraits"]["relationships"] %></p>            <!-- 인간 관계계 -->
-            <p>· <%= mbtiData["personalityTraits"]["hobbies"] %></p>                       <!-- 인간 관계계 -->
-            <p>· <%= mbtiData["personalityTraits"]["romance"] %></p>                  <!-- 인간 관계계 -->
-            <!-- idealType 추가해야 함 -->
-            <p>· <%= mbtiData["personalityTraits"]["strengths"].join(", ") %></p>          <!-- 인간 관계계 -->
-            <p>· <%= mbtiData["personalityTraits"]["weaknesses"].join(", ") %></p>         <!-- 인간 관계계 -->
-        </div>
+        
         <div class="result-recomand">
-            <h2><sapn class="circle-number">2</sapn>추천 향수</h2>
+            <h2><sapn class="circle-number">3</sapn>추천 향수</h2>
             <div class="perfume-container">
                 <% mbtiData["perfumeRecommendations"].forEach(function(perfume, index) { %>
                     <div class="perfume-item">
@@ -86,7 +112,13 @@
                     </div>
                 <% }); %>
             </div>
-            <hr>
         </div>
         <button id="restartButton" onclick="window.location.href='/'">다시 테스트하기</button>
-<%- include('partials/foot') %>
+
+    <footer>
+        <p>&copy; <%= new Date().getFullYear() %> Perfum MBTI Test</p>
+    </footer>
+
+    <script src="/js/app.js"></script>
+</body>
+</html>

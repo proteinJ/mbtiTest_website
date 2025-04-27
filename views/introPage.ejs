@@ -1,4 +1,27 @@
-<%- include('partials/head') %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBTI TEST</title>
+    <link rel="stylesheet" href="/css/main.css">  
+    <link rel="stylesheet" href="/css/introPage.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="/">
+                    <img src="/image/main_logo.png" alt="Forest Animal Logo" id="nav-logo">
+                </a>
+            </div>
+            <div class="title">
+                <h1>Perfume MBTI Test</h1>
+            </div>
+        </nav>
+    </header>
+
     <div class="container">
         <main>
             <img src="image/introPage_img.png" class="introPage_img">
@@ -11,4 +34,10 @@
                 어떤 향수가 나에게 제일 잘 어울릴까요?</p>
     </main>
 
-<%- include('partials/foot') %>
+    <footer>
+        <p>&copy; <%= new Date().getFullYear() %> Perfum MBTI Test</p>
+    </footer>
+
+    <script src="/js/app.js"></script>
+</body>
+</html>
