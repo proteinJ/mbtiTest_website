@@ -1,0 +1,43 @@
+.container {
+    background-image: url("../image/homepage-background.png");
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 8px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    color: rgba(108, 49, 148, 0.769);
+    flex-grow: 1;  /* content가 나머지 공간을 차지하도록 설정 */
+}
+
+h3 {
+    font-size: 30px;
+}
+
+h1 {
+    font-size: 80px;
+}
+
+.restartButton-container {
+    display: flex;
+    margin-top: auto;  /* 버튼을 하단으로 밀어주기 */
+    margin-bottom: 50px;  /* 버튼과 하단 간격 설정 */
+}
+
+#restartButton {
+    width: 60%;
+    padding: 10px;
+    background-color: #2a435e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#restartButton:hover {
+    background-color: #0056b3;
+}

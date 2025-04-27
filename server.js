@@ -89,6 +89,10 @@ app.get('/testPage4', (req, res) => {
     res.render('testPage4', { mbtiQuestion: DataBase_Q.questions});
 })
 
+app.get('/testP', (req, res) => {
+    res.render('testP', { mbtiQuestion: DataBase_Q.questions});
+})
+
 function iePer(count){
     if(count<0){
         return (50 + count / 30 * 50);
@@ -96,7 +100,7 @@ function iePer(count){
     return (50 + count / 30 * 50);
 }
 
-app.get('/result', (req, res) => {
+app.get('/resultPage', (req, res) => {
     const score1 = req.session.totalScorePage1;
     const score2 = req.session.totalScorePage2;
     const score3 = req.session.totalScorePage3;
@@ -118,7 +122,7 @@ app.get('/result', (req, res) => {
         }
         
 
-        res.render('result', { 
+        res.render('resultPage', { 
             mbtiType,
             mbtiData,
             EI_value,

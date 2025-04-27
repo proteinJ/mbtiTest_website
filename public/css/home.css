@@ -1,6 +1,6 @@
 @font-face {
-    font-family: '함초롱바탕';
-    src: url('./fonts/HCRBatang.ttf') format('truetype');
+    font-family: '산토끼체';
+    src: url('/fonts/경기천년바탕_Bold.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -16,7 +16,6 @@ main {
     flex-direction: column; /* 세로 방향 정렬 */
     align-items: center;    /* 가로 중앙 정렬 */
     height: 90vh;
-    padding-top: 80px; /* nav 아래 공간 띄우기 */
 }
 
 
@@ -29,6 +28,7 @@ main {
     border-radius: 8px;
     padding: 30px;
     height: 100vh;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .test-title-container {
@@ -41,8 +41,11 @@ main {
 
 .test-title {
     font-size: 3.8rem;
-    font-weight: 200;
-    font-family: '함초롱바탕', sans-serif;
+    font-weight: 600;
+    font-family: '산토끼체', sans-serif;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    letter-spacing: 1px;
+    line-height: 1.4;
     color: #ffffff;
 }
 
@@ -53,10 +56,12 @@ main {
 }
 
 .start-btn {
-    background-color: #ffffff00;
-    color: rgb(255, 255, 255);
+    background-color: #ffffff3a;
+    /* color: rgb(136, 93, 139); */
+    color: rgba(108, 49, 148, 0.769);
     border: 2px solid #ffffff;
     padding: 15px 40px;
+    font-family: '산토끼체', sans-serif;
     font-size: 1.5rem;
     font-weight: 600;
     border-radius: 35px;

@@ -2,13 +2,20 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+    font-family: '산토끼체', sans-serif;
+}
+
+@font-face {
+    font-family: '산토끼체';
+    src: url('/fonts/경기천년바탕_Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
 body {
     font-family: sans-serif;
     margin: 0;
-    background-color: #f4f4f4;
+    background-color: #e0dede;
 }
 
  /*기본 컨테이너*/
@@ -20,6 +27,7 @@ body {
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     padding: 30px;
+    padding-top: 5%;
 }
 
 /* 공통 header 스타일 */
