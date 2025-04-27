@@ -28,7 +28,7 @@ main {
     background-repeat: no-repeat;
     border-radius: 8px;
     padding: 30px;
-    height: 80em;
+    height: 100vh;
 }
 
 .test-title-container {
@@ -36,7 +36,7 @@ main {
     flex-direction: column; /* 세로 방향 정렬 */
     align-items: center;    /* 가로 중앙 정렬 */
     justify-content: center; /* 세로 중앙 정렬 */
-    margin-top: 40%;
+    margin-top: 20%;
 }
 
 .test-title {
