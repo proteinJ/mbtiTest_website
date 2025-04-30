@@ -1,11 +1,10 @@
 .container {
     background-image: url("../image/homepage-background.png");
-    background-size: 100% 100%;
-    background-position: fixed;
-    background-repeat: no-repeat;
+    background-size: 100%;
     border-radius: 8px;
     padding: 30px;
     height: 100vh;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 
