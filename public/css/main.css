@@ -15,66 +15,48 @@
 body {
     font-family: sans-serif;
     margin: 0;
-    background-color: #e0dede;
 }
 
- /*기본 컨테이너*/
- .container {
-    width: 50em;
-    min-width: 400px;
-    margin: auto; 
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-    padding-top: 5%;
+.container, /* 기존 .container 규칙에 .navbar-wrapper를 추가 */
+.navbar-wrapper {
+width: 100%; /* 사용 가능한 너비의 100%를 차지 (max-width 범위 내) */
+max-width: 50rem; /* .container와 동일한 최대 너비 설정 */
+margin: 0 auto; /* 중앙 정렬 (기존 .container는 margin: auto로 되어 있었음) */
 }
 
-/* 공통 header 스타일 */
-header {
-    position: absolute; /* 페이지의 최상단에 위치 */
-    width: 50em; /* 페이지의 너비 */
-    top: 0;
-    left: 50%; /* 화면의 50% 지점으로 시작 */
-    transform: translateX(-50%); /* 정확하게 가운데로 위치 */
-    padding: 10px 20px; /* 상하좌우 여백 */
+
+
+.container {
+  background-position: bottom;
+  background-size: cover;
+  padding: 30px; /* 기존 패딩 유지 */  
+  padding-top: 100px; /* 기존 패딩 유지 */
+  height: 100vh; /* 컨테이너 높이 유지 */
+  margin-top: -60px;
 }
 
-.navbar-home-icon {
-    display: flex;
-    justify-content: left;
+
+.navbar-wrapper {
+    background-color: #ffffff00;
+    height: 60px;
 }
 
-/* 네비게이션 바 (로고와 제목 배치) */
 .navbar {
+    width: 100%;
     display: flex;
-    align-items: center; /* 세로 중앙 정렬 */
-    width: 100%; /* navbar의 전체 너비 */
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 2%;
 }
-
-#navbar-home-icon {
-    height: 50px;
-}
-
-
-
-/* 제목 스타일 */
-.title h1 {
-    font-size: 1.5rem;
-    color: #2c3e50;
-    margin: 0; /* 제목의 여백 제거 */
-}
-
-
-
 
 footer {
     background-color: #f1f1f1;
+    width: 100%;
+    max-width: 50rem;
+    margin: 0 auto;
     text-align: center;
     padding: 20px;
     color: #666;
     font-size: 0.9rem;
     margin-top: auto; /* 자동으로 아래로 위치 */
 }
-
-

@@ -58,7 +58,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/intro', (req, res) => {
-    res.render('intropage');
+    res.render('introPage');
 })
 
 app.post('/submit', (req, res) => {

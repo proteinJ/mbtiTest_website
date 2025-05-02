@@ -4,38 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MBTI TEST</title>
-    <link rel="stylesheet" href="/css/main.css">  
+    <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/introPage.css">
 </head>
 
 <body>
-    <header>
+    <div class="navbar-wrapper" >
         <nav class="navbar">
-            <div class="logo">
-                <a href="/">
-                    <img src="/image/main_logo.png" alt="Forest Animal Logo" id="nav-logo">
-                </a>
+            <div class="home-icon">
+            <a href="/">
+                <img src="/image/navbar-home-icon.png" id="navbar-home-icon" style="height: 40px;"> 
+            </a>
             </div>
-            <div class="title">
-                <h1>Perfume MBTI Test</h1>
+            <div class="resultOage-Tag">
+            <a href="/resultPage" style="font-size: 30px; color: white; text-decoration: none; margin-left: 15px;">
+                Result Page
+            </a>
             </div>
         </nav>
-    </header>
+        </div>
 
+    
     <div class="container">
-        <main>
-            <img src="image/introPage_img.png" class="introPage_img">
-            <p class="story_top">
-                오늘은 기다리고 기다리던 당신의 <br>
-                이상형과 만나는 날입니다.</p>
+        <div class="container-content">
+            <img src="/image/intropage-img.png" alt = "인트로 페이지 이미지" class="intro_image">
+            <div class="intro_text">
+                <p>어떤 향수는,<br>나를 더 빛나게 만들고.</p>
+                <p>어떤 향수는,<br>아무도 모르게 나를 위로합니다.</p>
+                <p>내가 선택한 향수 하나하나엔<br>내 성격, 내 기억, 내 마음이 스며 있습니다.</p>
+                <p class><strong>"당신이 고른 향수는, 당신을 닮아 있습니다."</strong></p>
+                <p>오늘, 나는 어떤 향수를 고를까요?<br>그리고 그 선택은, 어떤 나를 보여줄까요?</p>
+            </div>
+            <button class="next_btn" onclick="window.location.href='/testP'">향수 고르기</button>
+        </div>
+    </div>
 
-            <p class="story_bottom">    
-                향수를 좋아하는 그녀/그로부터 점수를 얻고 싶은데 <br>
-                어떤 향수가 나에게 제일 잘 어울릴까요?</p>
-    </main>
 
     <footer>
-        <p>&copy; <%= new Date().getFullYear() %> Perfum MBTI Test</p>
+        <p>&copy; <%= new Date().getFullYear() %> Perfum MBTI Test :: ProteinJ</p>
     </footer>
 
     <script src="/js/app.js"></script>

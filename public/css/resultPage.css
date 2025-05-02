@@ -1,15 +1,9 @@
 .container {
-    background-image: url("../image/homepage-background.png");
-    background-attachment: fixed;
-    background-size: cover;
-    background-repeat: no-repeat;
-    border-radius: 8px;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
+    background-image: url("../image/main-background.png");
+    background-repeat: repeat;
 }
 
-.content {
+.container-content {
     color: rgba(108, 49, 148, 0.769);
     flex-grow: 1;  /* content가 나머지 공간을 차지하도록 설정 */
 }
