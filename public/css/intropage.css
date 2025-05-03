@@ -8,6 +8,7 @@
 .container {
     background-image: url("/image/main-background.png");
     background-repeat: no-repeat;
+    height: 100vh; /* 컨테이너 높이 유지 */
 }
 
 .container-content {

@@ -31,7 +31,6 @@ margin: 0 auto; /* 중앙 정렬 (기존 .container는 margin: auto로 되어 �
   background-size: cover;
   padding: 30px; /* 기존 패딩 유지 */  
   padding-top: 100px; /* 기존 패딩 유지 */
-  height: 100vh; /* 컨테이너 높이 유지 */
   margin-top: -60px;
 }
 
@@ -59,4 +58,34 @@ footer {
     color: #666;
     font-size: 0.9rem;
     margin-top: auto; /* 자동으로 아래로 위치 */
+}
+
+.ReStartButton {
+    background-color: #ffffff3a;
+    /* color: rgb(136, 93, 139); */
+    color: rgba(108, 49, 148, 0.769);
+    border: 2px solid #ffffff;
+    padding: 13px 38px;
+    font-family: '산토끼체', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    border-radius: 35px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-top: 50px;
+    display: inline-block;
+    fill-opacity: 0.7;
+    align-items:center;
+}
+
+.ReStartButton:hover {
+    background-color: #bebebec0;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.ReStartButton:active {
+    transform: translateY(1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
