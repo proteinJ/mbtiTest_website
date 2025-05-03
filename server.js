@@ -7,6 +7,7 @@ const session = require('express-session');
 // DB 연결
 const DataBase = require('./public/config/DataBase'); 
 const DataBase_Q = require('./public/config/DataBase_Q');
+const DataBase_Qtest = require('./public/config/DataBase_Qtest');
 
 app.use(express.json());
 
@@ -70,6 +71,7 @@ app.post('/submit', (req, res) => {
 
     console.log(`Page ${pageNumber}의 totalScore 저장:`, totalScore);
     res.json({ message: `Page ${pageNumber}의 점수가 세션에 저장되었습니다.` });
+
 })
 
 
@@ -89,8 +91,8 @@ app.get('/testPage4', (req, res) => {
     res.render('testPage4', { mbtiQuestion: DataBase_Q.questions});
 })
 
-app.get('/testP', (req, res) => {
-    res.render('testP', { mbtiQuestion: DataBase_Q.questions});
+app.get('/testP', (req, res) => {         
+    res.render('testP', { mbtiQuestion: DataBase_Qtest.questions});
 })
 
 function iePer(count){
