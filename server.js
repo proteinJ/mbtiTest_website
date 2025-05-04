@@ -80,23 +80,6 @@ app.post('/submit', (req, res) => {
     res.json({ message: '최종 점수가 성공적으로 저장되었습니다.' });
   });
 
-
-app.get('/testPage1', (req, res) => {
-    res.render('testPage1', { mbtiQuestion: DataBase_Q.questions});
-})
-
-app.get('/testPage2', (req, res) => {
-    res.render('testPage2', { mbtiQuestion: DataBase_Q.questions});
-})
-
-app.get('/testPage3', (req, res) => {
-    res.render('testPage3', { mbtiQuestion: DataBase_Q.questions});
-})
-
-app.get('/testPage4', (req, res) => {
-    res.render('testPage4', { mbtiQuestion: DataBase_Q.questions});
-})
-
 app.get('/testP', (req, res) => {         
     res.render('testP', { mbtiQuestion: DataBase_Qtest.questions});
 })
@@ -104,6 +87,10 @@ app.get('/testP', (req, res) => {
 function transPercentage(score_value){
     return (score_value / 8) * 100;
 }
+
+app.get('/resultList', (req, res) => {
+    res.render('resultList');
+})
 
 app.get('/resultPage', (req, res) => {
     const myScores = req.session.totalScore;
@@ -144,8 +131,8 @@ app.get('/resultPage', (req, res) => {
 // }
 );
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000 
 
-app.listen(PORT, '0.0.0.0', () => {
+app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 })

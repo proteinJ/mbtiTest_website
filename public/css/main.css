@@ -36,8 +36,10 @@ margin: 0 auto; /* 중앙 정렬 (기존 .container는 margin: auto로 되어 �
 
 
 .navbar-wrapper {
+    position: relative;
     background-color: #ffffff00;
     height: 60px;
+    z-index: 100;
 }
 
 .navbar {
@@ -62,7 +64,6 @@ footer {
 
 .ReStartButton {
     background-color: #ffffff3a;
-    /* color: rgb(136, 93, 139); */
     color: rgba(108, 49, 148, 0.769);
     border: 2px solid #ffffff;
     padding: 13px 38px;
