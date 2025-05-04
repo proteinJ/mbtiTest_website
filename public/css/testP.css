@@ -2,6 +2,7 @@
     background-image: url("../image/main-background.png");
     background-repeat: no-repeat;
     user-select: none;
+    height: 100vh; /* 컨테이너 높이 유지 */
 }
 
 .container-content {
@@ -13,8 +14,7 @@
 }
 
 .question-container {
-    margin-top:-5%;
-    margin-bottom: 15%;
+    margin-top:20%;
     padding-left: 10%;
     padding-right: 10%;
 }
