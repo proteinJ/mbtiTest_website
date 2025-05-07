@@ -13,7 +13,6 @@ app.use(express.json());
 
 // CSS, JS, 이미지 같은 정적 파일 제공
 app.use(express.static(path.join(__dirname, 'public')));
-// app.use(express.static(__dirname + '/public'));
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views')); // 'views' 폴더 설정
@@ -89,8 +88,20 @@ function transPercentage(score_value){
 }
 
 app.get('/resultList', (req, res) => {
-    res.render('resultList');
-})
+    const mbtiData = [];
+
+    // E, I 구분 없이 모든 MBTI를 하나의 배열로 변환
+    Object.values(DataBase).forEach(group => {
+        Object.entries(group).forEach(([type, data]) => {
+            mbtiData.push({
+                type,
+                ...data
+            });
+        });
+    });
+
+    res.render('resultList', { mbtiData });
+});
 
 app.get('/resultPage', (req, res) => {
     const myScores = req.session.totalScore;

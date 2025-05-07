@@ -27,10 +27,17 @@
     <div class="container">
         <div class="content-container">
             <% mbtiData.forEach(item => { %>
-                <div class="border p-4 rounded-lg bg-gray-100 text-center">
-                  <h3>당신은</h3>
-                  <h1><%= item.type %></h1>
-                  <h3>(<%= item.desc %>)</h3>
+                <div class="mbti-type-container">
+                  <div class="card-mbti-type">
+                    <h1><%= item.type %></h1>
+                  </div>
+                  <div class="card-perfume">
+                    <img src="<%= item.image %>">
+                  </div>
+                  <div class="card-description">
+                    <h2 style="font-size: 15px;">당신에게 어울리는 향수는</h2>
+                    <h2><%= item.perfumeRecommendations[0].perfumeName %></h2>
+                  </div>
                 </div>
               <% }) %>
         </div>

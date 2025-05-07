@@ -8,7 +8,7 @@
 .container {
     background-image: url("/image/main-background.png");
     background-repeat: no-repeat;
-    height: 100vh; /* 컨테이너 높이 유지 */
+    min-height: 100vh; /* 컨테이너 높이 유지 */
 }
 
 .container-content {
@@ -64,4 +64,14 @@
     transform: translateY(1px);
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
-            
+
+@media (max-width: 435px) {
+    .intro_text {
+        font-size: 19px;
+        line-height: 1.3;
+    }
+    .container-content {
+        margin-top: 50px;
+        gap: 70px;
+    }
+}

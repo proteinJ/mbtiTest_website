@@ -79,3 +79,25 @@ input[type="radio"] {
     color: rgba(108, 49, 148, 0.769);
 }
 
+
+@media (max-width: 760px) {
+    .question-box {
+        height: 6em;
+        width: 30em;
+    }
+    .question-text {
+        line-height: 1.1em;
+        font-size: 1.9em;
+    }
+}
+
+@media (max-width: 590px) {
+    .question-box {
+        height: 5em;
+        width: 25em;
+    }
+    .question-text {
+        line-height: 1em;
+        font-size: 1.6em;
+    }
+}
