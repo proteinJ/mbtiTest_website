@@ -21,36 +21,31 @@ body {
 .navbar-wrapper {
 width: 100%; /* 사용 가능한 너비의 100%를 차지 (max-width 범위 내) */
 max-width: 50rem; /* .container와 동일한 최대 너비 설정 */
-margin: 0 auto; /* 중앙 정렬 (기존 .container는 margin: auto로 되어 있었음) */
 }
 
 .container {
+  position: relative;
   background-position: bottom;
   background-size: cover;
-  padding: 30px; /* 기존 패딩 유지 */  
-  padding-top: 100px; /* 기존 패딩 유지 */
-  margin-top: -60px;
+  padding: 80px 30px 30px 30px;
+  width: 50em;
+  min-width: 400px;
+  margin: auto; 
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 50;
 }
+
 
 
 .navbar-wrapper {
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%); /* 정확히 가운데 정렬 */
     background-color: #ffffff00;
     height: 60px;
     z-index: 100;
-}
-
-    background-color: #e0dede;
-}
-
- /*기본 컨테이너*/
- .container {
-    width: 50em;
-    min-width: 400px;
-    margin: auto; 
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    padding: 30px;
 }
 
 /* 공통 header 스타일 */
@@ -81,13 +76,11 @@ footer {
     background-color: #f1f1f1;
     width: 100%;
     max-width: 50rem;
-    margin: 0 auto;
-    position: absolute; /* 페이지의 최상단에 위치 */
+    position: relative; /* 페이지의 최상단에 위치 */
     width: 50em; /* 페이지의 너비 */
-    bottom: -10;
-    left: 50%; /* 화면의 50% 지점으로 시작 */
-    transform: translateX(-50%); /* 정확하게 가운데로 위치 */
-    padding: 10px 20px; /* 상하좌우 여백 */
+    margin: -15px auto 0; /* 위로 살짝 겹치게 마이너스 마진 */
+    transform: translateY(10px); /* 아래로 10px 이동 (겹치는 느낌) */
+    padding: 20px 20px; /* 상하좌우 여백 */
     text-align: center;
     color:#666 ;
 }
@@ -121,6 +114,13 @@ footer {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
+
+
+@media (max-width: 800px) {
+    .container {
+        min-height: 100vh;
+    }
+}
 
 @media (max-width: 576px) {
     .navbar-wrapper {

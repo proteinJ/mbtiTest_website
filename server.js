@@ -54,6 +54,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/intro', (req, res) => {
+    res.clearCookie('totalScore');
     res.render('introPage');
 })
 
@@ -106,39 +107,53 @@ app.get('/resultList', (req, res) => {
 
 app.get('/resultPage', (req, res) => {
     const myScores = req.cookies.totalScore ? JSON.parse(req.cookies.totalScore) : null;
+    const queryType = req.query.mbtiType;
+    
+    let mbtiType;
+    let EI_value = 0, SN_value = 0, TF_value = 0, JP_value = 0;
 
-    const scoreE = myScores.E; // 8
-    const scoreS = myScores.S;
-    const scoreT = myScores.T;
-    const scoreJ = myScores.J;
+    // ✅ 1. 쿼리스트링으로 MBTI 타입이 들어오면 그것을 우선 사용
+    if (queryType) {
+        mbtiType = queryType.toUpperCase();
+    } 
+    // ✅ 2. 쿼리스트링이 없을 경우에만 쿠키 기반 계산
+    else if (myScores) {
+        const scoreE = myScores.E;
+        const scoreS = myScores.S;
+        const scoreT = myScores.T;
+        const scoreJ = myScores.J;
 
-    // 모든 점수가 존재할 경우에만 결과 계산
-    // if (score1 != null && score2 != null && score3 != null && score4 != null) {
-        const EI_value = Math.round(transPercentage(scoreE)); 
-        const SN_value = Math.round(transPercentage(scoreS)); 
-        const TF_value = Math.round(transPercentage(scoreT)); 
-        const JP_value = Math.round(transPercentage(scoreJ)); 
+        EI_value = Math.round(transPercentage(scoreE));
+        SN_value = Math.round(transPercentage(scoreS));
+        TF_value = Math.round(transPercentage(scoreT));
+        JP_value = Math.round(transPercentage(scoreJ));
 
-        const mbtiType = decision_mbtiType(scoreE, scoreS, scoreT, scoreJ);
-        const category = mbtiType.startsWith("E") ? "E" : "I";
-        const mbtiData = DataBase[category][mbtiType];
+        mbtiType = decision_mbtiType(scoreE, scoreS, scoreT, scoreJ);
+    }
 
-        console.log("쿠키 내용:", req.cookies);
-        console.log("myScores:", myScores);
+    if (!mbtiType) {
+        return res.status(400).send("❌ MBTI 타입을 알 수 없습니다. 테스트를 진행하거나, 타입을 전달해주세요.");
+    }
 
-        if(!mbtiData){
-            return res.status(500).send(`❌ 결과 데이터를 찾을 수 없습니다: ${mbtiType}`);
-        }
-        
+    const category = mbtiType.startsWith("E") ? "E" : "I";
+    const mbtiData = DataBase[category][mbtiType];
 
-        res.render('resultPage', { 
-            mbtiType,
-            mbtiData,
-            EI_value,
-            SN_value,
-            TF_value,
-            JP_value
-         });
+    console.log("쿠키 내용:", req.cookies);
+    console.log("myScores:", myScores);
+
+    if(!mbtiData){
+        return res.status(500).send(`❌ 결과 데이터를 찾을 수 없습니다: ${mbtiType}`);
+    }
+    
+
+    res.render('resultPage', { 
+        mbtiType,
+        mbtiData,
+        EI_value,
+        SN_value,
+        TF_value,
+        JP_value
+        });
     // } else {
     //     // 하나라도 점수가 없으면 에러 메시지
     //     res.status(400).send("⚠️ 모든 테스트를 완료하셔야 결과를 볼 수 있어요!");
