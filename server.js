@@ -7,12 +7,12 @@ const session = require('express-session');
 // DB 연결
 const DataBase = require('./public/config/DataBase'); 
 const DataBase_Q = require('./public/config/DataBase_Q');
+const DataBase_Qtest = require('./public/config/DataBase_Qtest');
 
 app.use(express.json());
 
 // CSS, JS, 이미지 같은 정적 파일 제공
 app.use(express.static(path.join(__dirname, 'public')));
-// app.use(express.static(__dirname + '/public'));
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views')); // 'views' 폴더 설정
@@ -24,25 +24,25 @@ app.use(session({
     saveUninitialized: true,
   }));
 
-function decision_mbtiType(EI, SN, TF, JP){
+function decision_mbtiType(E, S, T, J){
     let mbtiType = '';
 
-    if (EI > 0) {
+    if (E > 4) {
         mbtiType += 'E';
     } else {
         mbtiType += 'I';
     }
-    if (SN > 0) {
+    if (S > 4) {
         mbtiType += 'S';
     } else {
         mbtiType += 'N';
     }
-    if (TF > 0) {
+    if (T > 4) {
         mbtiType += 'T';
     } else {
         mbtiType += 'F';
     }
-    if (JP > 0) {
+    if (J > 4) {
         mbtiType += 'J';
     } else {
         mbtiType += 'P';
@@ -58,62 +58,67 @@ app.get('/', (req, res) => {
 })
 
 app.get('/intro', (req, res) => {
-    res.render('intropage');
+    res.render('introPage');
 })
 
 app.post('/submit', (req, res) => {
-    const { totalScore, pageNumber } = req.body; // 요청에서 전송된 점수 받아오기
+    const traitScores = req.body;
+  
+    // 유효성 검사
+    if (!traitScores || typeof traitScores !== 'object') {
+        console.error('유효하지 않은 점수 데이터 수신:', traitScores);
+        return res.status(400).json({ message: '잘못된 점수 데이터 형식입니다.' });
+      }
+    
+    console.log('클라이언트로부터 받은 최종 점수:', traitScores);
+  
+    // 세션에 저장
+    req.session.totalScore = traitScores;
+  
+    console.log('세션에 최종 점수 저장 완료:', req.session.totalScore);
+    res.json({ message: '최종 점수가 성공적으로 저장되었습니다.' });
+  });
 
-    req.session[`totalScorePage${pageNumber}`] = totalScore;
-
-    console.log(`세션 저장 후:`, req.session);
-
-    console.log(`Page ${pageNumber}의 totalScore 저장:`, totalScore);
-    res.json({ message: `Page ${pageNumber}의 점수가 세션에 저장되었습니다.` });
+app.get('/testP', (req, res) => {         
+    res.render('testP', { mbtiQuestion: DataBase_Qtest.questions});
 })
 
-
-app.get('/testPage1', (req, res) => {
-    res.render('testPage1', { mbtiQuestion: DataBase_Q.questions});
-})
-
-app.get('/testPage2', (req, res) => {
-    res.render('testPage2', { mbtiQuestion: DataBase_Q.questions});
-})
-
-app.get('/testPage3', (req, res) => {
-    res.render('testPage3', { mbtiQuestion: DataBase_Q.questions});
-})
-
-app.get('/testPage4', (req, res) => {
-    res.render('testPage4', { mbtiQuestion: DataBase_Q.questions});
-})
-
-app.get('/testP', (req, res) => {
-    res.render('testP', { mbtiQuestion: DataBase_Q.questions});
-})
-
-function iePer(count){
-    if(count<0){
-        return (50 + count / 30 * 50);
-    }
-    return (50 + count / 30 * 50);
+function transPercentage(score_value){
+    return (score_value / 8) * 100;
 }
 
+app.get('/resultList', (req, res) => {
+    const mbtiData = [];
+
+    // E, I 구분 없이 모든 MBTI를 하나의 배열로 변환
+    Object.values(DataBase).forEach(group => {
+        Object.entries(group).forEach(([type, data]) => {
+            mbtiData.push({
+                type,
+                ...data
+            });
+        });
+    });
+
+    res.render('resultList', { mbtiData });
+});
+
 app.get('/resultPage', (req, res) => {
-    const score1 = req.session.totalScorePage1;
-    const score2 = req.session.totalScorePage2;
-    const score3 = req.session.totalScorePage3;
-    const score4 = req.session.totalScorePage4;
+    const myScores = req.session.totalScore;
+
+    const scoreE = myScores.E; // 8
+    const scoreS = myScores.S;
+    const scoreT = myScores.T;
+    const scoreJ = myScores.J;
 
     // 모든 점수가 존재할 경우에만 결과 계산
     // if (score1 != null && score2 != null && score3 != null && score4 != null) {
-        const EI_value = Math.round(iePer(score1)); 
-        const SN_value = Math.round(iePer(score2)); 
-        const TF_value = Math.round(iePer(score3)); 
-        const JP_value = Math.round(iePer(score4)); 
+        const EI_value = Math.round(transPercentage(scoreE)); 
+        const SN_value = Math.round(transPercentage(scoreS)); 
+        const TF_value = Math.round(transPercentage(scoreT)); 
+        const JP_value = Math.round(transPercentage(scoreJ)); 
 
-        const mbtiType = decision_mbtiType(score1, score2, score3, score4);
+        const mbtiType = decision_mbtiType(scoreE, scoreS, scoreT, scoreJ);
         const category = mbtiType.startsWith("E") ? "E" : "I";
         const mbtiData = DataBase[category][mbtiType];
 
@@ -137,7 +142,7 @@ app.get('/resultPage', (req, res) => {
 // }
 );
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000 
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);

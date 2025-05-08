@@ -1,91 +1,103 @@
 .container {
-    background-image: url("../image/homepage-background.png");
-    background-size: 100%;
-    border-radius: 8px;
-    padding: 30px;
-    height: 100vh;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background-image: url("../image/main-background.png");
+    background-repeat: no-repeat;
+    user-select: none;
+    height: 100vh; /* 컨테이너 높이 유지 */
 }
 
+.container-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    gap: 100px;
+}
 
 .question-container {
+    margin-top: -65px;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+/* .question-section {
+    display: none;
+}
+
+.question-section:first-child {
+    display: block;
+} */
+
+.process-container {
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    height:10%;
+}
+
+.process {
+    color: rgb(255, 255, 255);
+    font-size: 1.5em;
+    font-weight: bold;
+} 
+
+.question-button {
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
     margin-top: 35%;
-    display: flex;
+    height:10%;
+}
+
+.question-box {
+    margin: 5%;
+    padding: 5%;
+    display: inline-flex;
     flex-direction: column; 
     align-items: center;   
     justify-content: center;
+    text-align: center;
+    background-color: #ffffff3a;
+    border-radius: 30px;
+    height: 8em;
+    width: 40em;
+    cursor: pointer;
+}
+
+.question-box:hover {
+    background-color: #ffffff88;
+}
+  
+input[type="radio"] {
+    display: none;
 }
 
 .question-text {
-    font-size: 3.8rem;
+    line-height: 1.25em;
+    font-size: 2em;
     font-weight: 200;
-    color: #ffffff;
-    text-shadow: 0px 0px 5px #441532c0;
+    color: rgba(108, 49, 148, 0.769);
 }
 
-.radio-container {
-    margin: 10%;
-    height: 10em; /*테스트용 나중에 수정 할 것 */
-    padding: 3.5%;
-    padding-left: 8%;
-    padding-right: 8%;
-    display: flex;
-    flex-direction: column; 
-    align-items: center;  
-    background-color: #d6b6c6cc;
-    box-shadow: 0 0 20px #00000011;
-    border-radius: 35px;
+
+@media (max-width: 760px) {
+    .question-box {
+        height: 6em;
+        width: 30em;
+    }
+    .question-text {
+        line-height: 1.1em;
+        font-size: 1.9em;
+    }
 }
 
-.radio-text-container {
-    display: flex;
-    flex-direction: row; /* 세로 방향 정렬 */ 
-    height: 50%;
-    width: 100%;
-    justify-content:space-between;
-}
-
-.radio-text {
-    text-align: center;
-    font-size: 1em;
-    height: 1em;
-    width: 5em;
-}
-
-.radio-group-container {
-    display: flex;
-    flex-direction: row; /* 세로 방향 정렬 */ 
-    align-items: center;
-    height: 50%;
-    width: 100%;
-    justify-content:space-between;
-    padding: 5px;
-}
-
-.radio-label {
-    height: 5%;
-    width: 5%;
-    display: flex; /* 인라인 플렉스로 변경 */
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    position: relative;
-}
-
-.radio-custom {
-    position: absolute; /* 절대 위치 */
-    top: 50%; /* 상위 요소의 중앙에 배치 */
-    left: 50%; /* 상위 요소의 중앙에 배치 */
-    transform: translate(-50%, -50%); /* 정확한 중앙 정렬 */
-    border-radius: 50%;
-    border: 2px solid #7b5e88;
-    background-color: #d6b6c6;
-    transition: all 0.3s ease;
-    width: 1.2em;
-    height: 1.2em;
-}
-
-.radio-input:checked + .radio-custom {
-    border-color: #4CAF50;
-    background-color: #4CAF50;
+@media (max-width: 590px) {
+    .question-box {
+        height: 5em;
+        width: 25em;
+    }
+    .question-text {
+        line-height: 1em;
+        font-size: 1.6em;
+    }
 }

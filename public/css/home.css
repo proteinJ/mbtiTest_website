@@ -4,13 +4,12 @@
     font-weight: normal;
     font-style: normal;
 }
+
+
 .container {
     background-image: url("../image/homepage-background.png");
-    background-size: 100%;
-    border-radius: 8px;
-    padding: 30px;
-    height: 100vh;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background-repeat: no-repeat;
+    height: 100vh; /* 컨테이너 높이 유지 */
 }
 
 .test-title-container {
@@ -18,7 +17,7 @@
     flex-direction: column; /* 세로 방향 정렬 */
     align-items: center;    /* 가로 중앙 정렬 */
     justify-content: center; /* 세로 중앙 정렬 */
-    margin-top: 10%;
+    margin-top: 3%;
 }
 
 .test-title {
@@ -34,35 +33,16 @@
 .start-btn-container {
     display: flex;
     justify-content: center; /* 가로 중앙 정렬 */
-    margin-top: 30%;
+    margin-top: 6%;
 }
 
-.start-btn {
-    background-color: #ffffff3a;
-    /* color: rgb(136, 93, 139); */
-    color: rgba(108, 49, 148, 0.769);
-    border: 2px solid #ffffff;
-    padding: 15px 40px;
-    font-family: '산토끼체', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 600;
-    border-radius: 35px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    margin-top: 50px;
-    display: inline-block;
-    fill-opacity: 0.7;
-    align-items:center;
-}
 
-.start-btn:hover {
-    background-color: #bebebec0;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-}
 
-.start-btn:active {
-    transform: translateY(1px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+@media (max-width: 576px) {
+    .test-title {
+        font-size: 3rem;
+    }
+    .container-content {
+        margin-top: 50px;
+    }
 }

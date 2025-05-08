@@ -1,43 +1,82 @@
 .container {
-    background-image: url("../image/homepage-background.png");
-    background-attachment: fixed;
-    background-size: cover;
-    background-repeat: no-repeat;
-    border-radius: 8px;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
+    background-image: url("../image/main-background.png");
+    background-repeat: repeat;
+    min-height: 100vh;
 }
 
-.content {
-    color: rgba(108, 49, 148, 0.769);
-    flex-grow: 1;  /* content가 나머지 공간을 차지하도록 설정 */
+.content-container {
+    display: grid;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    gap: 50px;
 }
+
+.mbti-type-container {
+    display: grid;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    gap: 5px;
+}
+
+
 
 h3 {
-    font-size: 30px;
+    color:aliceblue;
+    font-size: 25px;
 }
 
 h1 {
     font-size: 80px;
+    color: #ffffff
 }
 
-.restartButton-container {
+
+.start-btn-container {
     display: flex;
     margin-top: auto;  /* 버튼을 하단으로 밀어주기 */
     margin-bottom: 50px;  /* 버튼과 하단 간격 설정 */
 }
 
-#restartButton {
-    width: 60%;
-    padding: 10px;
-    background-color: #2a435e;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+/* Percentage Bar - conatinaer */
+
+.percentage-container {
+    width: 80%;
+    background-color: #ffffff00;
 }
 
-#restartButton:hover {
-    background-color: #0056b3;
+.percentage-bar {
+    display: flex;
+    align-items: center;
+}
+
+.percentage-bar .label {
+    width: 50px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.percentage-bar .bar {
+    width: 60%;
+    height: 15px;
+    background-color: #ffffff33;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    margin-top:40px;
+    margin-bottom:40px;
+}
+
+.percentage-bar .bar .fill {
+    height: 100%;
+    background-color: #007bff;
+    transition: width 0.5s ease-in-out;
+}
+
+.percentage-bar .percentage {
+    width: 50px;
+    text-align: right;
+    margin-left: 10px;
+
 }

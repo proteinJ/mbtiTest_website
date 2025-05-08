@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/resultList.css">
+</head>
+<body>
+    <div class="navbar-wrapper" >
+        <nav class="navbar">
+          <div class="home-icon">
+            <a href="/">
+              <img src="/image/navbar-home-icon.png" id="navbar-home-icon" style="height: 40px;"> 
+            </a>
+          </div>
+          <div class="resultOage-Tag">
+            <a href="/resultPage" style="font-size: 30px; color: white; text-decoration: none; margin-left: 15px;">
+              Result Page
+            </a>
+          </div>
+        </nav>
+      </div>
+
+    
+    <div class="container">
+        <div class="content-container">
+            <% mbtiData.forEach(item => { %>
+                <div class="mbti-type-container">
+                  <div class="card-mbti-type">
+                    <h1><%= item.type %></h1>
+                  </div>
+                  <div class="card-perfume">
+                    <img src="<%= item.image %>">
+                  </div>
+                  <div class="card-description">
+                    <h2 style="font-size: 15px;">당신에게 어울리는 향수는</h2>
+                    <h2><%= item.perfumeRecommendations[0].perfumeName %></h2>
+                  </div>
+                </div>
+              <% }) %>
+        </div>
+    </div>
+
+
+    <footer>
+        <p>&copy; <%= new Date().getFullYear() %> Perfum MBTI Test :: ProteinJ</p>
+    </footer>
+</body>
+</html>

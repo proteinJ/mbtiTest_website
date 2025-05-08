@@ -15,6 +15,33 @@
 body {
     font-family: sans-serif;
     margin: 0;
+}
+
+.container, /* 기존 .container 규칙에 .navbar-wrapper를 추가 */
+.navbar-wrapper {
+width: 100%; /* 사용 가능한 너비의 100%를 차지 (max-width 범위 내) */
+max-width: 50rem; /* .container와 동일한 최대 너비 설정 */
+margin: 0 auto; /* 중앙 정렬 (기존 .container는 margin: auto로 되어 있었음) */
+}
+
+
+
+.container {
+  background-position: bottom;
+  background-size: cover;
+  padding: 30px; /* 기존 패딩 유지 */  
+  padding-top: 100px; /* 기존 패딩 유지 */
+  margin-top: -60px;
+}
+
+
+.navbar-wrapper {
+    position: relative;
+    background-color: #ffffff00;
+    height: 60px;
+    z-index: 100;
+}
+
     background-color: #e0dede;
 }
 
@@ -45,28 +72,18 @@ header {
 
 /* 네비게이션 바 (로고와 제목 배치) */
 .navbar {
+    width: 100%;
     display: flex;
-    align-items: center; /* 세로 중앙 정렬 */
-    width: 100%; /* navbar의 전체 너비 */
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 2%;
 }
-
-#navbar-home-icon {
-    height: 50px;
-}
-
-
-
-/* 제목 스타일 */
-.title h1 {
-    font-size: 1.5rem;
-    color: #2c3e50;
-    margin: 0; /* 제목의 여백 제거 */
-}
-
-
-
 
 footer {
+    background-color: #f1f1f1;
+    width: 100%;
+    max-width: 50rem;
+    margin: 0 auto;
     position: absolute; /* 페이지의 최상단에 위치 */
     width: 50em; /* 페이지의 너비 */
     bottom: -10;
@@ -77,4 +94,38 @@ footer {
     color:#666 ;
 }
 
+.ReStartButton {
+    background-color: #ffffff3a;
+    color: rgba(108, 49, 148, 0.769);
+    border: 2px solid #ffffff;
+    padding: 13px 38px;
+    font-family: '산토끼체', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    border-radius: 35px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-top: 50px;
+    display: inline-block;
+    fill-opacity: 0.7;
+    align-items:center;
+}
 
+.ReStartButton:hover {
+    background-color: #bebebec0;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.ReStartButton:active {
+    transform: translateY(1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+
+@media (max-width: 576px) {
+    .navbar-wrapper {
+        height: 45px;
+    }
+}
