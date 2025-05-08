@@ -24,8 +24,6 @@ max-width: 50rem; /* .container와 동일한 최대 너비 설정 */
 margin: 0 auto; /* 중앙 정렬 (기존 .container는 margin: auto로 되어 있었음) */
 }
 
-
-
 .container {
   background-position: bottom;
   background-size: cover;

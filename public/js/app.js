@@ -9,7 +9,7 @@ const traitMap = ['EI', 'SN', 'TF', 'JP'];
 
 function handleAnswer(questionIndex, questionValue) {
 
-  const traitGroup = Math.floor(questionIndex / 8);
+  const traitGroup = Math.floor(questionIndex / 7);
 
   const direction = parseInt(questionValue); // 0 또는 1
   const trait = traitMap[traitGroup][direction]; // 해당 특성 결정
@@ -28,7 +28,7 @@ function nextQuestion(questionIndex, value) {
   // 받은 questionIndex(0-31)에 1을 더해야 실제 HTML ID와 일치
   document.getElementById(`question${questionIndex + 1}`).style.display = 'none';
 
-  if (questionIndex < 29) { 
+  if (questionIndex < 27) { 
       // 다음 질문 컨테이너 표시 (HTML ID: question2 ~ question32)
       // 현재 questionIndex에 2를 더해야 다음 질문 ID와 일치
       document.getElementById(`question${questionIndex + 2}`).style.display = 'block';

@@ -2,11 +2,13 @@ const express = require("express");
 const app = express();
 const ejs = require("ejs");
 const path = require('path');
-const session = require('express-session');
+const cookieParser = require('cookie-parser');
+
+// 쿠키 파서 등록
+app.use(cookieParser());
 
 // DB 연결
 const DataBase = require('./public/config/DataBase'); 
-const DataBase_Q = require('./public/config/DataBase_Q');
 const DataBase_Qtest = require('./public/config/DataBase_Qtest');
 
 app.use(express.json());
@@ -18,31 +20,25 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views')); // 'views' 폴더 설정
 
 
-app.use(session({
-    secret: 'proteinj',  // 세션 암호화 키
-    resave: false,
-    saveUninitialized: true,
-  }));
-
 function decision_mbtiType(E, S, T, J){
     let mbtiType = '';
 
-    if (E > 4) {
+    if (E > 3) {
         mbtiType += 'E';
     } else {
         mbtiType += 'I';
     }
-    if (S > 4) {
+    if (S > 3) {
         mbtiType += 'S';
     } else {
         mbtiType += 'N';
     }
-    if (T > 4) {
+    if (T > 3) {
         mbtiType += 'T';
     } else {
         mbtiType += 'F';
     }
-    if (J > 4) {
+    if (J > 3) {
         mbtiType += 'J';
     } else {
         mbtiType += 'P';
@@ -69,12 +65,17 @@ app.post('/submit', (req, res) => {
         console.error('유효하지 않은 점수 데이터 수신:', traitScores);
         return res.status(400).json({ message: '잘못된 점수 데이터 형식입니다.' });
       }
+  
+    // 쿠키에 저장 (1시간 유지)
+    res.cookie('totalScore', JSON.stringify(traitScores), {
+    maxAge: 1000 * 60 * 60, // 1시간
+    httpOnly: true // JS에서 접근 금지지
+    });
+
+    return res.json({ redirectTo: '/resultPage' });
     
     console.log('클라이언트로부터 받은 최종 점수:', traitScores);
-  
-    // 세션에 저장
-    req.session.totalScore = traitScores;
-  
+
     console.log('세션에 최종 점수 저장 완료:', req.session.totalScore);
     res.json({ message: '최종 점수가 성공적으로 저장되었습니다.' });
   });
@@ -104,7 +105,7 @@ app.get('/resultList', (req, res) => {
 });
 
 app.get('/resultPage', (req, res) => {
-    const myScores = req.session.totalScore;
+    const myScores = req.cookies.totalScore ? JSON.parse(req.cookies.totalScore) : null;
 
     const scoreE = myScores.E; // 8
     const scoreS = myScores.S;
@@ -121,6 +122,9 @@ app.get('/resultPage', (req, res) => {
         const mbtiType = decision_mbtiType(scoreE, scoreS, scoreT, scoreJ);
         const category = mbtiType.startsWith("E") ? "E" : "I";
         const mbtiData = DataBase[category][mbtiType];
+
+        console.log("쿠키 내용:", req.cookies);
+        console.log("myScores:", myScores);
 
         if(!mbtiData){
             return res.status(500).send(`❌ 결과 데이터를 찾을 수 없습니다: ${mbtiType}`);
