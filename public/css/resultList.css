@@ -22,7 +22,23 @@
     padding: 20px;
     width: 300px;
     height: 500px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
+
+.mbti-type-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    background-color: #f9f9f9;
+  }
+  
+  .mbti-type-container:active {
+    transform: translateY(-2px) scale(0.98);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  }
 
 .card-mbti-type {
     margin-top: 50px;

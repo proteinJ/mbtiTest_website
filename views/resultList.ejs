@@ -15,11 +15,6 @@
               <img src="/image/navbar-home-icon.png" id="navbar-home-icon" style="height: 40px;"> 
             </a>
           </div>
-          <div class="resultOage-Tag">
-            <a href="/resultPage" style="font-size: 30px; color: white; text-decoration: none; margin-left: 15px;">
-              Result Page
-            </a>
-          </div>
         </nav>
       </div>
 
@@ -27,7 +22,7 @@
     <div class="container">
         <div class="content-container">
             <% mbtiData.forEach(item => { %>
-                <div class="mbti-type-container">
+                <div class="mbti-type-container" data-type="<%= item.type %>">
                   <div class="card-mbti-type">
                     <h1><%= item.type %></h1>
                   </div>
@@ -47,5 +42,6 @@
     <footer>
         <p>&copy; <%= new Date().getFullYear() %> Perfum MBTI Test :: ProteinJ</p>
     </footer>
+    <script type="module" src="/js/result.js"></script>
 </body>
 </html>
