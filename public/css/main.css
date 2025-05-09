@@ -118,12 +118,45 @@ footer {
 
 @media (max-width: 800px) {
     .container {
-        min-height: 100vh;
+        width: 100%;
+        min-width: unset;
+        padding: 60px 20px 20px 20px;
+        box-shadow: none;
+        border-radius: 0;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .navbar-wrapper {
+        width: 100%;
+        max-width: 100%;
+        height: 50px;
+        padding: 0 15px;
+    }
+
+    footer {
+        width: 100%;
+        max-width: 100%;
+        margin: 20px auto 0;
+        transform: none;
+        padding: 15px;
+        font-size: 0.9rem;
+    }
+
+    .ReStartButton {
+        margin-top: 30px;
     }
 }
 
 @media (max-width: 576px) {
     .navbar-wrapper {
         height: 45px;
+        padding: 0 10px;
     }
+
+    .footer {
+        padding: 10px;
+        font-size: 0.8rem;
+    }
+
 }

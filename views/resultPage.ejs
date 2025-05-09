@@ -82,12 +82,12 @@
 
                   <div class="perfume-discription-container">
                     <div class="perfume-discription-title">
-                      <span style="width: 6em; display: flex;"><%= mbtiData["recommendedScents"][i] %></span>
+                      <span style="width: 6em; display: flex;"> <%= DataBase_P[mbtiData["recommendedScents"][i]][0] %> <%= mbtiData["recommendedScents"][i] %> </span>
                     </div>
 
                     <div class="perfume-discription-text-container">
                       <div class="perfume-discription-text-container">
-                        <p>설명무낭런ㅁ랴ㅐㄷㅈ푿ㄴ먀ㅐㄹㄴ</p>
+                        <p><%= DataBase_P[mbtiData["recommendedScents"][i]][1] %></p>
                       </div>
                     </div>
                   </div>

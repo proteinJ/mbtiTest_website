@@ -9,6 +9,7 @@ app.use(cookieParser());
 
 // DB 연결
 const DataBase = require('./public/config/DataBase'); 
+const DataBase_P = require('./public/config/DateBase_P'); 
 const DataBase_Qtest = require('./public/config/DataBase_Qtest');
 
 app.use(express.json());
@@ -17,7 +18,7 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views')); // 'views' 폴더 설정
+app.set('views', path.join(__dirname, 'views')); // 'views' 폴더 
 
 
 function decision_mbtiType(E, S, T, J){
@@ -149,6 +150,7 @@ app.get('/resultPage', (req, res) => {
     res.render('resultPage', { 
         mbtiType,
         mbtiData,
+        DataBase_P,
         EI_value,
         SN_value,
         TF_value,

@@ -46,6 +46,7 @@ span {
 h4 {
     font-size: 17px;
     font-weight: 200;
+    color:rgb(95, 95, 95);
 }
 
 
@@ -111,10 +112,6 @@ h1 {
     flex-direction: column;
 }
 
-.recommand-scent-title-container {
-
-}
-
 .recommand-scent-container{
     gap: 10px;
     display: flex;
@@ -177,4 +174,93 @@ h1 {
     flex-direction: row;
 }
 
+.restart-btn-container {
+    display: flex;
+    justify-content: center; /* 가로 중앙 정렬 */
+}
 
+@media (max-width: 800px) {
+    .container {
+      background-size: cover;
+      background-position: center;
+      padding: 20px;
+    }
+  
+    .content-container {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      padding: 10px;
+      margin-top: 4%;
+    }
+  
+    h1 {
+      font-size: 70px;
+    }
+  
+    h3 {
+      font-size: 25px;
+    }
+  
+    h4 {
+      font-size: 15px;
+    }
+  
+    .box-title {
+      font-size: 1.4em;
+      margin-left: 5px;
+    }
+  
+    .personality-container,
+    .recommand-scent-container {
+      padding: 20px;
+      max-width: 503px;
+    }
+  
+    .personality-box {
+      flex-direction: column;
+      gap: 15px;
+    }
+  
+    .personality-content {
+      width: 100%;
+      height: auto;
+    }
+  
+    .perfume-discription-container {
+      flex-direction: column;
+      width: 100%;
+      gap: 10px;
+    }
+  
+    .recommand-perfume-content {
+      flex-direction: column;
+      gap: 1em;
+    }
+  
+    .recommand-perfume-image {
+      width: 10em;
+      height: 10em;
+    }
+  
+    .recommand-perfume-text-container {
+      width: 100%;
+      height: auto;
+    }
+  
+    .restart-btn-container {
+      margin-top: 30px;
+    }
+  
+    .ReStartButton {
+      width: 70%;
+      padding: 12px;
+      font-size: 1.1rem;
+    }
+  
+    footer {
+      font-size: 0.9rem;
+      padding: 10px;
+    }
+  }
+  
