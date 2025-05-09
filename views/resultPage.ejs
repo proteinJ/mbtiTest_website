@@ -27,76 +27,88 @@
             <h3>( 순수한 이상주의자 )</h3>
           </div>
 
-          <div class="recommand-scent-personality-container">
-            <div class="recommand-scent-container">
-              <h3>추천 향 - <%= mbtiData["recommendedScents"] %></h3>
-              <h4> 감수성이 풍부하고 이상주의적인 성격에 어울리는 부드럽고 평화로운 향</h4>
-            </div>
+          <div class="recommnad-perfume-container-1">
+            <p class="box-title">특성</p>
+            <div class="recommand-scent-personality-container">
 
-            <div class="personality-container">
+              <div class="personality-container">
+                <div class="personality-box">
+                  <div class="personality-content">
+                    <span>인관관계</span>
+                    <h4><%= mbtiData["personalityTraits"]["relationships"] %></h4>
+                  </div>
+                  <div class="personality-content">
+                    <span>취미</span>
+                    <h4><%= mbtiData["personalityTraits"]["hobbies"] %></h4>
+                  </div>
+                </div>
 
-              <div class="personality-box">
-                <div class="personality-content">
-                  <span>인관관계</span>
-                  <h4><%= mbtiData["personalityTraits"]["relationships"] %></h4>
+                <div class="personality-box">
+                  <div class="personality-content">
+                    <span>연애</span>
+                    <h4><%= mbtiData["personalityTraits"]["romance"] %></h4>
+                  </div>
+                  <div class="personality-content">
+                    <span>이상형</span>
+                    <h4><%= mbtiData["personalityTraits"]["idealType"] %></h4>
+                  </div>
                 </div>
-                <div class="personality-content">
-                  <span>취미</span>
-                  <h4><%= mbtiData["personalityTraits"]["hobbies"] %></h4>
-                </div>
-                <div class="personality-content">
-                  <span>연애</span>
-                  <h4><%= mbtiData["personalityTraits"]["romance"] %></h4>
-                </div>
+                
+                <div class="personality-container-low">
+                  <div class="personality-content-PnC">
+                      <span>장점</span>
+                      <h4><%= mbtiData["personalityTraits"]["strengths"][0] %></h4>
+                      <h4><%= mbtiData["personalityTraits"]["strengths"][1] %></h4>
+                  </div>
+                  <div class="personality-content-PnC">
+                      <span>단점</span>
+                      <h4><%= mbtiData["personalityTraits"]["weaknesses"][0] %></h4>
+                      <h4><%= mbtiData["personalityTraits"]["weaknesses"][1] %></h4>
+                  </div>
+                </div>   
               </div>
-
-              <div class="personality-box">
-                <div class="personality-content">
-                  <span>이상형</span>
-                  <h4><%= mbtiData["personalityTraits"]["idealType"] %></h4>
-                </div>
-                <div class="personality-content">
-                  <span>장점</span>
-                  <h4><%= mbtiData["personalityTraits"]["strengths"] %></h4>
-                </div>
-                <div class="personality-content">
-                  <span>단점</span>
-                  <h4><%= mbtiData["personalityTraits"]["weaknesses"] %></h4>
-                </div>
-              </div>
-
             </div>
           </div>
 
+          <div class="recommand-scent-container-1">
+            <p class="box-title">추천 향</p>
+            <div class="recommand-scent-container">
+              <div class="recommand-scent-title-container">
+                <h4> 감수성이 풍부하고 이상주의적인 성격에 어울리는 부드럽고 평화로운 향</h4>
+              </div>
+
+              <div class="recommand-scent-content">
+                <% for (let i = 0; i < 2; i++) { %>
+
+                  <div class="perfume-discription-container">
+                    <div class="perfume-discription-title">
+                      <span style="width: 6em; display: flex;"><%= mbtiData["recommendedScents"][i] %></span>
+                    </div>
+
+                    <div class="perfume-discription-text-container">
+                      <div class="perfume-discription-text-container">
+                        <p>설명무낭런ㅁ랴ㅐㄷㅈ푿ㄴ먀ㅐㄹㄴ</p>
+                      </div>
+                    </div>
+                  </div>
+
+                <% } %>
+              </div>
+            </div>  
+          </div>
 
           <% for (let i = 0; i < 2; i++) { %>
 
             <div class="recommand-perfume-container">
               <div class="recommand-perfume-title-container">
-                <span>추천 향수: <%= mbtiData["perfumeRecommendations"][i]["perfumeNameEng"] %><br> <%= mbtiData["perfumeRecommendations"][i]["perfumeNameKor"] %></span>
+                <span><%= mbtiData["perfumeRecommendations"][i]["perfumeNameEng"] %><br> <%= mbtiData["perfumeRecommendations"][i]["perfumeNameKor"] %></span>
               </div>
 
               <div class="recommand-perfume-content">
                 <img src="/image/겔랑 - 몽 겔랑(ISFJ).webp" alt="Perfume" class="recommand-perfume-image">
 
                 <div class="recommand-perfume-text-container">
-                  <div class="recommand-perfume-text-content">
-                    <div class="recommand-perfume-text-left">특징:</div>
-                    <div class="recommand-perfume-text-right">향수 설명</div>
-                  </div>
-                  <div class="recommand-perfume-text-content">
-                    <div class="recommand-perfume-text-left">느낌:</div>
-                    <div class="recommand-perfume-text-right">향수 설명</div>
-                  </div>
-                  <div class="recommand-perfume-text-content" style="height : 2em;">
-                    <div class="recommand-perfume-text-left" style="width: 8em;">선호 연령대/성별:</div>
-                    <div class="recommand-perfume-text-right" style="width: 17em;">향수 설명</div>
-                  </div>
-                  <div class="recommand-perfume-text-content" style="height : 2em;">
-                    <div class="recommand-perfume-text-left">참고:</div>
-                    <div class="recommand-perfume-text-right">향수 설명</div>
-                  </div>
-
+                  <p style="font-size: 18px; font-weight: 100; color:rgb(95, 95, 95);">즉흥적이고 에너제틱한 성격에 어울리는 상쾌하고 강렬한 향으로 20대 여성들이 사용하기에 좋은 향수입니다. 이 향수는 햇살 좋은 날 피크닉 갈때, 혹은 여행 갈 때 사용하면 효과적입니다.</p>
                 </div>
               </div>
             </div>
@@ -104,31 +116,7 @@
           <% } %>
 
 
-          <% for (let i = 0; i < 2; i++) { %>
 
-            <div class="perfume-discription-container">
-              <div class="perfume-discription-title">
-                <span><%= mbtiData["recommendedScents"][i] %></span>
-              </div>
-
-              <div class="perfume-discription-text-container">
-                <div class="perfume-discription-text-container">
-                  <div class="perfume-discription-text-content">
-                    <div class="perfume-discription-text-left"><h4>설명:</h4></div>
-                    <div class="perfume-discription-text-right"><h4>설명문문</h4></div>
-                  </div>
-                  <div class="perfume-discription-text-content">
-                    <div class="perfume-discription-text-left"><h4>특징:</h4></div>
-                    <div class="perfume-discription-text-right"><h4>특징문문</h4></div>
-                  </div>
-                  <div class="perfume-discription-text-content">
-                    <div class="perfume-discription-text-left"><h4>이미지:</h4></div>
-                    <div class="perfume-discription-text-right"><h4>이미지문</h4></div>
-                  </div>
-                </div>
-              </div>
-
-            <% } %>
 
           </div>
 
