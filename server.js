@@ -14,7 +14,7 @@ const DataBase_Qtest = require('./public/config/DataBase_Qtest');
 
 app.use(express.json());
 
-// CSS, JS, 이미지 같은 정적 파일 제공
+// 정적 파일 제공
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.set('view engine', 'ejs');
@@ -54,6 +54,10 @@ app.get('/', (req, res) => {
     res.render('home');
 })
 
+app.get('/info', (req, res) => {
+    res.render('info');
+})
+
 app.get('/intro', (req, res) => {
     res.clearCookie('totalScore');
     res.render('introPage');
@@ -71,7 +75,7 @@ app.post('/submit', (req, res) => {
     // 쿠키에 저장 (1시간 유지)
     res.cookie('totalScore', JSON.stringify(traitScores), {
     maxAge: 1000 * 60 * 60, // 1시간
-    httpOnly: true // JS에서 접근 금지지
+    httpOnly: true // JS에서 접근 금지
     });
 
     return res.json({ redirectTo: '/resultPage' });
@@ -98,7 +102,8 @@ app.get('/resultList', (req, res) => {
         Object.entries(group).forEach(([type, data]) => {
             mbtiData.push({
                 type,
-                ...data
+                ...data,
+                image: data.image
             });
         });
     });

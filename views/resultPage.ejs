@@ -100,10 +100,8 @@
           <% for (let i = 0; i < 2; i++) { %>
 
             <div class="recommand-perfume-container">
-
               <div class="recommand-perfume-content">
                 <img src= <%= mbtiData["image"][i] %> alt="Perfume" class="recommand-perfume-image">
-
                 <div class="recommand-perfume-text-container">
                   <div class="recommand-perfume-title-container">
                     <span><%= mbtiData["perfumeRecommendations"][i]["perfumeNameEng"] %><br> <%= mbtiData["perfumeRecommendations"][i]["perfumeNameKor"] %></span>
@@ -127,8 +125,6 @@
     </div>
 
 
-    <footer>
-        <p>&copy; <%= new Date().getFullYear() %> Perfum MBTI Test :: ProteinJ</p>
-    </footer>
+    <%- include('partials/foot') %>
 </body>
 </html>

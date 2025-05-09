@@ -5,6 +5,7 @@
 }
 
 .content-container {
+    perspective: 1000px;
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2열로 구성 */
     align-items: center;
@@ -12,14 +13,14 @@
     gap: 50px;
 }
 
+
+
 .mbti-type-container {
-    background-color: rgba(255, 255, 255, 0.719);
     border-radius: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-items: center;
-    padding: 20px;
     width: 300px;
     height: 500px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -27,21 +28,53 @@
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    
+    transform-style: preserve-3d;
 }
 
-.mbti-type-container:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
-    background-color: #f9f9f9;
-  }
-  
-  .mbti-type-container:active {
-    transform: translateY(-2px) scale(0.98);
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-  }
 
-.card-mbti-type {
-    margin-top: 50px;
+.card-inner {
+    position: relative; /* 앞/뒷면의 absolute 위치 기준점 */
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s; /* 플립 애니메이션 속도 */
+    transform-style: preserve-3d; /* 자식 요소(front/back)가 3D 공간에 배치되도록 설정 */
+}
+
+.card-front,
+.card-back {
+    position: absolute; /* 부모(.card-inner) 기준 절대 위치 */
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* 웹킷 브라우저 (Chrome, Safari 등) */
+    backface-visibility: hidden; /* 요소의 뒷면이 보이지 않도록 설정 */
+    display: flex; /* 내용 정렬을 위해 flexbox 사용 */
+    flex-direction: column; /* 세로 방향으로 내용 배치 */
+    justify-content: center; /* 수직 가운데 정렬 */
+    align-items: center; /* 수평 가운데 정렬 */
+    padding: 20px; /* 내부 여백 */
+    box-sizing: border-box; /* padding이 width, height에 포함되도록 설정 */
+    border-radius: 10px; /* 모서리 둥글게 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 그림자 효과 (선택 사항) */
+    gap: 15px;
+}
+
+.card-front {
+    background-color: #fff; /* 앞면 배경색 */
+    color: #333; /* 앞면 글자색 */
+    z-index: 2; /* 앞면이 처음에 위에 오도록 설정 */
+}
+
+.card-back {
+    background-color: #f0f0f0; /* 뒷면 배경색 (앞면과 다르게 설정) */
+    color: #555; /* 뒷면 글자색 */
+    transform: rotateY(180deg); /* 뒷면은 처음에 180도 회전시켜 놓습니다. */
+}
+
+/* mbti-type-container에 마우스를 올렸을 때 */
+.mbti-type-container:hover .card-inner {
+    transform: rotateY(180deg); /* card-inner를 180도 회전시켜 뒷면을 보여줍니다. */
 }
 
 .card-description {
@@ -49,14 +82,47 @@
     text-align: center;
 }
 
+.card-img {
+    width: 250px;
+    height: 300px;
+    -webkit-mask-image:
+        linear-gradient(to top,    transparent 0%, black 8%),
+        linear-gradient(to bottom, transparent 0%, black 8%),
+        linear-gradient(to left,   transparent 0%, black 8%),
+        linear-gradient(to right,  transparent 0%, black 8%);
+    -webkit-mask-composite: intersect;
+    mask-composite: intersect;
+    mask-repeat: no-repeat;
+}
+
 h2 {
+
     color:rgb(110, 108, 108);
-    font-weight: 200;
-    font-size: 17px;
+    font-weight: 600;
+    font-size: 20px;
 }
 
 h1 {
     font-size: 60px;
-
     color: #503285
+}
+
+@media (max-width: 800px) {
+    .mbti-type-container {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    aspect-ratio: 3 / 5; /* 너비 기준으로 비율 유지 */
+    }
+    .card-img {
+        width: 100%;
+        height: auto;
+        max-height: 300px;
+    }
+}
+
+@media (max-width: 530px) {
+    h1 {
+        font-size: 45px;
+    }
 }
