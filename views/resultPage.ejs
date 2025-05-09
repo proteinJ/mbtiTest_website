@@ -100,14 +100,14 @@
           <% for (let i = 0; i < 2; i++) { %>
 
             <div class="recommand-perfume-container">
-              <div class="recommand-perfume-title-container">
-                <span><%= mbtiData["perfumeRecommendations"][i]["perfumeNameEng"] %><br> <%= mbtiData["perfumeRecommendations"][i]["perfumeNameKor"] %></span>
-              </div>
 
               <div class="recommand-perfume-content">
-                <img src="/image/겔랑 - 몽 겔랑(ISFJ).webp" alt="Perfume" class="recommand-perfume-image">
+                <img src=<%= mbtiData["image"][i] %> alt="Perfume" class="recommand-perfume-image">
 
                 <div class="recommand-perfume-text-container">
+                  <div class="recommand-perfume-title-container">
+                    <span><%= mbtiData["perfumeRecommendations"][i]["perfumeNameEng"] %><br> <%= mbtiData["perfumeRecommendations"][i]["perfumeNameKor"] %></span>
+                  </div>
                   <p style="font-size: 18px; font-weight: 100; color:rgb(95, 95, 95);">즉흥적이고 에너제틱한 성격에 어울리는 상쾌하고 강렬한 향으로 20대 여성들이 사용하기에 좋은 향수입니다. 이 향수는 햇살 좋은 날 피크닉 갈때, 혹은 여행 갈 때 사용하면 효과적입니다.</p>
                 </div>
               </div>

@@ -1,9 +1,3 @@
-@font-face {
-    font-family: '윤고딕';
-    src: url('/fonts/HANYGO240.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
 
 .container {
     height: 100vh; /* 컨테이너 높이 유지 */

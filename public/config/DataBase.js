@@ -14,7 +14,10 @@ module.exports ={
           "perfumeDescription": "상쾌하고 시트러스한 향"
         }
       ],
-      "image": "이미지_링크_또는_경로",
+      "image": [
+        "./image/ESTP_1.jpg",
+        "./image/ESTP_2.jpg"
+      ],
       "scentDescriptions": {
         "Citrus": "시트러스 향은 상큼하고 기분 좋은 상쾌함을 줍니다.",
         "Spicy": "스파이시 향은 강렬하고 에너지 넘치는 느낌을 줍니다."
@@ -48,7 +51,10 @@ module.exports ={
           "perfumeDescription": "깊고 강렬한 향"
         }
       ],
-      "image": "이미지_링크_또는_경로",
+      "image": [
+        "./image/ENTJ_1.jpg",
+        "./image/ENTJ_2.jpg"
+      ],
       "scentDescriptions": {
         "Citrus": "시트러스 향은 상큼하고 기분 좋은 상쾌함을 줍니다.",
         "Oriental": "오리엔탈 향은 따뜻하고 고급스러운 느낌을 줍니다."
@@ -82,7 +88,10 @@ module.exports ={
           "perfumeDescription": "창의적이고 신선한 향"
         }
       ],
-      "image": "이미지_링크_또는_경로",
+      "image": [
+        "./image/ENTP_1.jpg",
+        "./image/ENTP_2.jpg"
+      ],
       "scentDescriptions": {
         "Fruity": "프루티 향은 달콤하고 상큼한 느낌을 줍니다.",
         "Citrus": "시트러스 향은 상큼하고 기분 좋은 상쾌함을 줍니다."
@@ -116,7 +125,10 @@ module.exports ={
               "perfumeDescription": "상쾌하고 플로럴한 향"
             }
           ],
-          "image": "이미지_링크_또는_경로",
+          "image": [
+            "./image/ENFP_1.jpg",
+            "./image/ENFP_2.jpg"
+          ],
           "scentDescriptions": {
             "Fruity": "프루티 향은 달콤하고 상큼한 느낌을 줍니다.",
             "Floral": "플로럴 향은 부드럽고 자연스러운 느낌을 줍니다."
@@ -150,7 +162,10 @@ module.exports ={
           "perfumeDescription": "우아하고 세련된 플로럴 향"
       }
       ],
-      "image": "이미지_링크_또는_경로",
+      "image": [
+        "./image/ENFJ_1.jpg",
+        "./image/ENFJ_2.jpg"
+      ],
       "scentDescriptions": {
       "Floral": "플로럴 향은 부드럽고 자연스러운 느낌을 줍니다.",
       "Woody": "우디 향은 따뜻하고 안정적인 느낌을 줍니다."
@@ -184,7 +199,10 @@ module.exports ={
           "perfumeDescription": "상쾌하고 스파이시한 향"
       }
       ],
-      "image": "이미지_링크_또는_경로",
+      "image": [
+        "./image/ESFP_1.jpg",
+        "./image/ESFP_2.jpg"
+      ],
       "scentDescriptions": {
       "Fruity": "프루티 향은 달콤하고 상큼한 느낌을 줍니다.",
       "Spicy": "스파이시 향은 강렬하고 에너지 넘치는 느낌을 줍니다."
@@ -218,7 +236,10 @@ module.exports ={
           "perfumeDescription": "상쾌하고 시트러스한 향"
       }
       ],
-      "image": "이미지_링크_또는_경로",
+      "image": [
+        "./image/ESTJ_1.jpg",
+        "./image/ESTJ_2.jpg"
+      ],
       "scentDescriptions": {
       "Woody": "우디 향은 따뜻하고 안정적인 느낌을 줍니다.",
       "Citrus": "시트러스 향은 상큼하고 기분 좋은 상쾌함을 줍니다."
@@ -252,7 +273,10 @@ module.exports ={
           "perfumeDescription": "달콤하고 플로럴한 향"
       }
       ],
-      "image": "이미지_링크_또는_경로",
+      "image": [
+        "./image/ESFJ_1.jpg",
+        "./image/ESFJ_2.jpg"
+      ],
       "scentDescriptions": {
       "Floral": "플로럴 향은 부드럽고 자연스러운 느낌을 줍니다.",
       "Sweet": "스위트 향은 달콤하고 따뜻한 느낌을 줍니다."
@@ -292,7 +316,10 @@ module.exports ={
             "perfumeDescription": "우아하고 섬세한 향"
             }
         ],
-        "image": "이미지_링크_또는_경로",
+        "image": [
+          "./image/INFP_1.jpg",
+          "./image/INFP_2.jpg"
+        ],
         "scentDescriptions": {
             "Floral": "플로럴 향은 부드럽고 자연스러운 느낌을 줍니다.",
             "Green": "그린 향은 신선하고 자연적인 느낌을 줍니다."
@@ -326,7 +353,10 @@ module.exports ={
             "perfumeDescription": "우디하고 따뜻한 향"
             }
         ],
-        "image": "이미지_링크_또는_경로",
+        "image": [
+          "./image/INFJ_1.jpg",
+          "./image/INFJ_2.jpg"
+        ],
         "scentDescriptions": {
             "Musk": "머스크 향은 부드럽고 차분한 느낌을 줍니다.",
             "Woody": "우디 향은 따뜻하고 안정적인 느낌을 줍니다."
@@ -360,7 +390,10 @@ module.exports ={
             "perfumeDescription": "우디하고 세련된 향"
             }
         ],
-        "image": "이미지_링크_또는_경로",
+        "image": [
+          "./image/INTP_1.jpg",
+          "./image/INTP_2.jpg"
+        ],
         "scentDescriptions": {
             "Musk": "머스크 향은 부드럽고 차분한 느낌을 줍니다.",
             "Woody": "우디 향은 따뜻하고 안정적인 느낌을 줍니다."
@@ -394,7 +427,10 @@ module.exports ={
             "perfumeDescription": "스파이시하고 우디한 향"
             }
         ],
-        "image": "이미지_링크_또는_경로",
+        "image": [
+          "./image/INTJ_1.jpg",
+          "./image/INTJ_2.jpg"
+        ],
         "scentDescriptions": {
             "Woody": "우디 향은 따뜻하고 안정적인 느낌을 줍니다.",
             "Spicy": "스파이시 향은 강렬하고 에너지 넘치는 느낌을 줍니다."
@@ -428,7 +464,10 @@ module.exports ={
                 "perfumeDescription": "우아하고 섬세한 향"
             }
             ],
-            "image": "이미지_링크_또는_경로",
+            "image": [
+              "./image/ISFP_1.jpg",
+              "./image/ISFP_2.jpg"
+            ],
             "scentDescriptions": {
             "Floral": "플로럴 향은 부드럽고 자연스러운 느낌을 줍니다.",
             "Woody": "우디 향은 따뜻하고 안정적인 느낌을 줍니다."
@@ -462,7 +501,10 @@ module.exports ={
                 "perfumeDescription": "달콤하고 플로럴한 향"
             }
             ],
-            "image": "이미지_링크_또는_경로",
+            "image": [
+              "./image/ISFJ_1.jpg",
+              "./image/ISFJ_2.jpg"
+            ],
             "scentDescriptions": {
             "Floral": "플로럴 향은 부드럽고 자연스러운 느낌을 줍니다.",
             "Sweet": "스위트 향은 달콤하고 따뜻한 느낌을 줍니다."
@@ -496,7 +538,10 @@ module.exports ={
                 "perfumeDescription": "상쾌하고 머스크한 향"
             }
             ],
-            "image": "이미지_링크_또는_경로",
+            "image": [
+              "./image/ISTJ_1.jpg",
+              "./image/ISTJ_2.jpg"
+            ],
             "scentDescriptions": {
             "Woody": "우디 향은 따뜻하고 안정적인 느낌을 줍니다.",
             "Musk": "머스크 향은 부드럽고 차분한 느낌을 줍니다."
@@ -530,7 +575,10 @@ module.exports ={
                 "perfumeDescription": "스파이시하고 우디한 향"
             }
             ],
-            "image": "이미지_링크_또는_경로",
+            "image": [
+              "./image/ISTP_1.jpg",
+              "./image/ISTP_2.jpg"
+            ],
             "scentDescriptions": {
             "Spicy": "스파이시 향은 강렬하고 에너지 넘치는 느낌을 줍니다.",
             "Woody": "우디 향은 따뜻하고 안정적인 느낌을 줍니다."
