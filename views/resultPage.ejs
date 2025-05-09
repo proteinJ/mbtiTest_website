@@ -24,7 +24,7 @@
           <div class="mbti-type-container">
             <h3>당신은</h3>
             <h1><%= mbtiType %></h1>
-            <h3>( 순수한 이상주의자 )</h3>
+            <h3><%= mbtiData["category"] %></h3>
           </div>
 
           <div class="recommnad-perfume-container-1">
@@ -82,7 +82,7 @@
 
                   <div class="perfume-discription-container">
                     <div class="perfume-discription-title">
-                      <span style="width: 6em; display: flex;"> <%= DataBase_P[mbtiData["recommendedScents"][i]][0] %> <%= mbtiData["recommendedScents"][i] %> </span>
+                      <span style="width: 6em; display: flex; filter: grayscale(100%) brightness(150%);" > <%= DataBase_P[mbtiData["recommendedScents"][i]][0] %> <%= mbtiData["recommendedScents"][i] %> </span>
                     </div>
 
                     <div class="perfume-discription-text-container">
@@ -102,13 +102,13 @@
             <div class="recommand-perfume-container">
 
               <div class="recommand-perfume-content">
-                <img src=<%= mbtiData["image"][i] %> alt="Perfume" class="recommand-perfume-image">
+                <img src= <%= mbtiData["image"][i] %> alt="Perfume" class="recommand-perfume-image">
 
                 <div class="recommand-perfume-text-container">
                   <div class="recommand-perfume-title-container">
                     <span><%= mbtiData["perfumeRecommendations"][i]["perfumeNameEng"] %><br> <%= mbtiData["perfumeRecommendations"][i]["perfumeNameKor"] %></span>
                   </div>
-                  <p style="font-size: 18px; font-weight: 100; color:rgb(95, 95, 95);">즉흥적이고 에너제틱한 성격에 어울리는 상쾌하고 강렬한 향으로 20대 여성들이 사용하기에 좋은 향수입니다. 이 향수는 햇살 좋은 날 피크닉 갈때, 혹은 여행 갈 때 사용하면 효과적입니다.</p>
+                  <p style="font-size: 18px; font-weight: 100; color:rgb(46, 46, 46);"><%= mbtiData["perfumeRecommendations"][i]["perfumeDescription"] %></p>
                 </div>
               </div>
             </div>

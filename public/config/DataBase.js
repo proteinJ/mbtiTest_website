@@ -1,17 +1,18 @@
 module.exports ={
   "E": {
     "ESTP": {
+        "category":"(자유로운 도전가)",
       "recommendedScents": ["Citrus", "Spicy"],
       "perfumeRecommendations": [
         {
           "perfumeNameKor": "디올 '소바쥬'",
           "perfumeNameEng": "Dior 'Sauvage'",
-          "perfumeDescription": "즉흥적이고 에너제틱한 성격에 어울리는 상쾌하고 강렬한 향"
+          "perfumeDescription": "칼라브리안 베르가못과 앰브록산이 조화를 이루며, 스파이시한 페퍼와 우디 노트가 더해진 강렬하고 신선한 향입니다. 자유롭고 대담하며, 남성적인 매력을 강조합니다. 캐주얼하면서도 세련된 느낌을 줍니다. 여름철이나 일상적인 활동에 적합하며, 강한 존재감을 전달합니다."
         },
         {
           "perfumeNameKor": "조말론 '라임 바질 앤 만다린'",
           "perfumeNameEng": "Jo Malone 'Lime Basil & Mandarin'",
-          "perfumeDescription": "상쾌하고 시트러스한 향"
+          "perfumeDescription": "만다린 오렌지와 바다 노트로 시작해 톤카빈과 화이트 머스크로 마무리되는 우디 아쿠아틱 향수입니다. 상쾌하고 활기찬 스포츠 정신을 담으며, 가벼운 활동이나 여름철에 적합합니다. 오피스웨어부터 스포츠 활동까지 다양하게 활용 가능합니다."
         }
       ],
       "image": [
@@ -38,17 +39,18 @@ module.exports ={
       }
     },
     "ENTJ": {
+        "category":"(카리스마 리더)",
       "recommendedScents": ["Citrus", "Oriental"],
       "perfumeRecommendations": [
         {
           "perfumeNameKor": "크리드 '어벤투스'",
           "perfumeNameEng": "Creed 'Aventus'",
-          "perfumeDescription": "목표 지향적이고 카리스마 있는 성격에 어울리는 강렬하고 세련된 향"
+          "perfumeDescription": "레몬과 베르가못의 상쾌한 시트러스 향으로 시작해 라벤더와 로즈마리가 이어지며, 베티버와 샌달우드가 베이스를 이룹니다. 클래식하고 우아하며, 청결하고 정제된 느낌을 전달합니다. 포멀한 자리나 여름철 사용에 적합하며, 클래식한 취향을 가진 이들에게 추천합니다."
         },
         {
           "perfumeNameKor": "톰 포드 '오우드 우드'",
           "perfumeNameEng": "Tom Ford 'Oud Wood'",
-          "perfumeDescription": "깊고 강렬한 향"
+          "perfumeDescription": "사과와 시트러스 과일로 시작해 계피와 제라늄의 스파이시함이 이어지며, 샌달우드와 베티버가 베이스를 이룹니다. 현대적이고 세련된 매력을 강조하며, 자신감 넘치는 이미지를 전달합니다. 일상적인 사용부터 비즈니스 모임까지 폭넓게 활용 가능합니다."
         }
       ],
       "image": [
@@ -75,17 +77,18 @@ module.exports ={
       }
     },
     "ENTP": {
-      "recommendedScents": ["Fruity", "Citrus"],
+        "category":"(도전적인 혁신가)",
+      "recommendedScents": ["Fruity", "Citrus"],            
       "perfumeRecommendations": [
         {
           "perfumeNameKor": "딥티크 '오 드 민떼'",
           "perfumeNameEng": "Diptyque 'Eau de Minthé'",
-          "perfumeDescription": "호기심 많고 창의적인 성격에 어울리는 신선하고 다채로운 향"
+          "perfumeDescription": "사과와 생강의 상쾌함이 앰버우드와 톤카빈으로 이어지는 현대적이고 세련된 향수입니다. 창의적이고 열정적인 현대인의 정신을 표현하며, 캐주얼하면서도 세련된 느낌을 줍니다. 일상적인 사용과 저녁 모임 모두 적합합니다."    
         },
         {
           "perfumeNameKor": "르 라보 '떼 누아 29'",
           "perfumeNameEng": "Le Labo 'Thé Noir 29'",
-          "perfumeDescription": "창의적이고 신선한 향"
+          "perfumeDescription": "민트와 레몬의 신선함에 바닐라와 샌달우드가 더해진 달콤하고 강렬한 향수입니다. 열정적이고 매혹적인 분위기를 전달하며, 밤 문화에 적합합니다. 클럽이나 데이트 등 특별한 자리에서 효과적입니다." 
         }
       ],
       "image": [
@@ -112,17 +115,18 @@ module.exports ={
       }
     },
     "ENFP": {
+        "category":"(열정적인 아이디어 뱅크)",
           "recommendedScents": ["Fruity", "Floral"],
           "perfumeRecommendations": [
             {
               "perfumeNameKor": "조말론 '와일드 블루벨'",
               "perfumeNameEng": "Jo Malone 'Wild Bluebell'",
-              "perfumeDescription": "창의적이고 활발한 성격에 어울리는 다채롭고 경쾌한 향"
+              "perfumeDescription": "감귤류와 플로럴 노트가 어우러져 밝고 경쾌한 여름향수로 적합하며, 일상에서 활력을 더합니다. 자유롭고 활기찬 분위기를 전달하며 여름철에 특히 잘 어울립니다. 캐주얼한 자리나 야외 활동에 적합합니다."
             },
             {
               "perfumeNameKor": "딥티크 '오 로즈'",
               "perfumeNameEng": "Diptyque 'Eau Rose'",
-              "perfumeDescription": "상쾌하고 플로럴한 향"
+              "perfumeDescription": "배와 자몽의 과일향이 플로럴 노트와 조화를 이룸으로써 가벼운 여름향수로 적합합니다. 신선하고 자연스러운 느낌을 전달하며, 일상적인 사용에 적합합니다. 더운 날씨에 특히 잘 어울리며, 캐주얼한 자리나 야외 활동에서 사용하기 좋습니다."
             }
           ],
           "image": [
@@ -149,17 +153,18 @@ module.exports ={
           }
         },
   "ENFJ": {
+      "category":"(타고난 리더)",
       "recommendedScents": ["Floral", "Woody"],
       "perfumeRecommendations": [
       {
           "perfumeNameKor": "샤넬 '코코 마드모아젤'",
           "perfumeNameEng": "Chanel 'Coco Mademoiselle'",
-          "perfumeDescription": "따뜻하고 카리스마 있는 성격에 어울리는 부드럽고 깊이 있는 향"
+          "perfumeDescription": "감귤류와 플로럴 노트가 어우러져 밝고 경쾌한 여름향수로 적합하며, 일상에서 활력을 더합니다. 자유롭고 활기찬 분위기를 전달하며 여름철에 특히 잘 어울립니다. 캐주얼한 자리나 야외 활동에 적합합니다." 
       },
       {
           "perfumeNameKor": "톰 포드 '화이트 스웨이드'",
           "perfumeNameEng": "Tom Ford 'White Suede'",
-          "perfumeDescription": "우아하고 세련된 플로럴 향"
+          "perfumeDescription": "배와 자몽의 과일향이 플로럴 노트와 조화를 이룸으로써 가벼운 여름향수로 적합합니다. 신선하고 자연스러운 느낌을 전달하며, 일상적인 사용에 적합합니다. 더운 날씨에 특히 잘 어울리며, 캐주얼한 자리나 야외 활동에서 사용하기 좋습니다."
       }
       ],
       "image": [
@@ -186,17 +191,18 @@ module.exports ={
       }
   },
   "ESFP": {
+      "category":"(에너제틱한 엔터테이너)",
       "recommendedScents": ["Fruity", "Spicy"],
       "perfumeRecommendations": [
       {
           "perfumeNameKor": "돌체앤가바나 '라이트 블루'",
           "perfumeNameEng": "Dolce & Gabbana 'Light Blue'",
-          "perfumeDescription": "활발하고 사교적인 성격에 어울리는 달콤하고 자극적인 향"
+          "perfumeDescription": "민트와 라벤더의 상쾌함으로 시작해 바닐라와 샌달우드가 더해진 달콤하고 따뜻한 향수입니다. 전통적인 남성미와 섹시함을 동시에 표현하며, 강렬한 존재감을 전달합니다. 데이트나 클럽 같은 활기찬 자리에서 효과적이며, 밤 문화에 적합합니다."
       },
       {
           "perfumeNameKor": "바이레도 '블랑쉬'",
           "perfumeNameEng": "Byredo 'Blanche'",
-          "perfumeDescription": "상쾌하고 스파이시한 향"
+          "perfumeDescription": "자몽과 민트의 상쾌함으로 시작해 계피와 장미의 스파이시함이 이어지며, 가죽과 앰버가 베이스를 이룹니다. 화려하고 대담하며, 자신감을 강조하는 향수입니다. 특별한 이벤트나 저녁 모임에 적합하며, 겨울철에 특히 잘 어울립니다."
       }
       ],
       "image": [
@@ -223,17 +229,18 @@ module.exports ={
       }
   },
   "ESTJ": {
+      "category":"(원칙적인 관리자)",
       "recommendedScents": ["Woody", "Citrus"],
       "perfumeRecommendations": [
       {
           "perfumeNameKor": "톰 포드 '그레이 베티버'",
           "perfumeNameEng": "Tom Ford 'Grey Vetiver'",
-          "perfumeDescription": "책임감 강하고 현실적인 성격에 어울리는 단단하고 깔끔한 향"
+          "perfumeDescription": "레몬과 베르가못의 상쾌한 시트러스 향으로 시작해 라벤더와 로즈마리가 이어지며, 베티버와 샌달우드가 베이스를 이룹니다. 클래식하고 우아하며, 청결하고 정제된 느낌을 전달합니다. 포멀한 자리나 여름철 사용에 적합하며, 클래식한 취향을 가진 이들에게 추천합니다."
       },
       {
           "perfumeNameKor": "샤넬 '알뤼르 옴므 스포츠'",
           "perfumeNameEng": "Chanel 'Allure Homme Sport'",
-          "perfumeDescription": "상쾌하고 시트러스한 향"
+          "perfumeDescription": "사과와 시트러스 과일로 시작해 계피와 제라늄의 스파이시함이 이어지며, 샌달우드와 베티버가 베이스를 이룹니다. 현대적이고 세련된 매력을 강조하며, 자신감 넘치는 이미지를 전달합니다. 일상적인 사용부터 비즈니스 모임까지 폭넓게 활용 가능합니다."
       }
       ],
       "image": [
@@ -260,17 +267,18 @@ module.exports ={
       }
   },
   "ESFJ": {
+      "category":"(따뜻한 서포터)",
       "recommendedScents": ["Floral", "Sweet"],
       "perfumeRecommendations": [
       {
           "perfumeNameKor": "조말론 '피오니 앤 블러쉬 스웨이드'",
           "perfumeNameEng": "Jo Malone 'Peony & Blush Suede'",
-          "perfumeDescription": "친절하고 다정한 성격에 어울리는 부드럽고 따뜻한 향"
+          "perfumeDescription": "블랙커런트와 배의 과일향으로 시작해 아이리스와 오렌지 블로섬의 플로럴 노트가 이어지며, 바닐라와 프랄린이 베이스를 이룹니다. 따뜻하고 달콤하며, 여성스러움과 행복감을 전달하는 향수입니다. 데일리 사용이나 특별한 날 모두 적합하며, 봄과 가을철에 잘 어울립니다."
       },
       {
           "perfumeNameKor": "랑콤 '라 비 에 벨'",
           "perfumeNameEng": "Lancôme 'La Vie Est Belle'",
-          "perfumeDescription": "달콤하고 플로럴한 향"
+          "perfumeDescription": "시칠리안 레몬과 사과의 상쾌함으로 시작해 화이트 로즈와 대나무가 이어지며 앰버와 머스크가 베이스를 이룹니다. 여름철 해변을 연상시키는 시원하고 경쾌한 분위기를 전달합니다. 여름철 캐주얼한 자리나 야외 활동에 적합합니다."
       }
       ],
       "image": [
@@ -303,17 +311,18 @@ module.exports ={
 
 "I":{
         "INFP": {
+            "category":"(순수한 이상주의자)",
         "recommendedScents": ["Floral", "Green"],
         "perfumeRecommendations": [
             {
             "perfumeNameKor": "조말론 '잉글리쉬 페어 앤 프리지아'",
             "perfumeNameEng": "Jo Malone 'English Pear & Freesia'",
-            "perfumeDescription": "감수성이 풍부하고 이상주의적인 성격에 어울리는 부드럽고 평화로운 향"
+            "perfumeDescription": "배와 프리지아의 부드럽고 달콤한 향이 패출리와 우디 노트로 이어집니다. 자연스럽고 따뜻한 느낌을 제공합니다. 우아하고 섬세하며, 자연 친화적인 분위기를 전달합니다. 가볍고 부드러운 향조로 누구에게나 어울립니다. 봄과 가을철에 적합하며 데일리로 사용하기 좋습니다."
             },
             {
             "perfumeNameKor": "딥티크 '도손'",
             "perfumeNameEng": "Diptyque 'Do Son'",
-            "perfumeDescription": "우아하고 섬세한 향"
+            "perfumeDescription": "무화과 나무의 잎과 열매, 우디 노트가 조화를 이루는 그린 우디 향수로 자연 친화적입니다. 편안하고 창조적인 감성을 자극하며, 자연 속에 있는 듯한 느낌을 제공합니다. 일상적인 활동이나 여행 시 사용하기 적합합니다."
             }
         ],
         "image": [
@@ -340,17 +349,18 @@ module.exports ={
         }
         },
         "INFJ": {
+            "category":"(신비로운 이상주의자)",
         "recommendedScents": ["Musk", "Woody"],
         "perfumeRecommendations": [
             {
             "perfumeNameKor": "르 라보 '떼 누아 29'",
             "perfumeNameEng": "Le Labo 'Thé Noir 29'",
-            "perfumeDescription": "깊이 있는 사고와 직관적인 성격에 어울리는 신비롭고 차분한 향"
+            "perfumeDescription": "샌달우드와 시더우드가 중심을 이루며 카다멈과 앰버가 더해진 스모키하면서도 우디한 향수입니다. 중성적이고 신비로운 매력을 강조하며, 부드럽고 따뜻한 여운을 남깁니다. 일상적인 사용뿐만 아니라 특별한 자리에서도 잘 어울립니다."
             },
             {
             "perfumeNameKor": "딥티크 '탐 다오'",
             "perfumeNameEng": "Diptyque 'Tam Dao'",
-            "perfumeDescription": "우디하고 따뜻한 향"
+            "perfumeDescription": "샌달우드와 시더우드가 조화를 이루며 따뜻하고 부드러운 우디 향조를 제공합니다. 차분하고 고요하며 자연 친화적인 분위기를 전달합니다. 명상이나 휴식을 위한 시간에 적합하며 사계절 내내 사용 가능합니다."
             }
         ],
         "image": [
@@ -377,17 +387,18 @@ module.exports ={
         }
         },
         "INTP": {
+            "category":"(논리적인 사색가)",
         "recommendedScents": ["Musk", "Woody"],
         "perfumeRecommendations": [
             {
             "perfumeNameKor": "메종 마르지엘라 '재즈 클럽'",
             "perfumeNameEng": "Maison Margiela 'Jazz Club'",
-            "perfumeDescription": "깊이 있는 사고와 논리적인 성격에 어울리는 차분하고 지적인 향"
+            "perfumeDescription": "베티버, 샌달우드, 패출리, 시더우드 등 다양한 우디 노트가 조화된 깊고 풍부한 우디 향수입니다. 따뜻하고 이국적이며, 세련된 나무 향이 주는 차분하고 지적인 분위기입니다. 가을과 겨울철에 특히 적합하며, 독서나 사색의 시간에 잘 어울립니다."
             },
             {
             "perfumeNameKor": "불가리 '맨 우드 에센스'",
             "perfumeNameEng": "Bvlgari 'Man Wood Essence'",
-            "perfumeDescription": "우디하고 세련된 향"
+            "perfumeDescription": "레몬과 베르가못의 상쾌함으로 시작해 소나무와 앰버의 따뜻한 베이스로 이어지는 우디 아로마틱 향수입니다. 자유롭고 편안하며, 자연 속에서 느껴지는 따뜻한 감성을 전달합니다. 일상적인 사용이나 가벼운 야외 활동에 적합하며, 봄과 가을에 잘 어울립니다."
             }
         ],
         "image": [
@@ -414,17 +425,18 @@ module.exports ={
         }
         },
         "INTJ": {
+            "category":"(전략적인 마스터마인드)",
         "recommendedScents": ["Woody", "Spicy"],
         "perfumeRecommendations": [
             {
             "perfumeNameKor": "톰 포드 '노아르 드 누아르'",
             "perfumeNameEng": "Tom Ford 'Noir de Noir'",
-            "perfumeDescription": "냉철하고 계획적인 성격에 어울리는 강렬하고 깊이 있는 향"
+            "perfumeDescription": "레몬과 민트의 신선함으로 시작해 바이올렛 리프와 샌달우드가 조화를 이루는 클래식 후제르 향수입니다. 세련되고 고급스러운 분위기를 연출하며, 품격 있는 신사 이미지를 강조합니다. 포멀한 자리나 비즈니스 미팅에서 적합하며, 봄과 여름철에 특히 잘 어울립니다."
             },
             {
             "perfumeNameKor": "샤넬 '에고이스트'",
             "perfumeNameEng": "Chanel 'Egoïste'",
-            "perfumeDescription": "스파이시하고 우디한 향"
+            "perfumeDescription": "베르가못과 오레가노의 스파이시함으로 시작해 앰버와 우디 노트가 이어지는 강렬하고 복합적인 향수입니다. 웅장하고 신비로운 분위기를 전달하며, 깊은 여운을 남깁니다. 저녁 모임이나 특별한 이벤트에 적합하며, 가을과 겨울철에 잘 어울립니다."
             }
         ],
         "image": [
@@ -451,17 +463,18 @@ module.exports ={
         }
         },
         "ISFP": {
+            "category":"(감성적인 예술가)",
             "recommendedScents": ["Floral", "Woody"],
             "perfumeRecommendations": [
             {
                 "perfumeNameKor": "조말론 '잉글리쉬 페어 앤 프리지아'",
                 "perfumeNameEng": "Jo Malone 'English Pear & Freesia'",
-                "perfumeDescription": "자유롭고 감성적인 성격에 어울리는 부드럽고 자연스러운 향"
+                "perfumeDescription": "베르가못과 아프리칸 마리골드의 상쾌함이 바이올렛과 머스크로 이어지는 우디 플로럴 향수입니다. 이국적이고 따뜻하며, 창의적이고 예술적인 감성을 자극합니다. 일상적인 사용이나 예술적 활동에 적합하며, 사계절 내내 사용 가능합니다."
             },
             {
                 "perfumeNameKor": "딥티크 '도손'",
                 "perfumeNameEng": "Diptyque 'Do Son'",
-                "perfumeDescription": "우아하고 섬세한 향"
+                "perfumeDescription": "바닷바람을 연상시키는 소금기와 세이지의 부드럽고 자연스러운 조화입니다. 자유롭고 상쾌하며, 자연 속에서 느껴지는 평온함을 전달합니다. 봄과 여름철 야외 활동이나 캐주얼한 자리에서 특히 적합합니다."
             }
             ],
             "image": [
@@ -488,17 +501,18 @@ module.exports ={
             }
         },
         "ISFJ": {
+            "category":"(헌신적인 수호자)",
             "recommendedScents": ["Floral", "Sweet"],
             "perfumeRecommendations": [
             {
                 "perfumeNameKor": "조말론 '피오니 앤 블러쉬 스웨이드'",
                 "perfumeNameEng": "Jo Malone 'Peony & Blush Suede'",
-                "perfumeDescription": "책임감 있고 배려심 깊은 성격에 어울리는 따뜻하고 안정적인 향"
+                "perfumeDescription": "오렌지와 자스민의 플로럴 노트로 시작해 바닐라와 패출리가 더해진 클래식 앰버 플로럴 향수입니다. 우아하고 여성스러움을 강조하며, 세련된 매력을 전달합니다. 특별한 날이나 격식을 차리는 자리에서 잘 어울립니다."
             },
             {
                 "perfumeNameKor": "랑콤 '라 비 에 벨'",
                 "perfumeNameEng": "Lancôme 'La Vie Est Belle'",
-                "perfumeDescription": "달콤하고 플로럴한 향"
+                "perfumeDescription": "라벤더와 바닐라의 부드럽고 달콤한 조화가 특징인 앰버 플로럴 향수입니다. 따뜻하고 포근하며, 섬세한 여성미를 강조합니다. 일상적인 사용부터 저녁 모임까지 폭넓게 활용 가능합니다."
             }
             ],
             "image": [
@@ -525,17 +539,18 @@ module.exports ={
             }
         },
         "ISTJ": {
+            "category":"(원칙적인 관리자)",
             "recommendedScents": ["Woody", "Musk"],
             "perfumeRecommendations": [
             {
                 "perfumeNameKor": "톰 포드 '그레이 베티버'",
                 "perfumeNameEng": "Tom Ford 'Grey Vetiver'",
-                "perfumeDescription": "신중하고 체계적인 성격에 어울리는 차분하고 깊이 있는 향"
+                "perfumeDescription": "우디 계열의 오우드와 샌달우드, 앰버가 조화를 이루며 깊고 관능적인 향수를 제공합니다. 고급스럽고 중후하며, 절제된 세련미를 전달합니다. 포멀한 자리나 겨울철 저녁 모임에 적합합니다."
             },
             {
                 "perfumeNameKor": "샤넬 '알뤼르 옴므 스포츠'",
                 "perfumeNameEng": "Chanel 'Allure Homme Sport'",
-                "perfumeDescription": "상쾌하고 머스크한 향"
+                "perfumeDescription": "아이리스와 앰버의 부드럽고 세련된 조화가 특징인 현대적이고 고급스러운 향수입니다. 깨끗하고 프로페셔널한 이미지를 전달하며, 품격 있는 매력을 강조합니다. 오피스웨어나 격식을 차리는 자리에서 적합하며, 봄과 여름철에 잘 어울립니다."
             }
             ],
             "image": [
@@ -562,17 +577,18 @@ module.exports ={
             }
         },
         "ISTP": {
+            "category":"(능숙한 해결사)",
             "recommendedScents": ["Spicy", "Woody"],
             "perfumeRecommendations": [
             {
                 "perfumeNameKor": "메종 마르지엘라 '재즈 클럽'",
                 "perfumeNameEng": "Maison Margiela 'Jazz Club'",
-                "perfumeDescription": "즉흥적이고 실용적인 성격에 어울리는 강렬하고 활동적인 향"
+                "perfumeDescription": "럼과 스파이스의 강렬한 탑 노트로 시작해 튜베로즈와 가죽의 관능적인 미들 노트를 거쳐, 벤조인과 구아이악 우드의 따뜻한 베이스로 마무리되는 앰버리 스파이시 향수입니다. 강렬하고 대담하며, 불의 힘과 변화를 상징하는 남성미 넘치는 향수입니다. 저녁 모임이나 특별한 이벤트에 적합하며, 가을과 겨울철에 특히 잘 어울립니다."
             },
             {
                 "perfumeNameKor": "불가리 '맨 블랙 코롬'",
                 "perfumeNameEng": "Bvlgari 'Man Black Cologne'",
-                "perfumeDescription": "스파이시하고 우디한 향"
+                "perfumeDescription": "만다린 오렌지와 레몬의 상쾌한 시트러스 탑 노트, 바이올렛과 너트멕의 독특한 미들 노트, 그리고 가죽과 패출리의 따뜻한 베이스가 조화를 이룹니다. 클래식하면서도 독창적인 매력을 지닌 대담하고 세련된 향수입니다. 포멀한 자리나 특별한 날에 적합하며, 사계절 내내 사용 가능하지만 특히 가을과 겨울철에 잘 어울립니다."
             }
             ],
             "image": [

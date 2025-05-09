@@ -9,6 +9,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'GowunBatang', sans-serif !important;
+    word-break:keep-all;
 }
 
 body {
@@ -103,7 +104,7 @@ footer {
 }
 
 .ReStartButton:hover {
-    background-color: #bebebec0;
+    background-color: #ffffffc0;
     transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }

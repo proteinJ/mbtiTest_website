@@ -1,4 +1,6 @@
-
+* {
+    text-align: justify;
+}
 
 .container {
     background-image: url("../image/main-background.png");
@@ -32,7 +34,7 @@ span {
     color: #000000;
     font-weight: 500;
     font-size: 20px;
-    text-shadow: 0px 0px 1px #000000;;
+    text-shadow: 0px 0px 1px #000000;
 }
 
 h4 {
@@ -111,6 +113,12 @@ h1 {
     padding: 30px;
 }
 
+.recommand-scent-content{
+    display:flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 .perfume-discription-container{
     display: flex;
     align-items: left;
@@ -134,7 +142,7 @@ h1 {
 .recommand-perfume-title-container{
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .recommand-perfume-content {
@@ -146,9 +154,10 @@ h1 {
 }
 
 .recommand-perfume-image {
-    height: 12.5em;
-    width: 12.5em;
-    border: 3px solid #000000;
+    height: 18em;
+    width: 15em;
+    border: 3px solid #ffffff;
+    border-radius: 10px;
 }
 
 .recommand-perfume-text-container {
