@@ -119,10 +119,28 @@ h1 {
         height: auto;
         max-height: 300px;
     }
+    .card-front, .card-back {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        aspect-ratio: 3 / 5; /* 너비 기준으로 비율 유지 */
+    }
 }
 
-@media (max-width: 530px) {
+@media (max-width: 680px) {
     h1 {
-        font-size: 45px;
+        font-size: 40px;
+    }
+    h2 {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 630px) {
+    h1 {
+        font-size: 30px;
+    }
+    h2 {
+        font-size: 14px;
     }
 }

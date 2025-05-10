@@ -196,7 +196,7 @@ h1 {
   .content-container {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 100px;
     padding: 10px;
     margin-top: 4%;
   }
@@ -255,8 +255,13 @@ h1 {
     height: auto;
   }
 
+  .recommand-scent-container-1 {
+    margin-bottom: 40px;
+  }
+
   .restart-btn-container {
-    margin-top: 30px;
+    margin-top: 70px;
+    margin-bottom: 60px;
   }
 
   .ReStartButton {

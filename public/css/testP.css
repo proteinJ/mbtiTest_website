@@ -74,15 +74,18 @@ input[type="radio"] {
 
 @media (max-width: 800px) {
     .question-container {
-        margin-top: -4% ;
+        margin-top: -40px;
     }
     .question-box {
-        width: 90%;
+        width: 100%;
         max-width: 100%;
         height: auto;
         padding: 20px;
         margin: 20px 0;
         font-size: 0.9em;
         border-radius: 20px;
+    }
+    .question-text {
+        font-size: 1.7em;
     }
 }
