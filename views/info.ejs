@@ -12,6 +12,21 @@
     .info-section {
         margin-bottom: 50px;
     }
+    ul {
+      list-style-type: disc;       /* 불릿 모양 (기본값) */
+      list-style-position: outside; /* 점을 밖에 두고 텍스트 정렬 */
+      padding-left: 1.5rem;        /* 전체적으로 들여쓰기 */
+      margin: 0.5rem 0;
+    }
+    h3 {
+      margin-top: 10px;
+    }
+    
+    @media (max-width:800px) {
+      .container {
+        padding: 90px 20px 20px 20px;
+      }
+    }
   </style>
 </head>
 
@@ -21,12 +36,7 @@
     <nav class="navbar">
       <div class="home-icon">
         <a href="/">
-          <img src="/image/navbar-home-icon.png" id="navbar-home-icon" style="height: 40px;"> 
-        </a>
-      </div>
-      <div class="resultList-Tag">
-        <a href="/resultList" style="font-size: 30px; color: white; text-decoration: none; margin-left: 15px;">
-          All Perfume
+          <img src="/image/navbar-home-icon-black.png" id="navbar-home-icon-black" style="height: 40px;"> 
         </a>
       </div>
     </nav>
@@ -40,32 +50,80 @@
               <h2>About</h2>
               <p>
                 Perfum MBTI Test는 MBTI 성격 유형을 기반으로 당신에게 어울리는 향수를 추천해주는 웹 서비스입니다.
-                재미있고 직관적인 카드 UI를 통해 자신이나 친구의 향수 취향을 알아보세요!
+                우리는 성격의 언어인 MBTI와 향의 감성을 연결해 나만의 향수를 발견할 수 있는 경험을 제안합니다. <br>
+                자신이나 친구의 향과 추천 향수를 알아보세요!
               </p>
             </section>
         
             <section id="product" class="info-section">
-              <h2>Product</h2>
+              <h2>Produced</h2>
               <p>
                 추천되는 향수는 다양한 브랜드의 제품으로 구성되며, 향의 톤, 계절감, 개성 등을 반영해 MBTI별로 조화로운 향기를 제안합니다.
                 향수 데이터는 주관적인 큐레이션을 포함합니다.
               </p>
             </section>
         
-            <section id="contact" class="info-section">
-              <h2>Contact</h2>
-              <p>
-                문의 사항이 있으시면 아래 이메일로 연락해 주세요.<br>
-                ✉️ <a href="mailto:proteinj@example.com">proteinj@example.com</a>
-              </p>
-            </section>
         
             <section id="privacy-policy" class="info-section">
               <h2>Privacy Policy</h2>
+            
               <p>
-                본 사이트는 사용자의 개인정보를 수집하거나 저장하지 않으며, MBTI 테스트 결과는 서버에 저장되지 않고 클라이언트에서만 처리됩니다. 안심하고 이용하셔도 됩니다.
+                본 사이트는 사용자의 개인정보를 수집하거나 저장하지 않으며,
+                MBTI 테스트 결과는 서버에 저장되지 않고 클라이언트에서만 처리됩니다.
+                안심하고 이용하셔도 됩니다.
+              </p>
+            
+              <h3>1. 수집하는 정보</h3>
+              <p>저희는 다음과 같은 정보를 수집할 수 있습니다:</p>
+              <ul>
+                <li>사용자가 입력한 MBTI 유형</li>
+                <li>추천 결과에 대한 클릭 및 조회 기록</li>
+                <li>쿠키를 통한 세션 정보 (예: 추천 결과 유지, UI 설정 등)</li>
+                <li>모든 정보는 익명 처리되며, 개인을 식별할 수 있는 정보는 수집하지 않습니다.</li>
+              </ul>
+            
+              <h3>2. 정보 수집 목적</h3>
+              <p>수집된 정보는 아래 목적에 사용됩니다:</p>
+              <ul>
+                <li>향수 추천 결과 유지 및 재표시</li>
+                <li>사용자 환경 최적화</li>
+                <li>MBTI 유형별 추천 통계 등 내부 서비스 개선</li>
+              </ul>
+            
+              <h3>3. 쿠키 사용 안내</h3>
+              <p>
+                본 웹사이트는 쿠키(cookie)를 사용합니다. 쿠키는 사용자의 브라우저에 저장되어,
+                추천 결과를 유지하거나 인터페이스 설정을 기억하는 데 사용됩니다.
+              </p>
+              <p>
+                사용자는 브라우저 설정을 통해 쿠키 저장을 거부할 수 있습니다.
+                단, 이 경우 일부 기능이 제한될 수 있습니다.
+              </p>
+            
+              <h3>4. 제3자 제공</h3>
+              <p>
+                수집된 정보는 외부에 판매하거나 공유하지 않으며,
+                오직 내부 서비스 개선과 사용자 경험 향상을 위해서만 사용됩니다.
+              </p>
+            
+              <h3>5. 개인정보처리방침 변경</h3>
+              <p>
+                본 개인정보처리방침은 필요에 따라 변경될 수 있습니다.
+                중요한 변경 사항이 있을 경우 웹사이트를 통해 사전 고지합니다.
               </p>
             </section>
+            
+            <section id="contact" class="info-section">
+              <h2>Contact</h2>
+              <p>
+                협업 제안, 콘텐츠 사용, 기타 문의는 아래 이메일로 연락해 주세요. <br>
+
+                ✉️ <a href="mailto:2243083@donga.ac.kr">2243083@donga.ac.kr</a> <br>
+
+                빠르고, 성실하게 답변드리겠습니다.<br>
+              </p>
+            </section>
+
           </div>
       </div>
       
