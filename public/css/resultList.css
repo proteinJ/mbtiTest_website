@@ -4,10 +4,11 @@
     min-height: 100vh;
 }
 
+
 .content-container {
     perspective: 1000px;
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2열로 구성 */
+    grid-template-columns: repeat(2, 1fr); 
     align-items: center;
     justify-items: center;
     gap: 50px;
@@ -22,7 +23,8 @@
     align-items: center;
     justify-items: center;
     width: 300px;
-    height: 500px;
+    aspect-ratio: 3 / 5;
+    /* height: 500px; */
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     cursor: pointer;
     border-radius: 12px;
@@ -108,11 +110,19 @@ h1 {
 }
 
 @media (max-width: 800px) {
+    .container {
+        width: 100%;
+        padding: 60px 20px 20px 20px;
+        min-height: 100vh;        /* 최소한 화면 높이 */
+        height: auto;             /* 내용만큼 자동 확장 */
+        overflow: visible;        /* 필요시 */
+    }
+    
     .mbti-type-container {
     width: 100%;
     max-width: 300px;
     height: auto;
-    aspect-ratio: 3 / 5; /* 너비 기준으로 비율 유지 */
+    aspect-ratio: 3 / 5; 
     }
     .card-img {
         width: 100%;
@@ -123,7 +133,7 @@ h1 {
         width: 100%;
         max-width: 300px;
         height: auto;
-        aspect-ratio: 3 / 5; /* 너비 기준으로 비율 유지 */
+        aspect-ratio: 3 / 5; 
     }
 }
 
@@ -138,9 +148,30 @@ h1 {
 
 @media (max-width: 630px) {
     h1 {
-        font-size: 30px;
+        font-size: 1.4em;
     }
     h2 {
-        font-size: 14px;
+        font-size: 1.0em;
+    }
+    .card-front, .card-back {
+        gap: 0px;
+        padding: 0px;
+    }
+    .card-img {
+        width: 100%;
+        height: 150px;
+        max-height: 300px;
+    }
+}
+
+@media (max-width: 400px) {
+    h1 {
+        font-size: 25px;
+    }
+    h2 {
+        font-size: 12px;
+    }
+    .card-description {
+        line-height: normal;
     }
 }

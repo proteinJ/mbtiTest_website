@@ -1,0 +1,18 @@
+.info-section {
+    margin-bottom: 50px;
+}
+ul {
+  list-style-type: disc;       /* 불릿 모양 (기본값) */
+  list-style-position: outside; /* 점을 밖에 두고 텍스트 정렬 */
+  padding-left: 1.5rem;        /* 전체적으로 들여쓰기 */
+  margin: 0.5rem 0;
+}
+h3 {
+  margin-top: 10px;
+}
+
+@media (max-width:800px) {
+  .container {
+    padding: 90px 20px 20px 20px;
+  }
+}
