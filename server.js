@@ -3,18 +3,22 @@ if (process.env.NODE_ENV !== 'production') {
 }
 const LOCAL_DEV_COOKIE_SECRET = 'weak_fallback_cookie_scret_key_2243083';
 const COOKIE_SECRET_FROM_ENV = process.env.COOKIE_SECRET || LOCAL_DEV_COOKIE_SECRET;
-const APP_PORT = process.env.PORT;
+const APP_PORT = process.env.PORT || 3000;
 
 const express = require("express");
 const app = express();
 const ejs = require("ejs");
 const path = require('path');
 const cookieParser = require('cookie-parser');
+const helmet = require('helmet');
 
 
 
 // 쿠키 파서 등록
 app.use(cookieParser(COOKIE_SECRET_FROM_ENV));
+
+// 보안 관련 HTTP
+app.use(helmet());
 
 // DB 연결
 const DataBase = require('./config/DataBase');
@@ -83,8 +87,11 @@ app.post('/submit', (req, res) => {
   
     // 쿠키에 저장 (1시간 유지)
     res.cookie('totalScore', JSON.stringify(traitScores), {
-    maxAge: 900000, // 15분
-    httpOnly: true // JS에서 접근 금지
+        maxAge: 900000, // 15분
+        httpOnly: true, // JS에서 접근 금지
+        secure: process.env.NODE_ENV === 'production', // 운영 환경에서만 HTTPS 필수 (이전 답변에서 권장됨)
+        signed: true, // 서명된 쿠키 사용 (cookieParser 초기화 시 secret 사용 의미)
+        sameSite: 'Lax' // CSRF 방어 (이전 답변에서 권장됨)
     });
 
     return res.json({ redirectTo: '/resultPage' });
@@ -156,6 +163,11 @@ app.get('/resultPage', (req, res) => {
         return res.status(500).send(`❌ 결과 데이터를 찾을 수 없습니다: ${mbtiType}`);
     }
     
+    if (process.env.NODE_ENV !== 'production') { // 개발 환경에서만 로그
+        console.log("쿠키 내용:", req.cookies);
+        console.log("myScores:", myScores);
+    }
+    
 
     res.render('resultPage', { 
         mbtiType,
@@ -166,11 +178,8 @@ app.get('/resultPage', (req, res) => {
         TF_value,
         JP_value
         });
-    // } else {
-    //     // 하나라도 점수가 없으면 에러 메시지
-    //     res.status(400).send("⚠️ 모든 테스트를 완료하셔야 결과를 볼 수 있어요!");
     }
-// }
+
 );
 
 
