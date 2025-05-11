@@ -1,16 +1,25 @@
+if (process.env.NODE_ENV !== 'production') {
+    require('dotenv').config();
+}
+const LOCAL_DEV_COOKIE_SECRET = 'weak_fallback_cookie_scret_key_2243083';
+const COOKIE_SECRET_FROM_ENV = process.env.COOKIE_SECRET || LOCAL_DEV_COOKIE_SECRET;
+const APP_PORT = process.env.PORT;
+
 const express = require("express");
 const app = express();
 const ejs = require("ejs");
 const path = require('path');
 const cookieParser = require('cookie-parser');
 
+
+
 // 쿠키 파서 등록
-app.use(cookieParser());
+app.use(cookieParser(COOKIE_SECRET_FROM_ENV));
 
 // DB 연결
-const DataBase = require('./public/config/DataBase'); 
-const DataBase_P = require('./public/config/DateBase_P'); 
-const DataBase_Qtest = require('./public/config/DataBase_Qtest');
+const DataBase = require('./config/DataBase');
+const DataBase_P = require('./config/DateBase_P');
+const DataBase_Qtest = require('./config/DataBase_Qtest');
 
 app.use(express.json());
 
@@ -74,16 +83,12 @@ app.post('/submit', (req, res) => {
   
     // 쿠키에 저장 (1시간 유지)
     res.cookie('totalScore', JSON.stringify(traitScores), {
-    maxAge: 1000 * 60 * 60, // 1시간
+    maxAge: 900000, // 15분
     httpOnly: true // JS에서 접근 금지
     });
 
     return res.json({ redirectTo: '/resultPage' });
-    
-    console.log('클라이언트로부터 받은 최종 점수:', traitScores);
 
-    console.log('세션에 최종 점수 저장 완료:', req.session.totalScore);
-    res.json({ message: '최종 점수가 성공적으로 저장되었습니다.' });
   });
 
 app.get('/testP', (req, res) => {         
@@ -168,8 +173,7 @@ app.get('/resultPage', (req, res) => {
 // }
 );
 
-const PORT = process.env.PORT || 3000 
 
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+app.listen(APP_PORT, () => {
+    console.log(`Server running on port ${APP_PORT}`);
 })
