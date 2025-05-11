@@ -23,15 +23,19 @@
         <div class="container-content">
             <% for (let i = 0; i < 28; i++) { %> <div class="question-container" id="question<%= i + 1 %>" style="display: <%= i === 0 ? 'block' : 'none' %>">
                     <div class="process-container">
-                        <p class="process"><%= i + 1 %> / 28</p> </div>
+                        <p class="process"><%= i + 1 %> / 28</p> 
+                    </div>
+                    <div clas="question-situation-container">
+                      <p class="question-situation"><%= mbtiQuestion.situation[i] %></p>
+                    </div>
                     <div class="question-button">
                         <input type="radio" name="question<%= i %>" id="q<%= i %>_option0" value="0" onchange="nextQuestion(<%= i %>, this.value)">
                         <label for="q<%= i %>_option0" class="question-box">
-                            <p class="question-text"><%= mbtiQuestion.Questions[i * 2] %></p> </label>
+                            <p class="question-text"><%= mbtiQuestion.options[i * 2] %></p> </label>
 
                         <input type="radio" name="question<%= i %>" id="q<%= i %>_option1" value="1" onchange="nextQuestion(<%= i %>, this.value)">
                         <label for="q<%= i %>_option1" class="question-box">
-                            <p class="question-text"><%= mbtiQuestion.Questions[i * 2 + 1] %></p> </label>
+                            <p class="question-text"><%= mbtiQuestion.options[i * 2 + 1] %></p> </label>
                     </div>
                 </div>
             <% } %>

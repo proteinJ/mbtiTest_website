@@ -24,7 +24,9 @@
     align-items:center;
     justify-content: center;
     height:10%;
+    margin-bottom: 200px;
 }
+
 
 .process {
     color: rgb(255, 255, 255);
@@ -37,12 +39,12 @@
     flex-direction: column;
     align-items:center;
     justify-content: center;
-    margin-top: 35%;
     height:10%;
+    margin-top: 40px;
 }
 
 .question-box {
-    margin: 5%;
+    margin: 3%;
     padding: 5%;
     display: inline-flex;
     flex-direction: column; 
@@ -52,7 +54,7 @@
     background-color: #ffffff3a;
     border-radius: 30px;
     height: 8em;
-    width: 40em;
+    width: 38em;
     cursor: pointer;
 }
 
@@ -65,10 +67,20 @@ input[type="radio"] {
 }
 
 .question-text {
-    line-height: 1.25em;
-    font-size: 2em;
+    line-height: 1.2em;
+    font-size: 1.8em;
     font-weight: 200;
     color: rgba(108, 49, 148, 0.769);
+}
+
+.question-situation {
+    font-size: 2.5rem;
+    font-weight: 500;
+    text-align: center;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    letter-spacing: 1px;
+    line-height: 1.4;
+    color: #ffffff;
 }
 
 

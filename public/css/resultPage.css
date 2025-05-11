@@ -256,8 +256,8 @@ h1 {
   }
 
   .recommand-perfume-image {
-    width: 10em;
-    height: 10em;
+    width: 14em;
+    height: 18em;
   }
 
   .recommand-perfume-text-container {
@@ -284,5 +284,5 @@ h1 {
     font-size: 0.9rem;
     padding: 10px;
   }
-  }
+}
   
