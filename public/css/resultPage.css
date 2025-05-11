@@ -1,11 +1,7 @@
-@font-face {
-    font-family: 'YoonGothic';
-    src: url('/fonts/HANYGO240.ttf') format('truetype');
-    font-style: normal;
-}
+
 
 * {
-    font-family: 'YoonGothic', sans-serif !important;
+    font-family: 'GowunBatang', sans-serif !important;
 }
 
 .container {
@@ -38,6 +34,7 @@
 }
 
 span {
+    text-align: left;
     color: #000000;
     font-weight: 500;
     font-size: 20px;
@@ -149,6 +146,7 @@ h1 {
 .recommand-perfume-title-container{
     display: flex;
     justify-content: center;
+    flex-direction: column;
     margin-bottom: 10px;
 }
 

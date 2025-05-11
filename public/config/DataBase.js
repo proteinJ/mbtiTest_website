@@ -1,7 +1,7 @@
 module.exports ={
   "E": {
     "ESTP": {
-        "category":"(자유로운 도전가)",
+      "category":"(자유로운 도전가)",
       "recommendedScents": ["Citrus", "Spicy"],
       "perfumeRecommendations": [
         {
@@ -21,7 +21,8 @@ module.exports ={
       ],
       "scentDescriptions": {
         "Citrus": "시트러스 향은 상큼하고 기분 좋은 상쾌함을 줍니다.",
-        "Spicy": "스파이시 향은 강렬하고 에너지 넘치는 느낌을 줍니다."
+        "Spicy": "스파이시 향은 강렬하고 에너지 넘치는 느낌을 줍니다.",
+        "characteristic": "즉흥적이고 에너제틱한 성격에 어울리는 상쾌하고 강렬한 향"
       },
       "personalityTraits": {
         "relationships": "사교적이고 현실 감각이 뛰어나며, 주변을 생동감 넘치게 만듦.",
@@ -59,7 +60,8 @@ module.exports ={
       ],
       "scentDescriptions": {
         "Citrus": "시트러스 향은 상큼하고 기분 좋은 상쾌함을 줍니다.",
-        "Oriental": "오리엔탈 향은 따뜻하고 고급스러운 느낌을 줍니다."
+        "Oriental": "오리엔탈 향은 따뜻하고 고급스러운 느낌을 줍니다.",
+        "characteristic": "목표 지향적이고 카리스마 있는 성격에 어울리는 강렬하고 세련된 향"
       },
       "personalityTraits": {
         "relationships": "조직을 이끄는 리더십이 강하며, 사람들을 효율적으로 관리함.",
@@ -97,7 +99,8 @@ module.exports ={
       ],
       "scentDescriptions": {
         "Fruity": "프루티 향은 달콤하고 상큼한 느낌을 줍니다.",
-        "Citrus": "시트러스 향은 상큼하고 기분 좋은 상쾌함을 줍니다."
+        "Citrus": "시트러스 향은 상큼하고 기분 좋은 상쾌함을 줍니다.",
+        "characteristic": "호기심 많고 창의적인 성격에 어울리는 신선하고 다채로운 향"
       },
       "personalityTraits": {
         "relationships": "논쟁을 즐기며, 다양한 사람들과의 토론을 통해 새로운 아이디어를 얻음.",
@@ -135,7 +138,8 @@ module.exports ={
           ],
           "scentDescriptions": {
             "Fruity": "프루티 향은 달콤하고 상큼한 느낌을 줍니다.",
-            "Floral": "플로럴 향은 부드럽고 자연스러운 느낌을 줍니다."
+            "Floral": "플로럴 향은 부드럽고 자연스러운 느낌을 줍니다.",
+            "characteristic": "창의적이고 활발한 성격에 어울리는 다채롭고 경쾌한 향"
           },
           "personalityTraits": {
             "relationships": "누구와도 쉽게 친해지며, 사람들과의 교류에서 에너지를 얻음.",
@@ -173,8 +177,9 @@ module.exports ={
       ],
       "scentDescriptions": {
       "Floral": "플로럴 향은 부드럽고 자연스러운 느낌을 줍니다.",
-      "Woody": "우디 향은 따뜻하고 안정적인 느낌을 줍니다."
-      },
+      "Woody": "우디 향은 따뜻하고 안정적인 느낌을 줍니다.",
+        "characteristic": "따뜻하고 카리스마 있는 성격에 어울리는 부드럽고 깊이 있는 향"
+    },
       "personalityTraits": {
       "relationships": "사람들을 이끄는 능력이 뛰어나며, 깊이 있는 관계를 형성하는 것을 선호함.",
       "hobbies": "사람들과 어울리는 활동을 좋아하며, 토론과 자기 계발에 관심이 많음.",
@@ -211,8 +216,9 @@ module.exports ={
       ],
       "scentDescriptions": {
       "Fruity": "프루티 향은 달콤하고 상큼한 느낌을 줍니다.",
-      "Spicy": "스파이시 향은 강렬하고 에너지 넘치는 느낌을 줍니다."
-      },
+      "Spicy": "스파이시 향은 강렬하고 에너지 넘치는 느낌을 줍니다.",
+        "characteristic": "창의적이고 활발한 성격에 어울리는 다채롭고 경쾌한 향"
+    },
       "personalityTraits": {
       "relationships": "사람들과 함께하는 것을 좋아하며, 분위기를 밝게 만드는 능력이 있음.",
       "hobbies": "파티, 공연, 여행 등 즉흥적인 활동을 선호함.",
@@ -249,8 +255,9 @@ module.exports ={
       ],
       "scentDescriptions": {
       "Woody": "우디 향은 따뜻하고 안정적인 느낌을 줍니다.",
-      "Citrus": "시트러스 향은 상큼하고 기분 좋은 상쾌함을 줍니다."
-      },
+      "Citrus": "시트러스 향은 상큼하고 기분 좋은 상쾌함을 줍니다.",
+        "characteristic": "책임감 강하고 현실적인 성격에 어울리는 단단하고 깔끔한 향"
+    },
       "personalityTraits": {
       "relationships": "규칙과 질서를 중요하게 여기며, 조직적인 관계를 선호함.",
       "hobbies": "체계적인 계획을 세우는 활동, 자기 계발에 관심이 많음.",
@@ -287,8 +294,9 @@ module.exports ={
       ],
       "scentDescriptions": {
       "Floral": "플로럴 향은 부드럽고 자연스러운 느낌을 줍니다.",
-      "Sweet": "스위트 향은 달콤하고 따뜻한 느낌을 줍니다."
-      },
+      "Sweet": "스위트 향은 달콤하고 따뜻한 느낌을 줍니다.",
+        "characteristic": "따뜻하고 카리스마 있는 성격에 어울리는 부드럽고 깊이 있는 향"
+    },
       "personalityTraits": {
       "relationships": "사람들과 조화를 이루는 것을 중요시하며, 타인을 배려하는 성향이 강함.",
       "hobbies": "사람들과 함께하는 활동을 즐기며, 봉사나 사회적 활동에 관심이 많음.",
@@ -331,8 +339,9 @@ module.exports ={
         ],
         "scentDescriptions": {
             "Floral": "플로럴 향은 부드럽고 자연스러운 느낌을 줍니다.",
-            "Green": "그린 향은 신선하고 자연적인 느낌을 줍니다."
-        },
+            "Green": "그린 향은 신선하고 자연적인 느낌을 줍니다.",
+          "characteristic": "감수성이 풍부하고 이상주의적인 성격에 어울리는 부드럽고 평화로운 향"
+          },
         "personalityTraits": {
             "relationships": "깊고 의미 있는 관계를 선호하며, 타인의 감정을 세심하게 이해함.",
             "hobbies": "글쓰기, 예술, 음악 등 감성을 표현할 수 있는 활동을 즐김.",
@@ -369,8 +378,9 @@ module.exports ={
         ],
         "scentDescriptions": {
             "Musk": "머스크 향은 부드럽고 차분한 느낌을 줍니다.",
-            "Woody": "우디 향은 따뜻하고 안정적인 느낌을 줍니다."
-        },
+            "Woody": "우디 향은 따뜻하고 안정적인 느낌을 줍니다.",
+          "characteristic": "깊이 있는 사고와 직관적인 성격에 어울리는 신비롭고 차분한 향"
+          },
         "personalityTraits": {
             "relationships": "적은 사람과 깊은 관계를 맺으며, 의미 있는 대화를 선호함.",
             "hobbies": "글쓰기, 명상, 예술 등 내면을 탐구하는 활동을 즐김.",
@@ -407,8 +417,9 @@ module.exports ={
         ],
         "scentDescriptions": {
             "Musk": "머스크 향은 부드럽고 차분한 느낌을 줍니다.",
-            "Woody": "우디 향은 따뜻하고 안정적인 느낌을 줍니다."
-        },
+            "Woody": "우디 향은 따뜻하고 안정적인 느낌을 줍니다.",
+          "characteristic": "깊이 있는 사고와 논리적인 성격에 어울리는 차분하고 지적인 향"
+          },
         "personalityTraits": {
             "relationships": "혼자만의 시간을 즐기지만, 지적 대화에는 큰 흥미를 보임.",
             "hobbies": "철학, 과학, 프로그래밍 등 논리적 사고를 요하는 취미를 선호.",
@@ -445,8 +456,9 @@ module.exports ={
         ],
         "scentDescriptions": {
             "Woody": "우디 향은 따뜻하고 안정적인 느낌을 줍니다.",
-            "Spicy": "스파이시 향은 강렬하고 에너지 넘치는 느낌을 줍니다."
-        },
+            "Spicy": "스파이시 향은 강렬하고 에너지 넘치는 느낌을 줍니다.",
+          "characteristic": "냉철하고 계획적인 성격에 어울리는 강렬하고 깊이 있는 향"
+          },
         "personalityTraits": {
             "relationships": "소수의 깊은 관계를 선호하며, 감정보다는 논리를 중시함.",
             "hobbies": "독서, 자기 계발, 체계적인 목표 설정 등의 활동을 즐김.",
@@ -483,8 +495,9 @@ module.exports ={
             ],
             "scentDescriptions": {
             "Floral": "플로럴 향은 부드럽고 자연스러운 느낌을 줍니다.",
-            "Woody": "우디 향은 따뜻하고 안정적인 느낌을 줍니다."
-            },
+            "Woody": "우디 향은 따뜻하고 안정적인 느낌을 줍니다.",
+              "characteristic": "자유롭고 감성적인 성격에 어울리는 부드럽고 자연스러운 향"
+          },
             "personalityTraits": {
             "relationships": "내성적이지만 따뜻하며, 주변 사람들에게 조용한 배려를 보임.",
             "hobbies": "음악, 미술, 자연과 관련된 활동을 즐기며, 감성을 표현하는 것을 좋아함.",
@@ -521,8 +534,9 @@ module.exports ={
             ],
             "scentDescriptions": {
             "Floral": "플로럴 향은 부드럽고 자연스러운 느낌을 줍니다.",
-            "Sweet": "스위트 향은 달콤하고 따뜻한 느낌을 줍니다."
-            },
+            "Sweet": "스위트 향은 달콤하고 따뜻한 느낌을 줍니다.",
+              "characteristic": "책임감 있고 배려심 깊은 성격에 어울리는 따뜻하고 안정적인 향"
+          },
             "personalityTraits": {
             "relationships": "조용하지만 친절하며, 신뢰할 수 있는 관계를 중요하게 여김.",
             "hobbies": "손으로 하는 공예, 요리, 독서 등 차분한 활동을 선호함.",
@@ -560,8 +574,9 @@ module.exports ={
             ],
             "scentDescriptions": {
             "Woody": "우디 향은 따뜻하고 안정적인 느낌을 줍니다.",
-            "Musk": "머스크 향은 부드럽고 차분한 느낌을 줍니다."
-            },
+            "Musk": "머스크 향은 부드럽고 차분한 느낌을 줍니다.",
+              "characteristic": "신중하고 체계적인 성격에 어울리는 차분하고 깊이 있는 향"
+          },
             "personalityTraits": {
             "relationships": "신뢰할 수 있는 관계를 중요시하며, 약속을 철저히 지킴.",
             "hobbies": "역사, 독서, 퍼즐 등 질서와 논리를 요하는 활동을 선호.",
@@ -598,8 +613,9 @@ module.exports ={
             ],
             "scentDescriptions": {
             "Spicy": "스파이시 향은 강렬하고 에너지 넘치는 느낌을 줍니다.",
-            "Woody": "우디 향은 따뜻하고 안정적인 느낌을 줍니다."
-            },
+            "Woody": "우디 향은 따뜻하고 안정적인 느낌을 줍니다.",
+              "characteristic": "즉흥적이고 실용적인 성격에 어울리는 강렬하고 활동적인 향"
+          },
             "personalityTraits": {
             "relationships": "필요할 때만 소통하며, 관계에서 자유로움을 선호.",
             "hobbies": "스포츠, 자동차, 기술적인 작업 등 실용적인 취미를 즐김.",

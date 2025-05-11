@@ -74,7 +74,7 @@
             <p class="box-title">추천 향</p>
             <div class="recommand-scent-container">
               <div class="recommand-scent-title-container">
-                <h4> 감수성이 풍부하고 이상주의적인 성격에 어울리는 부드럽고 평화로운 향</h4>
+                <h4><%= mbtiData["scentDescriptions"]["characteristic"] %></h4>
               </div>
 
               <div class="recommand-scent-content">
@@ -82,7 +82,7 @@
 
                   <div class="perfume-discription-container">
                     <div class="perfume-discription-title">
-                      <span style="width: 6em; display: flex; filter: grayscale(100%) brightness(150%);" > <%= DataBase_P[mbtiData["recommendedScents"][i]][0] %> <%= mbtiData["recommendedScents"][i] %> </span>
+                      <span style="width: 6em; display: flex;" > <%= DataBase_P[mbtiData["recommendedScents"][i]][0] %> <%= mbtiData["recommendedScents"][i] %> </span>
                     </div>
 
                     <div class="perfume-discription-text-container">
@@ -104,7 +104,7 @@
                 <img src= <%= mbtiData["image"][i] %> alt="Perfume" class="recommand-perfume-image">
                 <div class="recommand-perfume-text-container">
                   <div class="recommand-perfume-title-container">
-                    <span><%= mbtiData["perfumeRecommendations"][i]["perfumeNameEng"] %><br> <%= mbtiData["perfumeRecommendations"][i]["perfumeNameKor"] %></span>
+                     <span><%= mbtiData["perfumeRecommendations"][i]["perfumeNameKor"] %></span> <br> <span style="font-size: 15px; margin-top: -20px;"><%= mbtiData["perfumeRecommendations"][i]["perfumeNameEng"] %></span>
                   </div>
                   <p style="font-size: 18px; font-weight: 100; color:rgb(46, 46, 46);"><%= mbtiData["perfumeRecommendations"][i]["perfumeDescription"] %></p>
                 </div>
