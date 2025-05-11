@@ -62,7 +62,7 @@
 
 @media (max-width: 800px) {
     .intro_text {
-        font-size: 26px;
+        font-size: 22px;
     }
     .container-content {
         gap: 70px;
@@ -70,6 +70,9 @@
     .next_btn {
         padding: 18px 30px;
         font-size: 26px;
+    }
+    strong {
+        font-size: 21px;
     }
 }
 

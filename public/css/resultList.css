@@ -53,13 +53,12 @@
     backface-visibility: hidden; /* 요소의 뒷면이 보이지 않도록 설정 */
     display: flex; /* 내용 정렬을 위해 flexbox 사용 */
     flex-direction: column; /* 세로 방향으로 내용 배치 */
-    justify-content: center; /* 수직 가운데 정렬 */
+    justify-content: flex-start;
     align-items: center; /* 수평 가운데 정렬 */
     padding: 20px; /* 내부 여백 */
     box-sizing: border-box; /* padding이 width, height에 포함되도록 설정 */
     border-radius: 10px; /* 모서리 둥글게 */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 그림자 효과 (선택 사항) */
-    gap: 15px;
 }
 
 .card-front {
@@ -74,14 +73,22 @@
     transform: rotateY(180deg); /* 뒷면은 처음에 180도 회전시켜 놓습니다. */
 }
 
+
 /* mbti-type-container에 마우스를 올렸을 때 */
 .mbti-type-container:hover .card-inner {
     transform: rotateY(180deg); /* card-inner를 180도 회전시켜 뒷면을 보여줍니다. */
 }
 
 .card-description {
-    line-height: 35px;
+    /* 기존 속성 */
+    line-height: 30px; /* 두 줄이 60px 높이에 깔끔하게 들어가도록 조정 */
     text-align: center;
+    height: 60px; /* 고정된 높이 유지 */
+
+    /* Flexbox 속성 추가 */
+    display: flex;          /* Flexbox 컨테이너로 지정 */
+    justify-content: center; /* 주축(기본은 가로)으로 콘텐츠 중앙 정렬 */
+    align-items: center;    /* 교차축(기본은 세로)으로 콘텐츠 중앙 정렬 */
 }
 
 .card-img {
@@ -106,7 +113,9 @@ h2 {
 
 h1 {
     font-size: 60px;
-    color: #503285
+    color: #503285;
+    margin: 0;
+    padding: 0;
 }
 
 @media (max-width: 800px) {
@@ -146,7 +155,7 @@ h1 {
     }
 }
 
-@media (max-width: 630px) {
+/* @media (max-width: 630px) {
     h1 {
         font-size: 1.4em;
     }
@@ -162,14 +171,14 @@ h1 {
         height: 150px;
         max-height: 300px;
     }
-}
+} */
 
-@media (max-width: 400px) {
+@media (max-width: 430px) {
     h1 {
-        font-size: 25px;
+        font-size: 29px;
     }
     h2 {
-        font-size: 12px;
+        font-size: 16px;
     }
     .card-description {
         line-height: normal;
