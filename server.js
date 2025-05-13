@@ -76,27 +76,32 @@ app.get('/intro', (req, res) => {
     res.render('introPage');
 })
 
-app.post('/submit', (req, res) => {
-    const traitScores = req.body;
-  
-    // 유효성 검사
-    if (!traitScores || typeof traitScores !== 'object') {
-        console.error('유효하지 않은 점수 데이터 수신:', traitScores);
-        return res.status(400).json({ message: '잘못된 점수 데이터 형식입니다.' });
-      }
-  
-    // 쿠키에 저장 (1시간 유지)
-    res.cookie('totalScore', JSON.stringify(traitScores), {
-        maxAge: 900000, // 15분
-        httpOnly: true, // JS에서 접근 금지
-        secure: process.env.NODE_ENV === 'production', // 운영 환경에서만 HTTPS 필수 (이전 답변에서 권장됨)
-        signed: true, // 서명된 쿠키 사용 (cookieParser 초기화 시 secret 사용 의미)
-        sameSite: 'Lax' // CSRF 방어 (이전 답변에서 권장됨)
+    app.post('/submit', (req, res) => {
+        console.log('Cookies:', req.cookies);  // 쿠키가 제대로 전달되는지 확인
+        console.log('Signed Cookies:', req.signedCookies);  // 서명된 쿠키가 제대로 전달되는지 확인
+
+        const traitScores = req.body;
+        console.log(traitScores);
+
+        // 유효성 검사
+        if (!traitScores || typeof traitScores !== 'object') {
+            console.error('유효하지 않은 점수 데이터 수신:', traitScores);
+            return res.status(400).json({ message: '잘못된 점수 데이터 형식입니다.' });
+        }
+    
+        // 쿠키에 저장 (15분 유지)
+        res.cookie('totalScore', JSON.stringify(traitScores), {
+            maxAge: 900000, // 15분
+            httpOnly: true, // JS에서 접근 금지
+            secure: false,
+            // secure: process.env.NODE_ENV === 'production' ? trye : false, // 운영 환경에서만 HTTPS 필수 (이전 답변에서 권장됨)
+            // signed: true,
+            sameSite: 'Lax' // CSRF 방어 (이전 답변에서 권장됨)
+        });
+
+        return res.json({ redirectTo: '/resultPage' });
+
     });
-
-    return res.json({ redirectTo: '/resultPage' });
-
-  });
 
 app.get('/testP', (req, res) => {         
     res.render('testP', { mbtiQuestion: DataBase_Qtest.questions});

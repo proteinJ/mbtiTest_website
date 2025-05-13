@@ -29,11 +29,11 @@
                       <p class="question-situation"><%= mbtiQuestion.situation[i] %></p>
                     </div>
                     <div class="question-button">
-                        <input type="radio" name="question<%= i %>" id="q<%= i %>_option0" value="0" onchange="nextQuestion(<%= i %>, this.value)">
+                        <input type="radio" name="question<%= i %>" id="q<%= i %>_option0" value="0" data-index="<%= i %>">
                         <label for="q<%= i %>_option0" class="question-box">
                             <p class="question-text"><%= mbtiQuestion.options[i * 2] %></p> </label>
 
-                        <input type="radio" name="question<%= i %>" id="q<%= i %>_option1" value="1" onchange="nextQuestion(<%= i %>, this.value)">
+                        <input type="radio" name="question<%= i %>" id="q<%= i %>_option1" value="1" data-index="<%= i %>">
                         <label for="q<%= i %>_option1" class="question-box">
                             <p class="question-text"><%= mbtiQuestion.options[i * 2 + 1] %></p> </label>
                     </div>

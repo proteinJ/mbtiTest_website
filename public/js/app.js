@@ -33,22 +33,68 @@ function nextQuestion(questionIndex, value) {
       // 현재 questionIndex에 2를 더해야 다음 질문 ID와 일치
       document.getElementById(`question${questionIndex + 2}`).style.display = 'block';
   } else {
-      // 마지막 질문(인덱스 31)까지 완료했으면 폼 제출
+      // 마지막 질문(인덱스 27)까지 완료했으면 폼 제출
+      console.log("submitForm()제출 완료")
       submitForm();
   }
 }
 
+  
+
+
 function submitForm() {
-fetch('/submit', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify(traitScores)
-})
-.then(response => response.json())
-.then(data => {
-  window.location.href = '/resultPage';
-})
-.catch(error => console.error('Error:', error));
+  fetch('/submit', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(traitScores),
+    // credentials: 'include'
+  })  
+  .then(response => response.json())
+  .then(data => {
+    if (data.redirectTo) {
+      window.location.href = '/resultPage'; 
+    } else {
+      console.error('No redirectTo provided in response');
+    }
+  })
+  .catch(error => console.error('Error:', error));
 }
+
+// -- radio 선택시 (test질문 버튼) --
+const container = document.querySelector('.container-content');
+  if (container) {
+    container.addEventListener('change', (event) => {
+      const target = event.target;
+      if (target.matches('input[type="radio"]')) {
+        const questionIndex = parseInt(target.dataset.index);
+        const value = target.value;
+        nextQuestion(questionIndex, value);
+      }
+    });
+  };
+
+// -- btn 선택시 (각 페이지 화면전환 버튼) --
+document.addEventListener('DOMContentLoaded', () => {
+  const homeNextBtn = document.getElementById('home_next_btn');
+  if (homeNextBtn) {
+    homeNextBtn.addEventListener('click', () => {
+      window.location.href = '/intro';
+    });
+  }
+
+  const introNextBtn = document.getElementById('intro_next_btn');
+  if (introNextBtn) {
+    introNextBtn.addEventListener('click', () => {
+      window.location.href = '/testP';
+    });
+  }
+
+  const resultNextBtn = document.getElementById('result_restart_btn');
+  if (resultNextBtn) {
+    resultNextBtn.addEventListener('click', () => {
+      window.location.href = '/';
+    });
+  }
+});
