@@ -76,14 +76,22 @@
     }
 }
 
+
+@media (max-width: 450px) {
+    .container-content {
+        gap: 20px;
+    }
+    .next_btn {
+        padding: 14px 24px;
+        font-size: 22px;
+    }
+}
+
 /* width 390px 이하 - iphone SE, mini 기종 */
 
 @media (max-width: 390px) {
     .intro_text {
         font-size: 18px;
-    }
-    .container-content {
-        gap: 30px;
     }
     .next_btn {
         padding: 14px 24px;

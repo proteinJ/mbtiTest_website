@@ -91,10 +91,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  const resultNextBtn = document.getElementById('result_restart_btn');
-  if (resultNextBtn) {
-    resultNextBtn.addEventListener('click', () => {
-      window.location.href = '/';
+  // const resultNextBtn = document.getElementById('result_restart_btn');
+  // if (resultNextBtn) {
+  //   resultNextBtn.addEventListener('click', () => {
+  //     window.location.href = '/';
+  //   });
+  // }
+
+  const allResultBtn = document.getElementById('AllResult-btn');
+  if (allResultBtn) {
+    allResultBtn.addEventListener('click', () => {
+      window.location.href = '/resultList';
     });
   }
 });

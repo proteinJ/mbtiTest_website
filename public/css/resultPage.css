@@ -58,11 +58,20 @@ h1 {
     color: #000000
 }
 
-.start-btn-container {
+/* .start-btn-container {
     display: flex;
-    margin-top: auto;  /* 버튼을 하단으로 밀어주기 */
-    margin-bottom: 50px;  /* 버튼과 하단 간격 설정 */
+    margin-top: auto;  
+    margin-bottom: 50px; 
+} */
+
+.AllResult-btn-container {
+  display: flex;
+    justify-content: center;
+    margin-top: 5%;
+    margin-bottom: 10%;
 }
+
+
 
 .recommand-scent-personality-container {
     color: #000000;
