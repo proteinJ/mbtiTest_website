@@ -114,7 +114,17 @@ footer {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
+.resultList-Tag {
+    font-size: 25px;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+}
 
+.home-icon {
+    height: 40px;
+}
 
 @media (max-width: 800px) {
     .container {

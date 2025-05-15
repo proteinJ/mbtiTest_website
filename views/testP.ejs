@@ -19,9 +19,12 @@
         </nav>
       </div>
 
+      
+
       <div class="container">
         <div class="container-content">
             <% for (let i = 0; i < 28; i++) { %> <div class="question-container" id="question<%= i + 1 %>" style="display: <%= i === 0 ? 'block' : 'none' %>">
+              
                     <div class="process-container">
                         <p class="process"><%= i + 1 %> / 28</p> 
                     </div>
@@ -39,6 +42,9 @@
                     </div>
                 </div>
             <% } %>
+            <div class="navigation-buttons">
+              <button id="prev-btn" class="prev-btn">이전</button>
+            </div>
         </div>
     </div>
 

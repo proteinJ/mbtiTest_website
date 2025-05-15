@@ -9,7 +9,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 100px;
+    gap: 30px;
 }
 
 .question-container {
@@ -89,6 +89,32 @@ input[type="radio"] {
     letter-spacing: 1px;
     line-height: 1.4;
     color: #ffffff;
+}
+
+.navigation-buttons {
+    display: flex;
+    z-index: 100;
+}
+
+button.prev-btn {
+    background-color: #ffffff3a;
+    color: rgba(108, 49, 148, 0.769);
+    border: 2px solid #ffffff;
+    padding: 20px 80px;
+    font-family: '산토끼체', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    border-radius: 35px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    fill-opacity: 0.7;
+}
+
+button.prev-btn:hover {
+    background-color: #9e9e9ec0;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
 @media (max-width: 800px) {

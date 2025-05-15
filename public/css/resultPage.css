@@ -58,20 +58,17 @@ h1 {
     color: #000000
 }
 
-/* .start-btn-container {
-    display: flex;
-    margin-top: auto;  
-    margin-bottom: 50px; 
-} */
-
-.AllResult-btn-container {
+.restart-btn-container {
   display: flex;
-    justify-content: center;
-    margin-top: 5%;
-    margin-bottom: 10%;
+  flex-direction: column;
+  margin-bottom: 30px;
 }
 
-
+.ReStartButton {
+  padding: 15px 60px;
+  margin-top: 0px;
+  margin-bottom: 30px;
+}
 
 .recommand-scent-personality-container {
     color: #000000;
@@ -198,13 +195,6 @@ h1 {
     flex-direction: row;
 }
 
-.restart-btn-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 15%;
-    margin-bottom: 10%;
-}
-
 .footer {
   text-align: center !important;  
 }
@@ -275,17 +265,13 @@ h1 {
   .recommand-scent-container-1 {
     margin-bottom: 40px;
   }
-
-  .restart-btn-container {
-    margin-top: 70px;
-    margin-bottom: 60px;
-  }
-
+  
   .ReStartButton {
-    width: 70%;
-    padding: 12px;
-    font-size: 1.1rem;
+    padding: 15px 60px;
+    margin-top: 0px;
+    margin-bottom: 30px;
   }
+
 
   footer {
     font-size: 0.9rem;

@@ -5,42 +5,64 @@ let traitScores = {
   J: 0, P: 0
 };
 
-const traitMap = ['EI', 'SN', 'TF', 'JP']; 
+const traitMap = ['EI', 'SN', 'TF', 'JP'];
+const userAnswers = Array(28).fill(null); // 각 질문의 선택값 저장
+let currentQuestionIndex = 0; // 현재 위치
 
-function handleAnswer(questionIndex, questionValue) {
-
+function updateTraitScore(questionIndex, value, isUndo = false) {
   const traitGroup = Math.floor(questionIndex / 7);
+  const direction = parseInt(value);
+  const trait = traitMap[traitGroup][direction];
 
-  const direction = parseInt(questionValue); // 0 또는 1
-  const trait = traitMap[traitGroup][direction]; // 해당 특성 결정
-  traitScores[trait] += 1; // 특성 점수 증가
+  traitScores[trait] += isUndo ? -1 : 1;
 
-  // 콘솔 로그는 질문 번호 (1-32)로 표시
-  console.log(`Q${questionIndex + 1}: ${trait} +1 →`, traitScores);
+  console.log(`${isUndo ? 'UNDO' : 'Q'}${questionIndex + 1}: ${trait} ${isUndo ? '-1' : '+1'} →`, traitScores);
 }
 
 function nextQuestion(questionIndex, value) {
+  const newValue = parseInt(value);
 
-  // 답변 처리 (질문 인덱스와 값 전달)
-  handleAnswer(questionIndex, value);
+  // 선택 저장 및 점수 반영
+  userAnswers[questionIndex] = newValue;
+  updateTraitScore(questionIndex, newValue);
 
-  // 현재 질문 컨테이너 숨기기 (HTML ID: question1 ~ question32)
-  // 받은 questionIndex(0-31)에 1을 더해야 실제 HTML ID와 일치
+  // 현재 질문 숨기기
   document.getElementById(`question${questionIndex + 1}`).style.display = 'none';
 
-  if (questionIndex < 27) { 
-      // 다음 질문 컨테이너 표시 (HTML ID: question2 ~ question32)
-      // 현재 questionIndex에 2를 더해야 다음 질문 ID와 일치
-      document.getElementById(`question${questionIndex + 2}`).style.display = 'block';
+  if (questionIndex < 27) {
+    currentQuestionIndex = questionIndex + 1;
+    document.getElementById(`question${currentQuestionIndex + 1}`).style.display = 'block';
   } else {
-      // 마지막 질문(인덱스 27)까지 완료했으면 폼 제출
-      console.log("submitForm()제출 완료")
-      submitForm();
+    console.log("submitForm() 제출 완료");
+    submitForm();
   }
 }
 
-  
+function prevQuestion() {
+  if (currentQuestionIndex === 0) return;
 
+  // 현재 질문 숨기기
+  document.getElementById(`question${currentQuestionIndex + 1}`).style.display = 'none';
+
+  // 이전 질문으로 이동
+  currentQuestionIndex -= 1;
+  document.getElementById(`question${currentQuestionIndex + 1}`).style.display = 'block';
+
+  // 기존 선택값이 있으면 점수에서 제거하고, 라디오 선택 해제
+  const previousValue = userAnswers[currentQuestionIndex];
+  if (previousValue !== null) {
+    updateTraitScore(currentQuestionIndex, previousValue, true); // 점수 -1
+
+    // 선택 해제
+    const option0 = document.getElementById(`q${currentQuestionIndex}_option0`);
+    const option1 = document.getElementById(`q${currentQuestionIndex}_option1`);
+    if (option0) option0.checked = false;
+    if (option1) option1.checked = false;
+
+    // 선택값 초기화
+    userAnswers[currentQuestionIndex] = null;
+  }
+}
 
 function submitForm() {
   fetch('/submit', {
@@ -49,33 +71,32 @@ function submitForm() {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(traitScores),
-    // credentials: 'include'
-  })  
-  .then(response => response.json())
-  .then(data => {
-    if (data.redirectTo) {
-      window.location.href = '/resultPage'; 
-    } else {
-      console.error('No redirectTo provided in response');
-    }
   })
-  .catch(error => console.error('Error:', error));
+    .then(response => response.json())
+    .then(data => {
+      if (data.redirectTo) {
+        window.location.href = '/resultPage';
+      } else {
+        console.error('No redirectTo provided in response');
+      }
+    })
+    .catch(error => console.error('Error:', error));
 }
 
-// -- radio 선택시 (test질문 버튼) --
+// 라디오 버튼 선택 시 처리
 const container = document.querySelector('.container-content');
-  if (container) {
-    container.addEventListener('change', (event) => {
-      const target = event.target;
-      if (target.matches('input[type="radio"]')) {
-        const questionIndex = parseInt(target.dataset.index);
-        const value = target.value;
-        nextQuestion(questionIndex, value);
-      }
-    });
-  };
+if (container) {
+  container.addEventListener('change', (event) => {
+    const target = event.target;
+    if (target.matches('input[type="radio"]')) {
+      const questionIndex = parseInt(target.dataset.index);
+      const value = target.value;
+      nextQuestion(questionIndex, value);
+    }
+  });
+}
 
-// -- btn 선택시 (각 페이지 화면전환 버튼) --
+// 페이지 이동 버튼 처리
 document.addEventListener('DOMContentLoaded', () => {
   const homeNextBtn = document.getElementById('home_next_btn');
   if (homeNextBtn) {
@@ -91,17 +112,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // const resultNextBtn = document.getElementById('result_restart_btn');
-  // if (resultNextBtn) {
-  //   resultNextBtn.addEventListener('click', () => {
-  //     window.location.href = '/';
-  //   });
-  // }
+  const resultRestartBtn = document.getElementById('result-restart-btn');
+  if (resultRestartBtn) {
+    resultRestartBtn.addEventListener('click', () => {
+      window.location.href = '/';
+    });
+  }
 
   const allResultBtn = document.getElementById('AllResult-btn');
   if (allResultBtn) {
     allResultBtn.addEventListener('click', () => {
       window.location.href = '/resultList';
+    });
+  }
+
+  const backBtn = document.getElementById('prev-btn');
+  if (backBtn) {
+    backBtn.addEventListener('click', () => {
+      prevQuestion();
     });
   }
 });
