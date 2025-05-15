@@ -104,7 +104,8 @@
                 <img src= <%= mbtiData["image"][i] %> alt="Perfume" class="recommand-perfume-image">
                 <div class="recommand-perfume-text-container">
                   <div class="recommand-perfume-title-container">
-                    <span><%= mbtiData["perfumeRecommendations"][i]["perfumeNameKor"] %></span> <br> <span style="font-size: 15px; margin-top: -1.6em;"><%= mbtiData["perfumeRecommendations"][i]["perfumeNameEng"] %></span>
+                    <div><span><%= mbtiData["perfumeRecommendations"][i]["perfumeNameKor"] %></span></div>
+                    <div><span style="font-size: 15px;"><%= mbtiData["perfumeRecommendations"][i]["perfumeNameEng"] %></span></div>
                   </div>
                   <p style="font-size: 18px; font-weight: 100; color:rgb(46, 46, 46);"><%= mbtiData["perfumeRecommendations"][i]["perfumeDescription"] %></p>
                 </div>

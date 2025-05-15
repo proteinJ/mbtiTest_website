@@ -23,7 +23,7 @@
     align-items:center;
     justify-content: center;
     height:10%;
-    margin-bottom: 200px;
+    margin-bottom: 100px;
 }
 
 
@@ -32,6 +32,8 @@
     font-size: 1.5em;
     font-weight: bold;
 } 
+
+
 
 .question-button {
     display:flex;
@@ -72,6 +74,13 @@ input[type="radio"] {
     color: rgba(108, 49, 148, 0.769);
 }
 
+.question-situation-container{
+    display: flex;
+    height: 7.5rem;
+    align-items: center;
+    justify-content: center;
+}
+
 .question-situation {
     font-size: 2.5rem;
     font-weight: 500;
@@ -85,6 +94,7 @@ input[type="radio"] {
 @media (max-width: 800px) {
     .question-container {
         margin-top: -40px;
+        width: 100%;
     }
     .process-container {
         margin-bottom: 8em;
@@ -95,7 +105,7 @@ input[type="radio"] {
     .question-box {
         width: 100%;
         max-width: 100%;
-        height: auto;
+        height: 9em;
         padding: 20px;
         margin: 10px 0;
         font-size: 0.9em;

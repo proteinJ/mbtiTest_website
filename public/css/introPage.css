@@ -4,6 +4,9 @@
     background-image: url("/image/main-background.png");
     background-repeat: no-repeat;
     min-height: 100vh; /* 컨테이너 높이 유지 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .container-content {
@@ -42,8 +45,8 @@
     color: rgb(91, 31, 147);
     border: none;
     border-radius: 20px;
-    padding: 14px 32px;
-    font-size: 18px;
+    padding: 20px 36px;
+    font-size: 20px;
     font-weight: bold;
     cursor: pointer;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -61,6 +64,10 @@
 }
 
 @media (max-width: 800px) {
+    .container{
+        align-items: flex-start;
+        padding-top: 150px;
+    }
     .intro_text {
         font-size: 22px;
     }
