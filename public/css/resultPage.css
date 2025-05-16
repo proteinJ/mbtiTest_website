@@ -9,6 +9,7 @@
   background-repeat: repeat;
   min-height: 100vh;
   text-align: justify;
+  padding: 100px 30px 100px 30px;
 }
 
 .box-title {
@@ -61,7 +62,7 @@ h1 {
 .restart-btn-container {
   display: flex;
   flex-direction: column;
-  margin-bottom: 30px;
+  margin: 80px 0px 20px 0px;
 }
 
 .ReStartButton {
@@ -200,6 +201,10 @@ h1 {
 }
 
 @media (max-width: 800px) {
+  .container {
+    padding: 60px 30px 60px 30px;
+  }
+
   .content-container {
     display: flex;
     flex-direction: column;
