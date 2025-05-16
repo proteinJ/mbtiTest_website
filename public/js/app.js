@@ -33,6 +33,7 @@ function nextQuestion(questionIndex, value) {
     currentQuestionIndex = questionIndex + 1;
     document.getElementById(`question${currentQuestionIndex + 1}`).style.display = 'block';
   } else {
+    document.getElementById(`prev-btn`).style.display = 'none';  
     console.log("submitForm() 제출 완료");
     submitForm();
   }
